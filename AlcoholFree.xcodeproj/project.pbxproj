@@ -1,0 +1,851 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
+		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */; };
+		42EC4C472705F0130052B1CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C462705F0130052B1CF /* ContentView.swift */; };
+		42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C482705F0130052B1CF /* NotificationController.swift */; };
+		42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C4A2705F0130052B1CF /* NotificationView.swift */; };
+		42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C4C2705F0130052B1CF /* ComplicationController.swift */; };
+		42EC4C4F2705F0140052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C4E2705F0140052B1CF /* Assets.xcassets */; };
+		42EC4C522705F0140052B1CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C512705F0140052B1CF /* Preview Assets.xcassets */; };
+		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
+		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
+		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42EC4C362705F0110052B1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC4C332705F0110052B1CF;
+			remoteInfo = "AlcoholFree WatchKit App";
+		};
+		42EC4C412705F0130052B1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC4C3E2705F0130052B1CF;
+			remoteInfo = "AlcoholFree WatchKit Extension";
+		};
+		42EC4C5A2705F0140052B1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC4C3E2705F0130052B1CF;
+			remoteInfo = "AlcoholFree WatchKit Extension";
+		};
+		42EC4C642705F0140052B1CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC4C332705F0110052B1CF;
+			remoteInfo = "AlcoholFree WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42EC4C702705F0150052B1CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C742705F0150052B1CF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlcoholFree WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeApp.swift; sourceTree = "<group>"; };
+		42EC4C462705F0130052B1CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		42EC4C482705F0130052B1CF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		42EC4C4A2705F0130052B1CF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		42EC4C4C2705F0130052B1CF /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		42EC4C4E2705F0140052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42EC4C512705F0140052B1CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		42EC4C532705F0140052B1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42EC4C542705F0140052B1CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		42EC4C592705F0140052B1CF /* AlcoholFreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcoholFreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeTests.swift; sourceTree = "<group>"; };
+		42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcoholFreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITests.swift; sourceTree = "<group>"; };
+		42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42EC4C3C2705F0130052B1CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C562705F0140052B1CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C602705F0140052B1CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42EC4C292705F0110052B1CF = {
+			isa = PBXGroup;
+			children = (
+				42EC4C382705F0110052B1CF /* AlcoholFree WatchKit App */,
+				42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */,
+				42EC4C5C2705F0140052B1CF /* AlcoholFreeTests */,
+				42EC4C662705F0140052B1CF /* AlcoholFreeUITests */,
+				42EC4C312705F0110052B1CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42EC4C312705F0110052B1CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C302705F0110052B1CF /* AlcoholFree.app */,
+				42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */,
+				42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */,
+				42EC4C592705F0140052B1CF /* AlcoholFreeTests.xctest */,
+				42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42EC4C382705F0110052B1CF /* AlcoholFree WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C392705F0130052B1CF /* Assets.xcassets */,
+			);
+			path = "AlcoholFree WatchKit App";
+			sourceTree = "<group>";
+		};
+		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
+				42EC4C462705F0130052B1CF /* ContentView.swift */,
+				42EC4C482705F0130052B1CF /* NotificationController.swift */,
+				42EC4C4A2705F0130052B1CF /* NotificationView.swift */,
+				42EC4C4C2705F0130052B1CF /* ComplicationController.swift */,
+				42EC4C4E2705F0140052B1CF /* Assets.xcassets */,
+				42EC4C532705F0140052B1CF /* Info.plist */,
+				42EC4C542705F0140052B1CF /* PushNotificationPayload.apns */,
+				42EC4C502705F0140052B1CF /* Preview Content */,
+			);
+			path = "AlcoholFree WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		42EC4C502705F0140052B1CF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C512705F0140052B1CF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		42EC4C5C2705F0140052B1CF /* AlcoholFreeTests */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */,
+			);
+			path = AlcoholFreeTests;
+			sourceTree = "<group>";
+		};
+		42EC4C662705F0140052B1CF /* AlcoholFreeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */,
+				42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */,
+			);
+			path = AlcoholFreeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42EC4C2F2705F0110052B1CF /* AlcoholFree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EC4C752705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree" */;
+			buildPhases = (
+				42EC4C2E2705F0110052B1CF /* Resources */,
+				42EC4C742705F0150052B1CF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42EC4C372705F0110052B1CF /* PBXTargetDependency */,
+			);
+			name = AlcoholFree;
+			productName = AlcoholFree;
+			productReference = 42EC4C302705F0110052B1CF /* AlcoholFree.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EC4C712705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit App" */;
+			buildPhases = (
+				42EC4C322705F0110052B1CF /* Resources */,
+				42EC4C702705F0150052B1CF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42EC4C422705F0130052B1CF /* PBXTargetDependency */,
+			);
+			name = "AlcoholFree WatchKit App";
+			productName = "AlcoholFree WatchKit App";
+			productReference = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		42EC4C3E2705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EC4C6D2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit Extension" */;
+			buildPhases = (
+				42EC4C3B2705F0130052B1CF /* Sources */,
+				42EC4C3C2705F0130052B1CF /* Frameworks */,
+				42EC4C3D2705F0130052B1CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AlcoholFree WatchKit Extension";
+			productName = "AlcoholFree WatchKit Extension";
+			productReference = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		42EC4C582705F0140052B1CF /* AlcoholFreeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EC4C782705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeTests" */;
+			buildPhases = (
+				42EC4C552705F0140052B1CF /* Sources */,
+				42EC4C562705F0140052B1CF /* Frameworks */,
+				42EC4C572705F0140052B1CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42EC4C5B2705F0140052B1CF /* PBXTargetDependency */,
+			);
+			name = AlcoholFreeTests;
+			productName = AlcoholFreeTests;
+			productReference = 42EC4C592705F0140052B1CF /* AlcoholFreeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42EC4C622705F0140052B1CF /* AlcoholFreeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EC4C7B2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeUITests" */;
+			buildPhases = (
+				42EC4C5F2705F0140052B1CF /* Sources */,
+				42EC4C602705F0140052B1CF /* Frameworks */,
+				42EC4C612705F0140052B1CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42EC4C652705F0140052B1CF /* PBXTargetDependency */,
+			);
+			name = AlcoholFreeUITests;
+			productName = AlcoholFreeUITests;
+			productReference = 42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42EC4C2A2705F0110052B1CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					42EC4C2F2705F0110052B1CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					42EC4C332705F0110052B1CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					42EC4C3E2705F0130052B1CF = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					42EC4C582705F0140052B1CF = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 42EC4C3E2705F0130052B1CF;
+					};
+					42EC4C622705F0140052B1CF = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 42EC4C332705F0110052B1CF;
+					};
+				};
+			};
+			buildConfigurationList = 42EC4C2D2705F0110052B1CF /* Build configuration list for PBXProject "AlcoholFree" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42EC4C292705F0110052B1CF;
+			productRefGroup = 42EC4C312705F0110052B1CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42EC4C2F2705F0110052B1CF /* AlcoholFree */,
+				42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */,
+				42EC4C3E2705F0130052B1CF /* AlcoholFree WatchKit Extension */,
+				42EC4C582705F0140052B1CF /* AlcoholFreeTests */,
+				42EC4C622705F0140052B1CF /* AlcoholFreeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42EC4C2E2705F0110052B1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C322705F0110052B1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C3D2705F0130052B1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EC4C522705F0140052B1CF /* Preview Assets.xcassets in Resources */,
+				42EC4C4F2705F0140052B1CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C572705F0140052B1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C612705F0140052B1CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42EC4C3B2705F0130052B1CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
+				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
+				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
+				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
+				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C552705F0140052B1CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42EC4C5F2705F0140052B1CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */,
+				42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42EC4C372705F0110052B1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */;
+			targetProxy = 42EC4C362705F0110052B1CF /* PBXContainerItemProxy */;
+		};
+		42EC4C422705F0130052B1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC4C3E2705F0130052B1CF /* AlcoholFree WatchKit Extension */;
+			targetProxy = 42EC4C412705F0130052B1CF /* PBXContainerItemProxy */;
+		};
+		42EC4C5B2705F0140052B1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC4C3E2705F0130052B1CF /* AlcoholFree WatchKit Extension */;
+			targetProxy = 42EC4C5A2705F0140052B1CF /* PBXContainerItemProxy */;
+		};
+		42EC4C652705F0140052B1CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */;
+			targetProxy = 42EC4C642705F0140052B1CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42EC4C6B2705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42EC4C6C2705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42EC4C6E2705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		42EC4C6F2705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		42EC4C722705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		42EC4C732705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		42EC4C762705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		42EC4C772705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		42EC4C792705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlcoholFree WatchKit Extension.appex/AlcoholFree WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		42EC4C7A2705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlcoholFree WatchKit Extension.appex/AlcoholFree WatchKit Extension";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		42EC4C7C2705F0150052B1CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AlcoholFree WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		42EC4C7D2705F0150052B1CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "AlcoholFree WatchKit App";
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42EC4C2D2705F0110052B1CF /* Build configuration list for PBXProject "AlcoholFree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C6B2705F0150052B1CF /* Debug */,
+				42EC4C6C2705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EC4C6D2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C6E2705F0150052B1CF /* Debug */,
+				42EC4C6F2705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EC4C712705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C722705F0150052B1CF /* Debug */,
+				42EC4C732705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EC4C752705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C762705F0150052B1CF /* Debug */,
+				42EC4C772705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EC4C782705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C792705F0150052B1CF /* Debug */,
+				42EC4C7A2705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EC4C7B2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EC4C7C2705F0150052B1CF /* Debug */,
+				42EC4C7D2705F0150052B1CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42EC4C2A2705F0110052B1CF /* Project object */;
+}
