@@ -20,6 +20,9 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+		CE5DD642270B443E0047FF64 /* SoundClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */; };
+		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
+		CE5DD646270DD11D0047FF64 /* ReadTheRoom.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcoholFreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITests.swift; sourceTree = "<group>"; };
 		42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
+		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
+		CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ReadTheRoom.mlmodel; path = ../../../Downloads/ReadTheRoom.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +169,13 @@
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
 				42EC4C4A2705F0130052B1CF /* NotificationView.swift */,
 				42EC4C4C2705F0130052B1CF /* ComplicationController.swift */,
+				CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */,
 				42EC4C4E2705F0140052B1CF /* Assets.xcassets */,
 				42EC4C532705F0140052B1CF /* Info.plist */,
 				42EC4C542705F0140052B1CF /* PushNotificationPayload.apns */,
+				CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */,
 				42EC4C502705F0140052B1CF /* Preview Content */,
+				CE5DD643270B46210047FF64 /* ResultsObserver.swift */,
 			);
 			path = "AlcoholFree WatchKit Extension";
 			sourceTree = "<group>";
@@ -383,9 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
+				CE5DD642270B443E0047FF64 /* SoundClassificationView.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
+				CE5DD646270DD11D0047FF64 /* ReadTheRoom.mlmodel in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
 			);
