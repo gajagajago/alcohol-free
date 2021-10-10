@@ -5,7 +5,7 @@ import SoundAnalysis
 class ResultsObserver: NSObject, SNResultsObserving {
     /// Notifies the observer when a request generates a prediction.
     func request(_ request: SNRequest, didProduce result: SNResult) {
-        print("REQUEST")
+        print("maybe..")
         // Downcast the result to a classification result.
         guard let result = result as? SNClassificationResult else  { return }
 

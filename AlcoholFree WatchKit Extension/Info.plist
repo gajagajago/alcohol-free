@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Just hit OK. Don&apos;t worry about it</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Don&apos;t worry about it, srsly</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>

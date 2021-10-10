@@ -2,22 +2,25 @@ import SwiftUI
 import SoundAnalysis
 import CoreML
 import AVFAudio
+import AVFoundation
 
 struct SoundClassificationView: View {
-    @State var store = SoundClassificationStore()
+    var store = SoundClassificationStore()
+    @State var isRunning = false
     
     var body: some View {
         VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             Button(action: {
-                WKInterfaceDevice.current().play(.notification)
-                if store.isRunning() {
+                if isRunning {
                     store.stop()
+                    isRunning = false
                 } else {
                     store.start()
+                    isRunning = true
                 }
             }) {
-                Text(store.isRunning() ? "Stop" : "Start")
+                Text(isRunning ? "Stop" : "Start")
             }
         }
     }
@@ -30,6 +33,8 @@ class SoundClassificationStore {
     let streamAnalyzer: SNAudioStreamAnalyzer
     let analysisQueue: DispatchQueue
     let model: MLModel
+    // Create a new observer to receive notifications for analysis results.
+    let resultsObserver = ResultsObserver()
     
     init () {
         // Create a new audio engine.
@@ -40,7 +45,7 @@ class SoundClassificationStore {
         self.inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
         self.streamAnalyzer = SNAudioStreamAnalyzer(format: inputFormat)
         
-        self.analysisQueue = DispatchQueue(label:"com.alcholFree.AnalysisQueue")
+        self.analysisQueue = DispatchQueue(label:"com.apple.AnalysisQueue")
         
         self.model = try! ReadTheRoom(configuration: MLModelConfiguration()).model
     }
@@ -57,9 +62,6 @@ class SoundClassificationStore {
             print("Unable to start AVAudioEngine: \(error.localizedDescription)")
         }
         
-        // Create a new observer to receive notifications for analysis results.
-        let resultsObserver = ResultsObserver()
-
         // Prepare a new request for the trained model.
         do {
             let request = try SNClassifySoundRequest(mlModel: model)
@@ -72,6 +74,21 @@ class SoundClassificationStore {
     }
     
     private func installAudioTap() {
+//        audioEngine.inputNode.installTap(onBus: inputBus,
+//                                         bufferSize: 8192,
+//                                         format: inputFormat) { buffer, time in
+//            let channelDataValue = buffer.floatChannelData!.pointee
+//            let channelDataValueArray = stride(from: 0,
+//                                               to: Int(buffer.frameLength),
+//                                               by: buffer.stride).map{ channelDataValue[$0] }
+//
+//            let rms = sqrt(channelDataValueArray.map{ $0 * $0 }.reduce(0, +) / Float(buffer.frameLength))
+//            let avgPower = 20 * log10(rms)
+//            print(avgPower)
+//            self.analysisQueue.async {
+//                self.streamAnalyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
+//            }
+//        }
         audioEngine.inputNode.installTap(onBus: inputBus,
                                          bufferSize: 8192,
                                          format: inputFormat,
@@ -87,6 +104,7 @@ class SoundClassificationStore {
     
     func stop() {
         audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: inputBus)
     }
 }
 
