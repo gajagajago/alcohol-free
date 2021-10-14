@@ -1,0 +1,6 @@
+framework module Pods_AlcoholFree_WatchKit_Extension {
+  umbrella header "Pods-AlcoholFree WatchKit Extension-umbrella.h"
+
+  export *
+  module * { export * }
+}
