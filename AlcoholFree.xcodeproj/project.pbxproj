@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427626F22717F639003C558F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F12717F639003C558F /* DetailView.swift */; };
+		427626F42718017D003C558F /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F32718017D003C558F /* PaceView.swift */; };
+		427626F627180191003C558F /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F527180191003C558F /* EndView.swift */; };
+		427626F827180286003C558F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F727180286003C558F /* SummaryView.swift */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -79,6 +83,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		427626F12717F639003C558F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		427626F32718017D003C558F /* PaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
+		427626F527180191003C558F /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		427626F727180286003C558F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +166,10 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				427626F727180286003C558F /* SummaryView.swift */,
+				427626F12717F639003C558F /* DetailView.swift */,
+				427626F527180191003C558F /* EndView.swift */,
+				427626F32718017D003C558F /* PaceView.swift */,
 				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
@@ -384,10 +396,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
+				427626F22717F639003C558F /* DetailView.swift in Sources */,
+				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
+				427626F42718017D003C558F /* PaceView.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
+				427626F827180286003C558F /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
