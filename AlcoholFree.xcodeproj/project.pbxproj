@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20D7598640CC9DB8C18D7E16 /* Pods_AlcoholFreeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC220C0AD512050F8DDF529 /* Pods_AlcoholFreeTests.framework */; };
 		427626F22717F639003C558F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F12717F639003C558F /* DetailView.swift */; };
 		427626F42718017D003C558F /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F32718017D003C558F /* PaceView.swift */; };
 		427626F627180191003C558F /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F527180191003C558F /* EndView.swift */; };
@@ -25,10 +24,6 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
-		61B24440762ECA52DF9DC645 /* Pods_AlcoholFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802F4C4E8D156ADEB9F01B40 /* Pods_AlcoholFree.framework */; };
-		8B97D6EDA6CFEB7FF05721ED /* Pods_AlcoholFree_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC9002CEF3C2F2315C5DBD6 /* Pods_AlcoholFree_WatchKit_Extension.framework */; };
-		8C44789EA4B234A4569304B0 /* Pods_AlcoholFree_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFF438BFC995C8B8D7F37FD /* Pods_AlcoholFree_WatchKit_App.framework */; };
-		A39100DB28B25AB18EAF87D0 /* Pods_AlcoholFree_AlcoholFreeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B01CA331EF2EFAB54E4745 /* Pods_AlcoholFree_AlcoholFreeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +86,6 @@
 		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
-		2AFF438BFC995C8B8D7F37FD /* Pods_AlcoholFree_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlcoholFree_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		427626F12717F639003C558F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		427626F32718017D003C558F /* PaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
 		427626F527180191003C558F /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
@@ -114,11 +108,7 @@
 		42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcoholFreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITests.swift; sourceTree = "<group>"; };
 		42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		5BC220C0AD512050F8DDF529 /* Pods_AlcoholFreeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlcoholFreeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EC9002CEF3C2F2315C5DBD6 /* Pods_AlcoholFree_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlcoholFree_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77C07025CC9099164112B9F2 /* Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		802F4C4E8D156ADEB9F01B40 /* Pods_AlcoholFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlcoholFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97B01CA331EF2EFAB54E4745 /* Pods_AlcoholFree_AlcoholFreeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlcoholFree_AlcoholFreeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A056D826B17CA00CCB2DA787 /* Pods-AlcoholFree WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +122,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61B24440762ECA52DF9DC645 /* Pods_AlcoholFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +129,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B97D6EDA6CFEB7FF05721ED /* Pods_AlcoholFree_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D7598640CC9DB8C18D7E16 /* Pods_AlcoholFreeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A39100DB28B25AB18EAF87D0 /* Pods_AlcoholFree_AlcoholFreeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C44789EA4B234A4569304B0 /* Pods_AlcoholFree_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,11 +237,6 @@
 		BD0CDDB0E7CE2B43768506CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				802F4C4E8D156ADEB9F01B40 /* Pods_AlcoholFree.framework */,
-				2AFF438BFC995C8B8D7F37FD /* Pods_AlcoholFree_WatchKit_App.framework */,
-				6EC9002CEF3C2F2315C5DBD6 /* Pods_AlcoholFree_WatchKit_Extension.framework */,
-				97B01CA331EF2EFAB54E4745 /* Pods_AlcoholFree_AlcoholFreeUITests.framework */,
-				5BC220C0AD512050F8DDF529 /* Pods_AlcoholFreeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,7 +255,6 @@
 				A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */,
 				AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
