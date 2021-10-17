@@ -12,7 +12,7 @@ struct AlcoholFreeApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                SoundClassificationView()
+                ContentView()
             }
         }
 

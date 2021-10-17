@@ -24,7 +24,7 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
-		CE5DD642270B443E0047FF64 /* SoundClassificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */; };
+		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE5DD646270DD11D0047FF64 /* ReadTheRoom.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */; };
 /* End PBXBuildFile section */
@@ -111,14 +111,14 @@
 		42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlcoholFreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITests.swift; sourceTree = "<group>"; };
 		42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
-		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
-		CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ReadTheRoom.mlmodel; path = ../../../Downloads/ReadTheRoom.mlmodel; sourceTree = "<group>"; };
 		77C07025CC9099164112B9F2 /* Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A056D826B17CA00CCB2DA787 /* Pods-AlcoholFree WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
+		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
+		CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ReadTheRoom.mlmodel; path = ../../../Downloads/ReadTheRoom.mlmodel; sourceTree = "<group>"; };
 		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,13 +207,13 @@
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
 				42EC4C4A2705F0130052B1CF /* NotificationView.swift */,
 				42EC4C4C2705F0130052B1CF /* ComplicationController.swift */,
-				CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */,
 				42EC4C4E2705F0140052B1CF /* Assets.xcassets */,
 				42EC4C532705F0140052B1CF /* Info.plist */,
 				42EC4C542705F0140052B1CF /* PushNotificationPayload.apns */,
 				CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */,
 				42EC4C502705F0140052B1CF /* Preview Content */,
 				CE5DD643270B46210047FF64 /* ResultsObserver.swift */,
+				CE363912271BA46D001B9B0D /* SoundClassifier.swift */,
 			);
 			path = "AlcoholFree WatchKit Extension";
 			sourceTree = "<group>";
@@ -575,12 +575,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
-				CE5DD642270B443E0047FF64 /* SoundClassificationView.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
 				427626F22717F639003C558F /* DetailView.swift in Sources */,
 				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
 				427626F42718017D003C558F /* PaceView.swift in Sources */,
+				CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
 				CE5DD646270DD11D0047FF64 /* ReadTheRoom.mlmodel in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,

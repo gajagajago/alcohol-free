@@ -1,42 +1,22 @@
-import SwiftUI
+import Foundation
 import SoundAnalysis
 import CoreML
 import AVFAudio
 import AVFoundation
 
-struct SoundClassificationView: View {
-    var store = SoundClassificationStore()
-    @State var isRunning = false
+class SoundClassifier {
+    static let shared = SoundClassifier()
     
-    var body: some View {
-        VStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Button(action: {
-                if isRunning {
-                    store.stop()
-                    isRunning = false
-                } else {
-                    store.start()
-                    isRunning = true
-                }
-            }) {
-                Text(isRunning ? "Stop" : "Start")
-            }
-        }
-    }
-}
-
-class SoundClassificationStore {
     let audioEngine: AVAudioEngine
     let inputBus: AVAudioNodeBus
     let inputFormat: AVAudioFormat
     let streamAnalyzer: SNAudioStreamAnalyzer
     let analysisQueue: DispatchQueue
     let model: MLModel
-    // Create a new observer to receive notifications for analysis results.
-    let resultsObserver = ResultsObserver()
     
-    init () {
+    var observer: ResultsObserver?
+    
+    private init () {
         // Create a new audio engine.
         self.audioEngine = AVAudioEngine()
 
@@ -54,11 +34,9 @@ class SoundClassificationStore {
         return audioEngine.isRunning
     }
     
-    func start() {
-        if (isRunning()) {
-            return
-        }
-            
+    func start(resultsObserver: ResultsObserver) {
+        observer = resultsObserver
+        
         do {
             // Start the stream of audio data.
             try audioEngine.start()
@@ -107,17 +85,7 @@ class SoundClassificationStore {
     }
     
     func stop() {
-        if (!isRunning()) {
-            return
-        }
-        
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: inputBus)
-    }
-}
-
-struct SoundClassificationView_Previews: PreviewProvider {
-    static var previews: some View {
-        SoundClassificationView()
     }
 }
