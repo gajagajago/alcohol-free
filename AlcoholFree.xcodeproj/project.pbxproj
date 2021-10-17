@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		427626F22717F639003C558F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F12717F639003C558F /* DetailView.swift */; };
+		427626F42718017D003C558F /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F32718017D003C558F /* PaceView.swift */; };
+		427626F627180191003C558F /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F527180191003C558F /* EndView.swift */; };
+		427626F827180286003C558F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F727180286003C558F /* SummaryView.swift */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -82,6 +86,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
+		427626F12717F639003C558F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		427626F32718017D003C558F /* PaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
+		427626F527180191003C558F /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		427626F727180286003C558F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,9 +114,23 @@
 		CE5DD641270B443E0047FF64 /* SoundClassificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassificationView.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE5DD645270DD11D0047FF64 /* ReadTheRoom.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ReadTheRoom.mlmodel; path = ../../../Downloads/ReadTheRoom.mlmodel; sourceTree = "<group>"; };
+		77C07025CC9099164112B9F2 /* Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A056D826B17CA00CCB2DA787 /* Pods-AlcoholFree WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
+		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2BCEFF8BCB76876E84A5F884 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42EC4C3C2705F0130052B1CF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +152,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AC1B82A77E3D0B18D925A81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,6 +170,8 @@
 				42EC4C5C2705F0140052B1CF /* AlcoholFreeTests */,
 				42EC4C662705F0140052B1CF /* AlcoholFreeUITests */,
 				42EC4C312705F0110052B1CF /* Products */,
+				CED1472F3CFBA119AD2D9C04 /* Pods */,
+				BD0CDDB0E7CE2B43768506CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +198,10 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				427626F727180286003C558F /* SummaryView.swift */,
+				427626F12717F639003C558F /* DetailView.swift */,
+				427626F527180191003C558F /* EndView.swift */,
+				427626F32718017D003C558F /* PaceView.swift */,
 				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
@@ -205,6 +243,30 @@
 			path = AlcoholFreeUITests;
 			sourceTree = "<group>";
 		};
+		BD0CDDB0E7CE2B43768506CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CED1472F3CFBA119AD2D9C04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */,
+				E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */,
+				DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */,
+				0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */,
+				A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */,
+				A056D826B17CA00CCB2DA787 /* Pods-AlcoholFree WatchKit Extension.release.xcconfig */,
+				2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */,
+				77C07025CC9099164112B9F2 /* Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig */,
+				A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */,
+				AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,8 +274,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC4C752705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree" */;
 			buildPhases = (
+				C8F7DEE6A12369C5CFE7D83B /* [CP] Check Pods Manifest.lock */,
 				42EC4C2E2705F0110052B1CF /* Resources */,
 				42EC4C742705F0150052B1CF /* Embed Watch Content */,
+				2BCEFF8BCB76876E84A5F884 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -229,8 +293,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC4C712705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit App" */;
 			buildPhases = (
+				CCA06259D68F93816934FF48 /* [CP] Check Pods Manifest.lock */,
 				42EC4C322705F0110052B1CF /* Resources */,
 				42EC4C702705F0150052B1CF /* Embed App Extensions */,
+				9AC1B82A77E3D0B18D925A81 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +312,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC4C6D2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFree WatchKit Extension" */;
 			buildPhases = (
+				EE269F60C76E48B87F64CA1D /* [CP] Check Pods Manifest.lock */,
 				42EC4C3B2705F0130052B1CF /* Sources */,
 				42EC4C3C2705F0130052B1CF /* Frameworks */,
 				42EC4C3D2705F0130052B1CF /* Resources */,
@@ -263,6 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC4C782705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeTests" */;
 			buildPhases = (
+				010222F7C5405170C85895FC /* [CP] Check Pods Manifest.lock */,
 				42EC4C552705F0140052B1CF /* Sources */,
 				42EC4C562705F0140052B1CF /* Frameworks */,
 				42EC4C572705F0140052B1CF /* Resources */,
@@ -281,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42EC4C7B2705F0150052B1CF /* Build configuration list for PBXNativeTarget "AlcoholFreeUITests" */;
 			buildPhases = (
+				B3D9B714DA4D206201BFFB8C /* [CP] Check Pods Manifest.lock */,
 				42EC4C5F2705F0140052B1CF /* Sources */,
 				42EC4C602705F0140052B1CF /* Frameworks */,
 				42EC4C612705F0140052B1CF /* Resources */,
@@ -387,6 +456,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		010222F7C5405170C85895FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlcoholFreeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3D9B714DA4D206201BFFB8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlcoholFree-AlcoholFreeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F7DEE6A12369C5CFE7D83B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlcoholFree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCA06259D68F93816934FF48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlcoholFree WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE269F60C76E48B87F64CA1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlcoholFree WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42EC4C3B2705F0130052B1CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -395,11 +577,15 @@
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				CE5DD642270B443E0047FF64 /* SoundClassificationView.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
+				427626F22717F639003C558F /* DetailView.swift in Sources */,
+				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
+				427626F42718017D003C558F /* PaceView.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
 				CE5DD646270DD11D0047FF64 /* ReadTheRoom.mlmodel in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
+				427626F827180286003C558F /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +748,7 @@
 		};
 		42EC4C6E2705F0150052B1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +781,7 @@
 		};
 		42EC4C6F2705F0150052B1CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A056D826B17CA00CCB2DA787 /* Pods-AlcoholFree WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +814,7 @@
 		};
 		42EC4C722705F0150052B1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -651,6 +840,7 @@
 		};
 		42EC4C732705F0150052B1CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -676,6 +866,7 @@
 		};
 		42EC4C762705F0150052B1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -689,6 +880,7 @@
 		};
 		42EC4C772705F0150052B1CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -702,6 +894,7 @@
 		};
 		42EC4C792705F0150052B1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -728,6 +921,7 @@
 		};
 		42EC4C7A2705F0150052B1CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -754,6 +948,7 @@
 		};
 		42EC4C7C2705F0150052B1CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -778,6 +973,7 @@
 		};
 		42EC4C7D2705F0150052B1CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C07025CC9099164112B9F2 /* Pods-AlcoholFree-AlcoholFreeUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

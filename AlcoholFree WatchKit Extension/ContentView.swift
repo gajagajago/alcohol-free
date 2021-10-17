@@ -8,9 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedPace = 0
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        NavigationView {
+            VStack {
+                Text("목표 페이스를 설정해주세요.")
+                    .padding()
+                
+                HStack(alignment: .bottom) {
+                    Picker(selection: $selectedPace, label: Text("Select pace")){
+                        ForEach(1...10, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .frame(width: 80.0, height: 40.0)
+                    .labelsHidden()
+                    .pickerStyle(WheelPickerStyle())
+                    
+                    Text("잔 / 10분")
+                }
+                .padding()
+                
+                NavigationLink(destination: DetailView()
+                                .navigationBarBackButtonHidden(true)){
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .frame(width: 150.0, height: 45.0)
+                            .foregroundColor(.blue)
+                        Text("시작")
+                    }
+                    .padding()
+                }
+                .buttonStyle(PlainButtonStyle())
+                .frame(width: 150.0)
+                .navigationBarBackButtonHidden(true)
+            }
+        }
     }
 }
 

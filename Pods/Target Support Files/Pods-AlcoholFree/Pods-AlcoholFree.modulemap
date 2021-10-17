@@ -1,0 +1,6 @@
+framework module Pods_AlcoholFree {
+  umbrella header "Pods-AlcoholFree-umbrella.h"
+
+  export *
+  module * { export * }
+}
