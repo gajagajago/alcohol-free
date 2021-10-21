@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct DetailView: View {
+    var drinkClassifierManager = DrinkClassifierManager()
     var body: some View {
         TabView {
             PaceView()
             EndView()
+        }.onAppear {
+            drinkClassifierManager.startMotionUpdates()
+        }.onDisappear {
+            print("ON DISAPPEAR")
         }
     }
 }
