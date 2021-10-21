@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
-
+import CoreMotion
+import CoreML
 struct PaceView: View {
+    let drinkClassifierManager = DrinkClassifierManager()
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
@@ -24,7 +27,6 @@ struct PaceView: View {
                 }
             }
             .padding(.bottom, 10.0)
-
             
             VStack(alignment: .leading) {
                 Text("추정 혈중 알코올 농도")
@@ -35,8 +37,6 @@ struct PaceView: View {
             }
             
             Spacer()
-            
-            
         }
     }
 }

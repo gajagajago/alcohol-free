@@ -24,6 +24,8 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+		BEEB41B9272168BA007ED9DE /* DrinkClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */; };
+		BEEB41BE27217B07007ED9DE /* DrinkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,9 @@
 		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE1785732721A0AC004E274F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkClassifierManager.swift; sourceTree = "<group>"; };
+		BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrinkClassifier.mlmodel; sourceTree = "<group>"; };
 		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +197,7 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BEFB02722721669A00AAC770 /* DrinkClassification */,
 				427626F727180286003C558F /* SummaryView.swift */,
 				427626F12717F639003C558F /* DetailView.swift */,
 				427626F527180191003C558F /* EndView.swift */,
@@ -239,6 +245,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEFB02722721669A00AAC770 /* DrinkClassification */ = {
+			isa = PBXGroup;
+			children = (
+				BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */,
+				BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */,
+				BE1785732721A0AC004E274F /* MyPlayground.playground */,
+			);
+			path = DrinkClassification;
 			sourceTree = "<group>";
 		};
 		CED1472F3CFBA119AD2D9C04 /* Pods */ = {
@@ -566,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
+				BEEB41BE27217B07007ED9DE /* DrinkClassifier.mlmodel in Sources */,
 				427626F22717F639003C558F /* DetailView.swift in Sources */,
 				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
@@ -574,6 +591,7 @@
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
 				427626F827180286003C558F /* SummaryView.swift in Sources */,
+				BEEB41B9272168BA007ED9DE /* DrinkClassifierManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +760,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
@@ -756,7 +774,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -775,7 +793,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
@@ -789,7 +807,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -809,13 +827,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -841,7 +859,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -858,9 +876,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -874,7 +892,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5V36KPM3TT;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -896,7 +914,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -923,7 +941,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -948,7 +966,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -973,7 +991,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFreeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
