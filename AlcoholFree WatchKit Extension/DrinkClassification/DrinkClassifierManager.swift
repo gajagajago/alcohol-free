@@ -43,6 +43,12 @@ class DrinkClassifierManager {
         motionManager.accelerometerUpdateInterval = interval
         motionManager.gyroUpdateInterval = interval
         motionManager.deviceMotionUpdateInterval = interval
+        
+        // stateIn을 0으로 초기화 (더 좋은 방법 찾습니다)
+        for index in 0..<400 {
+            stateOutput[index] = 0
+        }
+        print(stateOutput)
     }
     
     func startMotionUpdates() {
@@ -57,17 +63,17 @@ class DrinkClassifierManager {
     func addAccelSampleToDataArray (motionData: CMDeviceMotion) {
 //        print("\(currentIndexInPredictionWindow): \(motionData.userAcceleration), \(motionData.rotationRate), \(motionData.attitude.quaternion)")
         // Add the current accelerometer reading to the data array
-        accelDataX[currentIndexInPredictionWindow] = motionData.userAcceleration.x as NSNumber
-        accelDataY[currentIndexInPredictionWindow] = motionData.userAcceleration.y as NSNumber
-        accelDataZ[currentIndexInPredictionWindow] = motionData.userAcceleration.z as NSNumber
+        accelDataX[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.userAcceleration.x as NSNumber
+        accelDataY[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.userAcceleration.y as NSNumber
+        accelDataZ[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.userAcceleration.z as NSNumber
         
-        motionRotationRateX[currentIndexInPredictionWindow] = motionData.rotationRate.x as NSNumber
-        motionRotationRateY[currentIndexInPredictionWindow] = motionData.rotationRate.y as NSNumber
-        motionRotationRateZ[currentIndexInPredictionWindow] = motionData.rotationRate.z as NSNumber
+        motionRotationRateX[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.rotationRate.x as NSNumber
+        motionRotationRateY[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.rotationRate.y as NSNumber
+        motionRotationRateZ[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.rotationRate.z as NSNumber
         
-        motionQuaternionX[currentIndexInPredictionWindow] = motionData.attitude.quaternion.x as NSNumber
-        motionQuaternionY[currentIndexInPredictionWindow] = motionData.attitude.quaternion.y as NSNumber
-        motionQuaternionZ[currentIndexInPredictionWindow] = motionData.attitude.quaternion.z as NSNumber
+        motionQuaternionX[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.attitude.quaternion.x as NSNumber
+        motionQuaternionY[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.attitude.quaternion.y as NSNumber
+        motionQuaternionZ[[currentIndexInPredictionWindow] as [NSNumber]] = motionData.attitude.quaternion.z as NSNumber
         
         // Update the index in the prediction window data array
         currentIndexInPredictionWindow += 1
@@ -88,7 +94,7 @@ class DrinkClassifierManager {
     func performModelPrediction () -> String? {
         // Perform model prediction
         let modelPrediction = try? drinkClassifierModel.prediction(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
-    
+
         guard let modelPrediction = modelPrediction else {
             print("prediction 실패")
             return nil
@@ -96,10 +102,10 @@ class DrinkClassifierManager {
         // Update the state vector
         if let value = modelPrediction.labelProbability.first?.value, value.isNaN {
             print(motionRotationRateX, motionRotationRateY, motionRotationRateZ, motionQuaternionX, motionQuaternionY, motionQuaternionZ, accelDataX, accelDataY, accelDataZ, stateOutput)
-        }
+    }
         print(modelPrediction.labelProbability)
         stateOutput = modelPrediction.stateOut
-        
+
         // Return the predicted activity - the activity with the highest probability
         return modelPrediction.label
     }

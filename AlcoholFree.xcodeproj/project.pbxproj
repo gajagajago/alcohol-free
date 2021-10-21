@@ -24,8 +24,8 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+		BE1785752721CF1D004E274F /* DrinkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1785742721CF1D004E274F /* DrinkClassifier.mlmodel */; };
 		BEEB41B9272168BA007ED9DE /* DrinkClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */; };
-		BEEB41BE27217B07007ED9DE /* DrinkClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,8 +116,8 @@
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE1785732721A0AC004E274F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BE1785742721CF1D004E274F /* DrinkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrinkClassifier.mlmodel; sourceTree = "<group>"; };
 		BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkClassifierManager.swift; sourceTree = "<group>"; };
-		BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DrinkClassifier.mlmodel; sourceTree = "<group>"; };
 		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,7 +250,7 @@
 		BEFB02722721669A00AAC770 /* DrinkClassification */ = {
 			isa = PBXGroup;
 			children = (
-				BEEB41BD27217B07007ED9DE /* DrinkClassifier.mlmodel */,
+				BE1785742721CF1D004E274F /* DrinkClassifier.mlmodel */,
 				BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */,
 				BE1785732721A0AC004E274F /* MyPlayground.playground */,
 			);
@@ -582,7 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
-				BEEB41BE27217B07007ED9DE /* DrinkClassifier.mlmodel in Sources */,
+				BE1785752721CF1D004E274F /* DrinkClassifier.mlmodel in Sources */,
 				427626F22717F639003C558F /* DetailView.swift in Sources */,
 				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,

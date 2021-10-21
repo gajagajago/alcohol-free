@@ -9,8 +9,6 @@ import SwiftUI
 import CoreMotion
 import CoreML
 struct PaceView: View {
-    let drinkClassifierManager = DrinkClassifierManager()
-    
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
