@@ -12,7 +12,6 @@ class SoundClassifier {
     let inputFormat: AVAudioFormat
     let streamAnalyzer: SNAudioStreamAnalyzer
     let analysisQueue: DispatchQueue
-    let model: MLModel
     
     var observer: ResultsObserver?
     
@@ -26,8 +25,6 @@ class SoundClassifier {
         self.streamAnalyzer = SNAudioStreamAnalyzer(format: inputFormat)
         
         self.analysisQueue = DispatchQueue(label:"com.apple.AnalysisQueue")
-        
-        self.model = try! ReadTheRoom(configuration: MLModelConfiguration()).model
     }
     
     func isRunning() -> Bool {
@@ -46,7 +43,16 @@ class SoundClassifier {
         
         // Prepare a new request for the trained model.
         do {
-            let request = try SNClassifySoundRequest(mlModel: model)
+            let request = try SNClassifySoundRequest(classifierIdentifier: .version1)
+            /// Indicates the amount of audio, in seconds, that informs a prediction.
+            request.windowDuration = CMTimeMakeWithSeconds(1.5, preferredTimescale: 48_000)
+            /// The amount of overlap between consecutive analysis windows.
+            ///
+            /// The system performs sound classification on a window-by-window basis. The system divides an
+            /// audio stream into windows, and assigns labels and confidence values. This value determines how
+            /// much two consecutive windows overlap. For example, 0.9 means that each window shares 90% of
+            /// the audio that the previous window uses.
+            request.overlapFactor = Double(0.0)
             try streamAnalyzer.add(request, withObserver: resultsObserver)
         } catch {
             print(error)

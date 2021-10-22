@@ -21,7 +21,7 @@ struct DetailView: View, ResultsDelegator {
     }
     
     func delegate(identifier: String, confidence: Double) {
-        if (identifier == "applause") {
+        if (identifier == "glass_clink") {
             count += 1
         }
     }
