@@ -25,6 +25,7 @@
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
 		BE0D796327297D000007B259 /* HealthKitSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D796227297D000007B259 /* HealthKitSessionManager.swift */; };
+		BE0D7965272981120007B259 /* PredictionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D7964272981120007B259 /* PredictionData.swift */; };
 		BE1785752721CF1D004E274F /* MotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */; };
 		BE58FA1727297782007C744B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE58FA1627297782007C744B /* HealthKit.framework */; };
 		BEEB41B9272168BA007ED9DE /* DrinkClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */; };
@@ -118,6 +119,7 @@
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE0D796227297D000007B259 /* HealthKitSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSessionManager.swift; sourceTree = "<group>"; };
+		BE0D7964272981120007B259 /* PredictionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionData.swift; sourceTree = "<group>"; };
 		BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifier.mlmodel; sourceTree = "<group>"; };
 		BE58FA1527297782007C744B /* AlcoholFree WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AlcoholFree WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		BE58FA1627297782007C744B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -268,6 +270,7 @@
 			children = (
 				BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */,
 				BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */,
+				BE0D7964272981120007B259 /* PredictionData.swift */,
 			);
 			path = MotionClassification;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0D7965272981120007B259 /* PredictionData.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
 				BE0D796327297D000007B259 /* HealthKitSessionManager.swift in Sources */,
 				BE1785752721CF1D004E274F /* MotionClassifier.mlmodel in Sources */,
