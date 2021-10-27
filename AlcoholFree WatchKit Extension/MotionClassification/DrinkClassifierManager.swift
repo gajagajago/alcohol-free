@@ -19,7 +19,7 @@ class DrinkClassifierManager {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     static let stateInLength = 400
     
-    let drinkClassifierModel = try! DrinkClassifier(configuration: .init())
+    let motionClassifierModel = try! MotionClassifier(configuration: .init())
     
     var currentIndexInPredictionWindow = 0
     
@@ -112,7 +112,7 @@ class DrinkClassifierManager {
     
     func performModelPrediction () -> String? {
         // Perform model prediction
-        let modelPrediction = try? drinkClassifierModel.prediction(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
+        let modelPrediction = try? motionClassifierModel.prediction(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
 
         guard let modelPrediction = modelPrediction else { return nil }
 //        let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .long))
