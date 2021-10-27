@@ -16,7 +16,7 @@ struct DetailView: View {
         }.onAppear {
             drinkClassifierManager.startMotionUpdates()
         }.onDisappear {
-            print("ON DISAPPEAR")
+            drinkClassifierManager.stopMotionUpdates()
         }
     }
 }

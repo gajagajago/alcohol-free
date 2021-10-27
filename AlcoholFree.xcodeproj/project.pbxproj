@@ -24,6 +24,7 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+		BE0D796327297D000007B259 /* HealthKitSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D796227297D000007B259 /* HealthKitSessionManager.swift */; };
 		BE1785752721CF1D004E274F /* MotionClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */; };
 		BE58FA1727297782007C744B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE58FA1627297782007C744B /* HealthKit.framework */; };
 		BEEB41B9272168BA007ED9DE /* DrinkClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */; };
@@ -116,7 +117,7 @@
 		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE1785732721A0AC004E274F /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BE0D796227297D000007B259 /* HealthKitSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSessionManager.swift; sourceTree = "<group>"; };
 		BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifier.mlmodel; sourceTree = "<group>"; };
 		BE58FA1527297782007C744B /* AlcoholFree WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AlcoholFree WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		BE58FA1627297782007C744B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -201,6 +202,7 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BE58FA1827297C6B007C744B /* HealthKit */,
 				BE58FA1527297782007C744B /* AlcoholFree WatchKit Extension.entitlements */,
 				BEFB02722721669A00AAC770 /* MotionClassification */,
 				427626F727180286003C558F /* SummaryView.swift */,
@@ -253,12 +255,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE58FA1827297C6B007C744B /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				BE0D796227297D000007B259 /* HealthKitSessionManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
 		BEFB02722721669A00AAC770 /* MotionClassification */ = {
 			isa = PBXGroup;
 			children = (
 				BE1785742721CF1D004E274F /* MotionClassifier.mlmodel */,
 				BEEB41B8272168BA007ED9DE /* DrinkClassifierManager.swift */,
-				BE1785732721A0AC004E274F /* MyPlayground.playground */,
 			);
 			path = MotionClassification;
 			sourceTree = "<group>";
@@ -588,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
+				BE0D796327297D000007B259 /* HealthKitSessionManager.swift in Sources */,
 				BE1785752721CF1D004E274F /* MotionClassifier.mlmodel in Sources */,
 				427626F22717F639003C558F /* DetailView.swift in Sources */,
 				427626F627180191003C558F /* EndView.swift in Sources */,
