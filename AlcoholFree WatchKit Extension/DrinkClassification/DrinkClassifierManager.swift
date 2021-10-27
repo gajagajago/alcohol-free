@@ -10,6 +10,8 @@
 import Foundation
 import CoreML
 import CoreMotion
+import HealthKit
+
 
 class DrinkClassifierManager {
     
@@ -38,6 +40,10 @@ class DrinkClassifierManager {
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     
+    // For background work
+    let healthStore = HKHealthStore()
+    var session: HKWorkoutSession?
+    
     init() {
         let interval = TimeInterval(DrinkClassifierManager.sensorUpdateInterval)
         motionManager.accelerometerUpdateInterval = interval
@@ -48,10 +54,23 @@ class DrinkClassifierManager {
         for index in 0..<400 {
             stateOutput[index] = 0
         }
-        print(stateOutput)
     }
     
     func startMotionUpdates() {
+        // Configure the workout session.
+        let workoutConfiguration = HKWorkoutConfiguration()
+        workoutConfiguration.activityType = .walking
+        workoutConfiguration.locationType = .outdoor
+        
+        do {
+            session = try HKWorkoutSession(healthStore: healthStore, configuration: workoutConfiguration)
+        } catch {
+            fatalError("Unable to create the workout session!")
+        }
+        
+        // Start the workout session and device motion updates.
+        session!.startActivity(with: Date())
+        
         print("startMotionUpdate")
         motionManager.startDeviceMotionUpdates(to: self.queue) {
             (data: CMDeviceMotion?, error: Error?) in
@@ -95,14 +114,8 @@ class DrinkClassifierManager {
         // Perform model prediction
         let modelPrediction = try? drinkClassifierModel.prediction(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
 
-        guard let modelPrediction = modelPrediction else {
-            print("prediction 실패")
-            return nil
-        }
-        // Update the state vector
-        if let value = modelPrediction.labelProbability.first?.value, value.isNaN {
-            print(motionRotationRateX, motionRotationRateY, motionRotationRateZ, motionQuaternionX, motionQuaternionY, motionQuaternionZ, accelDataX, accelDataY, accelDataZ, stateOutput)
-    }
+        guard let modelPrediction = modelPrediction else { return nil }
+//        let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .long))
         print(modelPrediction.labelProbability)
         stateOutput = modelPrediction.stateOut
 
