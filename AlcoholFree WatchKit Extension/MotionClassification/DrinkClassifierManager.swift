@@ -29,7 +29,6 @@ class DrinkClassifierManager {
     }
     
     func startMotionUpdates() {
-        HealthKitSessionManager.shared.startBackgroundSession()
         motionManager.startDeviceMotionUpdates(to: self.queue) {
             (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {return}
@@ -39,7 +38,6 @@ class DrinkClassifierManager {
     
     func stopMotionUpdates() {
         motionManager.stopDeviceMotionUpdates()
-        HealthKitSessionManager.shared.endBackgroundSession()
     }
     
     func addAccelSampleToDataArray (motionData: CMDeviceMotion) {

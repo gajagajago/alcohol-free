@@ -14,9 +14,12 @@ struct DetailView: View {
             PaceView()
             EndView()
         }.onAppear {
+            // 모니터링 시작 전 백그라운드 세션 활성화
+            HealthKitSessionManager.shared.startBackgroundSession()
             drinkClassifierManager.startMotionUpdates()
         }.onDisappear {
             drinkClassifierManager.stopMotionUpdates()
+            HealthKitSessionManager.shared.endBackgroundSession()
         }
     }
 }
