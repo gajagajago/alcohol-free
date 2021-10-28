@@ -7,16 +7,17 @@
 
 import SwiftUI
 
+var timerInterval = 10 // Minutes
+
 struct DetailView: View, ResultsDelegator {
     var selectedPace: Int
     @State var count = 0
     @State var currentPace = 0.0
     
-    var timerInterval = 10 // Minutes
     @State var timerIntervalCnt = 0
     var drinkingMotionDetectedCnt = 1
     
-    let timer = Timer.publish(every: 1*60*10, on: .main, in: .common).autoconnect() // Last 10 should be set to timerInterval
+    let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common).autoconnect() // Last 10 should be set to timerInterval
     
     var body: some View {
         TabView {
