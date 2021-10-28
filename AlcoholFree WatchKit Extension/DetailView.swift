@@ -12,9 +12,26 @@ struct DetailView: View, ResultsDelegator {
     @State var count = 0
     @State var currentPace = 0.0
     
+    var timerInterval = 60
+    @State var timerIntervalCnt = 0
+    var drinkingMotionDetectedCnt = 1
+    
+    let timer = Timer.publish(every: 60.0, on: .main, in: .common).autoconnect()
+    
+//    init() {
+//        Timer
+//            .scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+//            self.currentPace += 0.1
+//        }
+//    }
+    
     var body: some View {
         TabView {
             PaceView(selectedPace: selectedPace, currentPace: $currentPace)
+                .onReceive(timer) { time in
+                    currentPace = Double(count)
+                    timerIntervalCnt = timerIntervalCnt+1
+                }
             EndView()
         }
         .onAppear {
@@ -22,11 +39,35 @@ struct DetailView: View, ResultsDelegator {
         }
     }
     
+    mutating func setCurrentPace() {
+        let prevTotalTime = Double(timerInterval*timerIntervalCnt)
+        let prevTotalCnt = currentPace * prevTotalTime
+        let currTotalTime = Double(timerInterval * (timerIntervalCnt+1))
+        var currTotalCnt: Double
+        
+        if (drinkingMotionDetectedCnt >= 1) {
+            currTotalCnt = prevTotalCnt + Double(count)
+            count = 0
+        }
+        else if (drinkingMotionDetectedCnt == 0 && count >= 1) {
+            //
+            currTotalCnt = prevTotalCnt
+            count = 1
+        } else {
+            // drinkingMotion = 0 && count = 0
+            currTotalCnt = prevTotalCnt
+            count = 0
+        }
+        
+        currentPace = currTotalCnt / currTotalTime
+    }
+    
     func delegate(identifier: String, confidence: Double) {
         if (identifier == "glass_clink") {
             count += 1
         }
     }
+    
 }
 
 struct DetailView_Previews: PreviewProvider {
