@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DetailView: View, ResultsDelegator {
+    var selectedPace: Int
     @State var count = 0
+    @State var currentPace = 0.0
     
     var body: some View {
         TabView {
-            PaceView(count: $count)
+            PaceView(selectedPace: selectedPace, currentPace: $currentPace)
             EndView()
         }
         .onAppear {
@@ -29,6 +31,6 @@ struct DetailView: View, ResultsDelegator {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(selectedPace: 0)
     }
 }

@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct PaceView: View {
-    @Binding var count: Int
-    
+    var selectedPace: Int
+    @Binding var currentPace: Double
+
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                Text("현재 페이스")
-                    .font(.system(size: 15))
-                
-                HStack(alignment: .bottom) {
-                    Text("\(count)잔")
-                        .font(.system(size: 30, weight: .semibold))
-                    VStack {
-                        Spacer()
+        
+        VStack(alignment: .leading ) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text("현재 페이스")
+                        .font(.system(size: 15))
+                    
+                    HStack(alignment: .bottom) {
+                        Text("\(currentPace, specifier: "%.1f")잔")
+                            .font(.system(size: 30, weight: .semibold))
                         Text(" / 10분")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(.gray)
+                        
                     }
-                    
-                }.frame(height:23)
+                }
+                Spacer()
+                VStack(alignment: .leading) {
+                    Text("목표 페이스")
+                        .font(.system(size: 15))
+                    Text("\(selectedPace)잔")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(currentPace >= Double(selectedPace) ? Color.red : Color.green)
+                        .frame(height:30)
+                }
             }
             Spacer()
             VStack(alignment: .leading) {
@@ -43,6 +53,6 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView(count: .constant(0))
+        PaceView(selectedPace: 3, currentPace: .constant(3.3))
     }
 }
