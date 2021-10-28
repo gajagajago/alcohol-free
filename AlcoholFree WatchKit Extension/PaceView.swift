@@ -14,30 +14,28 @@ struct PaceView: View {
                 Text("현재 페이스")
                     .font(.system(size: 15))
                 
-                HStack(alignment: .bottom) {
+                HStack {
                     Text("2잔")
                         .font(.system(size: 30, weight: .semibold))
+                    VStack {
+                        Spacer()
+                        Text(" / 10분")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(.gray)
+                    }
                     
-                    Text(" / 10분")
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(.gray)
-                }
+                }.frame(height:23)
             }
-            .padding(.bottom, 10.0)
-
-            
+            Spacer()
             VStack(alignment: .leading) {
                 Text("추정 혈중 알코올 농도")
-                    .frame(height: 15)
+                    .font(.system(size: 15))
                 
                 Text("0.03%")
                     .font(.system(size: 30, weight: .semibold))
             }
-            
             Spacer()
-            
-            
-        }
+        }.frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
