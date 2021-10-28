@@ -14,7 +14,8 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
-                    Text("목표 페이스를 설정해주세요.")
+                    Text("목표 페이스를 설정해주세요")
+                        .multilineTextAlignment(.center)
                         .padding()
                         .font(.title3.weight(.semibold))
                         .fixedSize(horizontal: false, vertical: true)
