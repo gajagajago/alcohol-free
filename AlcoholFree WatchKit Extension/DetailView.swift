@@ -12,24 +12,17 @@ struct DetailView: View, ResultsDelegator {
     @State var count = 0
     @State var currentPace = 0.0
     
-    var timerInterval = 60
+    var timerInterval = 10 // Minutes
     @State var timerIntervalCnt = 0
     var drinkingMotionDetectedCnt = 1
     
-    let timer = Timer.publish(every: 60.0, on: .main, in: .common).autoconnect()
-    
-//    init() {
-//        Timer
-//            .scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-//            self.currentPace += 0.1
-//        }
-//    }
+    let timer = Timer.publish(every: 1*60*10, on: .main, in: .common).autoconnect() // Last 10 should be set to timerInterval
     
     var body: some View {
         TabView {
-            PaceView(selectedPace: selectedPace, currentPace: $currentPace)
+            PaceView(selectedPace: selectedPace, currentPace: $currentPace, timerInterval: timerInterval)
                 .onReceive(timer) { time in
-                    currentPace = Double(count)
+                    setCurrentPace()
                     timerIntervalCnt = timerIntervalCnt+1
                 }
             EndView()
@@ -39,7 +32,7 @@ struct DetailView: View, ResultsDelegator {
         }
     }
     
-    mutating func setCurrentPace() {
+    func setCurrentPace() {
         let prevTotalTime = Double(timerInterval*timerIntervalCnt)
         let prevTotalCnt = currentPace * prevTotalTime
         let currTotalTime = Double(timerInterval * (timerIntervalCnt+1))

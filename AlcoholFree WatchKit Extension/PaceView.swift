@@ -10,7 +10,8 @@ import SwiftUI
 struct PaceView: View {
     var selectedPace: Int
     @Binding var currentPace: Double
-
+    var timerInterval: Int // Minutes
+    
     var body: some View {
         
         VStack(alignment: .leading ) {
@@ -20,7 +21,7 @@ struct PaceView: View {
                         .font(.system(size: 15))
                     
                     HStack(alignment: .bottom) {
-                        Text("\(currentPace, specifier: "%.1f")잔")
+                        Text("\(currentPace * Double(timerInterval), specifier: "%.1f")잔")
                             .font(.system(size: 30, weight: .semibold))
                         Text(" / 10분")
                             .font(.system(size: 20, weight: .semibold))
@@ -53,6 +54,6 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView(selectedPace: 3, currentPace: .constant(3.3))
+        PaceView(selectedPace: 3, currentPace: .constant(0.3), timerInterval: 10)
     }
 }
