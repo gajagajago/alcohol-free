@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct PaceView: View {
+    @Binding var count: Int
+    
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Text("현재 페이스")
                     .font(.system(size: 15))
                 
-                HStack {
-                    Text("2잔")
+                HStack(alignment: .bottom) {
+                    Text("\(count)잔")
                         .font(.system(size: 30, weight: .semibold))
                     VStack {
                         Spacer()
@@ -41,6 +43,6 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView()
+        PaceView(count: .constant(0))
     }
 }
