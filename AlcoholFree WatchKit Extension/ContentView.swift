@@ -23,6 +23,7 @@ struct ContentView: View {
                     Picker(selection: $selectedPace, label: Text("Select pace")){
                         ForEach(1...10, id: \.self) {
                             Text("\($0)")
+                                .font(.title3)
                         }
                     }
                     .frame(width: 80,height: 40.0)
