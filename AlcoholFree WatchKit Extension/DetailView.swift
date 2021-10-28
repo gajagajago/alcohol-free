@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-var timerInterval = 10 // Minutes
-
+var timerInterval = 1 // timer check 하는 주기
+var timerThreshold = 10 // 초기 기준 시간
 struct DetailView: View, ResultsDelegator {
     var selectedPace: Int
     @State var count = 0
@@ -21,7 +21,7 @@ struct DetailView: View, ResultsDelegator {
     
     var body: some View {
         TabView {
-            PaceView(selectedPace: selectedPace, currentPace: $currentPace, timerInterval: timerInterval)
+            PaceView(selectedPace: selectedPace, currentPace: $currentPace, timerThreshold: timerThreshold)
                 .onReceive(timer) { time in
                     setCurrentPace()
                     timerIntervalCnt = timerIntervalCnt+1

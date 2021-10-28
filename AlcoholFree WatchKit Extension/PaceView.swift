@@ -10,7 +10,7 @@ import SwiftUI
 struct PaceView: View {
     var selectedPace: Int
     @Binding var currentPace: Double
-    var timerInterval: Int // Minutes
+    var timerThreshold: Int // 초기 기준 시간
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct PaceView: View {
                         .font(.system(size: 15))
                     
                     HStack(alignment: .bottom) {
-                        Text("\(currentPace * Double(timerInterval), specifier: "%.1f")잔")
+                        Text("\(currentPace * Double(timerThreshold), specifier: "%.1f")잔")
                             .font(.system(size: 30, weight: .semibold))
                         Text(" / 10분")
                             .font(.system(size: 20, weight: .semibold))
@@ -35,7 +35,7 @@ struct PaceView: View {
                         .font(.system(size: 15))
                     Text("\(selectedPace)잔")
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(currentPace * Double(timerInterval) >= Double(selectedPace) ? Color.red : Color.green)
+                        .foregroundColor(currentPace * Double(timerThreshold) >= Double(selectedPace) ? Color.red : Color.green)
                         .frame(height:30)
                 }
             }
@@ -54,6 +54,6 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView(selectedPace: 2, currentPace: .constant(0.3), timerInterval: 10)
+        PaceView(selectedPace: 2, currentPace: .constant(0.3), timerThreshold: 10)
     }
 }
