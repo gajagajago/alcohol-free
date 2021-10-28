@@ -18,7 +18,6 @@ struct DetailView: View, ResultsDelegator {
     var drinkingMotionDetectedCnt = 1
     
     let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
-    var drinkClassifierManager = DrinkClassifierManager()
     var body: some View {
         TabView {
             PaceView(selectedPace: selectedPace, currentPace: $currentPace, timerThreshold: timerThreshold)
@@ -30,11 +29,11 @@ struct DetailView: View, ResultsDelegator {
         }.onAppear {
             // 모니터링 시작 전 백그라운드 세션 활성화
             HealthKitSessionManager.shared.startBackgroundSession()
-            drinkClassifierManager.startMotionUpdates()
+            MotionClassifier.shared.startMotionUpdates()
             SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
         }.onDisappear {
             SoundClassifier.shared.stop()
-            drinkClassifierManager.stopMotionUpdates()
+            MotionClassifier.shared.stopMotionUpdates()
             HealthKitSessionManager.shared.endBackgroundSession()
         }
     }

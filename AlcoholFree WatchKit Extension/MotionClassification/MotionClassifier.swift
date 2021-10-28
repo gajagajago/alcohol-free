@@ -13,16 +13,17 @@ import CoreMotion
 
 
 
-class DrinkClassifierManager {
+class MotionClassifier {
+    static let shared = MotionClassifier()
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifier(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModel(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     
     init() {
-        let interval = TimeInterval(DrinkClassifierManager.sensorUpdateInterval)
+        let interval = TimeInterval(MotionClassifier.sensorUpdateInterval)
         motionManager.accelerometerUpdateInterval = interval
         motionManager.gyroUpdateInterval = interval
         motionManager.deviceMotionUpdateInterval = interval
