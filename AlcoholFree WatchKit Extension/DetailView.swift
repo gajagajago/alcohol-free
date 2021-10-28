@@ -33,6 +33,7 @@ struct DetailView: View, ResultsDelegator {
             drinkClassifierManager.startMotionUpdates()
             SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
         }.onDisappear {
+            SoundClassifier.shared.stop()
             drinkClassifierManager.stopMotionUpdates()
             HealthKitSessionManager.shared.endBackgroundSession()
         }
