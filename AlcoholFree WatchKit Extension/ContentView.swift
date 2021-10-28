@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedPace = 0
+    @State var selectedPace = 1
     
     var body: some View {
         NavigationView {
@@ -34,7 +34,7 @@ struct ContentView: View {
                     Text(" 잔 / 10분").font(.headline)
                 }
                 Spacer()
-                NavigationLink(destination: DetailView()
+                NavigationLink(destination: DetailView(selectedPace: selectedPace)
                                 .navigationBarBackButtonHidden(true)){
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
