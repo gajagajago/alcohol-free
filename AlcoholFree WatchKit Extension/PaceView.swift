@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import CoreMotion
+import CoreML
 struct PaceView: View {
     var selectedPace: Int
     @Binding var currentPace: Double
