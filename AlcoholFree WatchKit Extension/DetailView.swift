@@ -17,7 +17,7 @@ struct DetailView: View, ResultsDelegator {
     @State var timerIntervalCnt = 0
     var drinkingMotionDetectedCnt = 1
     
-    let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common).autoconnect() // Last 10 should be set to timerInterval
+    let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
     
     var body: some View {
         TabView {
@@ -58,6 +58,10 @@ struct DetailView: View, ResultsDelegator {
     
     func delegate(identifier: String, confidence: Double) {
         if (identifier == "glass_clink") {
+            // Init timer at first clink
+            if (currentPace == 0.0) {
+                timer.connect()
+            }
             count += 1
         }
     }

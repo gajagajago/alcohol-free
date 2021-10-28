@@ -35,7 +35,7 @@ struct PaceView: View {
                         .font(.system(size: 15))
                     Text("\(selectedPace)잔")
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(currentPace * Double(timerThreshold) >= Double(selectedPace) ? Color.red : Color.green)
+                        .foregroundColor(currentPace * Double(timerThreshold) > Double(selectedPace) ? Color.red : Color.green)
                         .frame(height:30)
                 }
             }
