@@ -35,7 +35,7 @@ struct PaceView: View {
                         .font(.system(size: 15))
                     Text("\(selectedPace)잔")
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(currentPace >= Double(selectedPace) ? Color.red : Color.green)
+                        .foregroundColor(currentPace * Double(timerInterval) >= Double(selectedPace) ? Color.red : Color.green)
                         .frame(height:30)
                 }
             }
@@ -54,6 +54,6 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView(selectedPace: 3, currentPace: .constant(0.3), timerInterval: 10)
+        PaceView(selectedPace: 2, currentPace: .constant(0.3), timerInterval: 10)
     }
 }
