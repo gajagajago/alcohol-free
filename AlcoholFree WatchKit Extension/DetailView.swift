@@ -17,6 +17,8 @@ struct DetailView: View, ResultsDelegator {
     @State var timerIntervalCnt = 0
     var drinkingMotionDetectedCnt = 1
     
+    @State var showModal = false
+    
     let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
     
     var body: some View {
@@ -30,6 +32,9 @@ struct DetailView: View, ResultsDelegator {
         }
         .onAppear {
             SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+        }
+        .sheet(isPresented: self.$showModal) {
+            ModalView()
         }
     }
     
@@ -66,6 +71,12 @@ struct DetailView: View, ResultsDelegator {
         }
     }
     
+    func showNotification() {
+        WKInterfaceDevice.current().play(.success)
+        if !showModal {
+            showModal = true
+        }
+    }
 }
 
 struct DetailView_Previews: PreviewProvider {
