@@ -32,6 +32,10 @@ class SoundClassifier {
     }
     
     func start(resultsObserver: ResultsObserver) {
+        if isRunning() {
+            return
+        }
+        
         observer = resultsObserver
         
         do {
