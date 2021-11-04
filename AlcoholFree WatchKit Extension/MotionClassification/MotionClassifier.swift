@@ -21,7 +21,7 @@ class MotionClassifier {
     let motionClassifierModel = try! MotionClassifierModel(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
-    
+
     init() {
         let interval = TimeInterval(MotionClassifier.sensorUpdateInterval)
         motionManager.accelerometerUpdateInterval = interval
@@ -48,6 +48,11 @@ class MotionClassifier {
         if (predictionData.isPredictionDataReady()) {
             if let predictedActivity = performModelPrediction() {
                 
+                if (predictedActivity == "just_drink") {
+                    // increase drinkMotionDetectedCnt by 1
+                    delegator.increaseDrinkingMotionDetectedCnt()
+                }
+                
                 // Use the predicted activity here
                 
                 // Start a new prediction window
@@ -69,4 +74,8 @@ class MotionClassifier {
         // Return the predicted activity - the activity with the highest probability
         return modelPrediction.label
     }
+}
+
+protocol IncreaseDrinkingMotionCnt {
+    func increaseDrinkingMotionDetectedCnt()
 }

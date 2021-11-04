@@ -15,7 +15,7 @@ struct DetailView: View, ResultsDelegator {
     @State var currentPace = 0.0
     
     @State var timerIntervalCnt = 0
-    var drinkingMotionDetectedCnt = 1
+    @State var drinkingMotionDetectedCnt = 1
     
     let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
     var body: some View {
@@ -59,6 +59,10 @@ struct DetailView: View, ResultsDelegator {
         }
         
         currentPace = currTotalCnt / currTotalTime
+    }
+    
+    func increaseDrinkingMotionDetectedCnt() {
+        drinkingMotionDetectedCnt += 1
     }
     
     func delegate(identifier: String, confidence: Double) {
