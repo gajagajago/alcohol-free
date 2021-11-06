@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotificationView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("현재 페이스가 목표 페이스를 초과했어요!")
     }
 }
 

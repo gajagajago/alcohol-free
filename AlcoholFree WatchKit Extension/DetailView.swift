@@ -67,12 +67,13 @@ struct DetailView: View, ResultsDelegator {
                 timer.connect()
             }
             count += 1
+            print("짠!")
         }
     }
     
     func setNotification(){
         let manager = LocalNotificationManager()
-        manager.addNotification(title: "This is a test reminder")
+        manager.addNotification(title: "현재 페이스가 목표 페이스를 초과했어요!")
         manager.schedule()
     }
 }
