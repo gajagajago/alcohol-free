@@ -26,7 +26,8 @@
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
 		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
-		CEDDD46E2732157500729B15 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDD46D2732157500729B15 /* ModalView.swift */; };
+		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
+		CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB827361C22000B7C5F /* ExtensionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +119,8 @@
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
-		CEDDD46D2732157500729B15 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
+		CE7AFCB827361C22000B7C5F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,7 +215,8 @@
 				42EC4C502705F0140052B1CF /* Preview Content */,
 				CE5DD643270B46210047FF64 /* ResultsObserver.swift */,
 				CE363912271BA46D001B9B0D /* SoundClassifier.swift */,
-				CEDDD46D2732157500729B15 /* ModalView.swift */,
+				CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */,
+				CE7AFCB827361C22000B7C5F /* ExtensionDelegate.swift */,
 			);
 			path = "AlcoholFree WatchKit Extension";
 			sourceTree = "<group>";
@@ -577,10 +580,11 @@
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
 				427626F22717F639003C558F /* DetailView.swift in Sources */,
+				CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */,
 				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
 				427626F42718017D003C558F /* PaceView.swift in Sources */,
-				CEDDD46E2732157500729B15 /* ModalView.swift in Sources */,
+				CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */,
 				CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,

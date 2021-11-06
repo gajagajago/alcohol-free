@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct AlcoholFreeApp: App {
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
