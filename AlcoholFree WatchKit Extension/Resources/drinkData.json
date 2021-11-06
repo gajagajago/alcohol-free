@@ -2,97 +2,97 @@
     {
         "id": 1,
         "name": "진로 소주",
-        "aliases": ["진로", "진로이즈백", "진로 이즈백"]
+        "aliases": ["진로", "진로이즈백", "진로 이즈백"],
         "category": "소주",
-        "alcoholPercent: 16.9,
+        "alcoholPercent": 16.9,
         "volumeMl": 360,
     },
     {
         "id": 2,
         "name": "참이슬 Fresh",
-        "aliases": ["참이슬", "참이슬 후레쉬", "후레쉬"]
+        "aliases": ["참이슬", "참이슬 후레쉬", "후레쉬"],
         "category": "소주",
-        "alcoholPercent: 17.0,
+        "alcoholPercent": 17.0,
         "volumeMl": 360,
     },
     {
         "id": 3,
         "name": "처음처럼",
-        "aliases": null
+        "aliases": null,
         "category": "소주",
-        "alcoholPercent: 16.9,
+        "alcoholPercent": 16.9,
         "volumeMl": 360,
     },
     {
         "id": 4,
         "name": "한라산 오리지널",
-        "aliases": null
+        "aliases": null,
         "category": "소주",
-        "alcoholPercent: 21.0,
+        "alcoholPercent": 21.0,
         "volumeMl": 360,
     },
     {
         "id": 5,
         "name": "한라산 순한맛",
-        "aliases": null
+        "aliases": null,
         "category": "소주",
-        "alcoholPercent: 17.0,
+        "alcoholPercent": 17.0,
         "volumeMl": 360,
     },
     {
         "id": 6,
         "name": "순하리",
-        "aliases": ["순하리 사과", "순하리 유자", "순하리 복숭아"]
+        "aliases": ["순하리 사과", "순하리 유자", "순하리 복숭아"],
         "category": "소주",
-        "alcoholPercent: 14.0,
+        "alcoholPercent": 14.0,
         "volumeMl": 360,
     },
     {
         "id": 7,
         "name": "좋은데이 과일소주",
-        "aliases": ["좋은데이 자몽", "좋은데이 복숭아", "좋은데이 블루베리", "좋은데이 석류", "좋은데이 유자"]
+        "aliases": ["좋은데이 자몽", "좋은데이 복숭아", "좋은데이 블루베리", "좋은데이 석류", "좋은데이 유자"],
         "category": "소주",
-        "alcoholPercent: 13.5,
+        "alcoholPercent": 13.5,
         "volumeMl": 360,
     },
     {
         "id": 8,
         "name": "자몽에 이슬",
-        "aliases": ["청포도에 이슬", "자두에 이슬", "딸기에 이슬"]
+        "aliases": ["청포도에 이슬", "자두에 이슬", "딸기에 이슬"],
         "category": "소주",
-        "alcoholPercent: 13.0,
+        "alcoholPercent": 13.0,
         "volumeMl": 360,
     },
     {
         "id": 9,
         "name": "순한 처음처럼",
-        "aliases": ["처음처럼 순한 거"]
+        "aliases": ["처음처럼 순한 거"],
         "category": "소주",
-        "alcoholPercent: 16.5,
+        "alcoholPercent": 16.5,
         "volumeMl": 360,
     },
     {
         "id": 10,
         "name": "참나무통 맑은이슬",
-        "aliases": ["참나무통", "맑은 이슬"]
+        "aliases": ["참나무통", "맑은 이슬"],
         "category": "소주",
-        "alcoholPercent: 16.0,
+        "alcoholPercent": 16.0,
         "volumeMl": 360,
     },
     {
         "id": 11,
         "name": "좋은데이",
-        "aliases": null
+        "aliases": null,
         "category": "소주",
-        "alcoholPercent: 16.9,
+        "alcoholPercent": 16.9,
         "volumeMl": 360,
     },
     {
         "id": 12,
         "name": "C1",
-        "aliases": ["시원", "씨원"]
+        "aliases": ["시원", "씨원"],
         "category": "소주",
-        "alcoholPercent: 19.0,
+        "alcoholPercent": 19.0,
         "volumeMl": 360,
     },
 ]

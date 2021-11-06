@@ -11,6 +11,8 @@ var timerInterval = 1 // timer check 하는 주기
 var timerThreshold = 10 // 초기 기준 시간
 struct DetailView: View, ResultsDelegator {
     var selectedPace: Int
+    var selectedDrink: Drink
+    
     @State var count = 0
     @State var currentPace = 0.0
     
@@ -80,6 +82,6 @@ struct DetailView: View, ResultsDelegator {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(selectedPace: 0)
+        DetailView(selectedPace: 0, selectedDrink: drinks[0])
     }
 }

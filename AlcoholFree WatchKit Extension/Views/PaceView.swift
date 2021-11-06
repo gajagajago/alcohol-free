@@ -22,12 +22,13 @@ struct PaceView: View {
                     
                     HStack(alignment: .bottom) {
                         Text("\(currentPace * Double(timerThreshold), specifier: "%.1f")잔")
-                            .font(.system(size: 30, weight: .semibold))
+                            .font(.system(size: 20, weight: .semibold))
                         Text(" / 10분")
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(.gray)
-                        
                     }
+                    .frame(height:30)
+
                 }
                 Spacer()
                 VStack(alignment: .leading) {
@@ -45,7 +46,7 @@ struct PaceView: View {
                     .font(.system(size: 15))
                 
                 Text("0.03%")
-                    .font(.system(size: 30, weight: .semibold))
+                    .font(.system(size: 25, weight: .semibold))
             }
             Spacer()
         }.frame(maxWidth: .infinity, alignment: .leading)

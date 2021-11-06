@@ -11,7 +11,7 @@ import SwiftUI
 struct Drink: Hashable, Codable {
     var id: Int
     var name: String
-    var aliases: Array<String>
+//    var aliases: Array<String>
     var category: String
     var alcoholPercent: Double
     var volumeMl: Int
