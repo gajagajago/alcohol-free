@@ -11,6 +11,7 @@ struct PaceView: View {
     var selectedPace: Int
     @Binding var currentPace: Double
     var timerThreshold: Int // 초기 기준 시간
+    @Binding var bloodAlcPercent: Double
     
     var body: some View {
         
@@ -45,7 +46,7 @@ struct PaceView: View {
                 Text("추정 혈중 알코올 농도")
                     .font(.system(size: 15))
                 
-                Text("0.03%")
+                Text("\(bloodAlcPercent, specifier: "%.5f")%")
                     .font(.system(size: 25, weight: .semibold))
             }
             Spacer()
@@ -55,6 +56,11 @@ struct PaceView: View {
 
 struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceView(selectedPace: 2, currentPace: .constant(0.3), timerThreshold: 10)
+        PaceView(
+            selectedPace: 2,
+            currentPace: .constant(0.3),
+            timerThreshold: 10,
+            bloodAlcPercent: .constant(0.05)
+        )
     }
 }

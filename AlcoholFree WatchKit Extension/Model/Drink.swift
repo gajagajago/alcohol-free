@@ -14,5 +14,5 @@ struct Drink: Hashable, Codable {
 //    var aliases: Array<String>
     var category: String
     var alcoholPercent: Double
-    var volumeMl: Int
+    var volumeMl: Double
 }
