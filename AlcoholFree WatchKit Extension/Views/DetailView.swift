@@ -9,21 +9,41 @@ import SwiftUI
 
 var timerInterval = 1 // timer check 하는 주기
 var timerThreshold = 10 // 초기 기준 시간
+var standardAlcConstant = 0.7964 // 표준 알코올 계수
+var gender = 0.7 // 임시 성별 계수
+var weight = 70.0 // 임시 몸무게 계수
+
 struct DetailView: View, ResultsDelegator {
     var selectedPace: Int
+    var selectedDrink: Drink
+    
     @State var count = 0
+    @State var totalCount = 0
     @State var currentPace = 0.0
+    @State var bloodAlcPercent = 0.00
     
     @State var timerIntervalCnt = 0
     var drinkingMotionDetectedCnt = 1
     
-    let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
+    let timer = Timer.publish(
+        every: 60*Double(timerInterval),
+        tolerance: 0.1,
+        on: .main,
+        in: .common) 
     
     var body: some View {
         TabView {
-            PaceView(selectedPace: selectedPace, currentPace: $currentPace, timerThreshold: timerThreshold)
+            PaceView(
+                selectedPace: selectedPace,
+                currentPace: $currentPace,
+                timerThreshold: timerThreshold,
+                bloodAlcPercent: $bloodAlcPercent)
                 .onReceive(timer) { time in
+                    print("Timer !! Update stats")
+                    // Update current pace
                     setCurrentPace()
+                    // Update blood alcohol percent
+                    setBloodAlcPercent()
                     timerIntervalCnt = timerIntervalCnt+1
                 }
             EndView()
@@ -33,31 +53,41 @@ struct DetailView: View, ResultsDelegator {
         }
     }
     
+    func incrementTotalCnt(count: Int) {
+        totalCount = totalCount + count
+    }
+    
     func setCurrentPace() {
-        let prevTotalTime = Double(timerInterval*timerIntervalCnt)
-        let prevTotalCnt = currentPace * prevTotalTime
         let currTotalTime = Double(timerInterval * (timerIntervalCnt+1))
-        var currTotalCnt: Double
         
         if (drinkingMotionDetectedCnt >= 1) {
-            currTotalCnt = prevTotalCnt + Double(count)
+            incrementTotalCnt(count: count)
             count = 0
         }
         else if (drinkingMotionDetectedCnt == 0 && count >= 1) {
-            //
-            currTotalCnt = prevTotalCnt
             count = 1
         } else {
-            // drinkingMotion = 0 && count = 0
-            currTotalCnt = prevTotalCnt
             count = 0
         }
         
-        currentPace = currTotalCnt / currTotalTime
+        // Update current pace
+        currentPace = Double(totalCount) / currTotalTime
         
+        // Notify user if pace is too fast
         if (currentPace > Double(selectedPace)) {
             setNotification()
         }
+    }
+    
+    func setBloodAlcPercent() {
+        let alc = selectedDrink.alcoholPercent / 100
+        let ml = (selectedDrink.category == "소주") ? 50 : (selectedDrink.category == "맥주" ? 200 : 100)
+        
+        let alcMg = alc * Double(ml) * Double(totalCount) * standardAlcConstant
+        let alcPercent = alcMg / (gender*weight*1000)
+        
+        print("Alc percent %f", alcPercent)
+        bloodAlcPercent = alcPercent
     }
     
     func delegate(identifier: String, confidence: Double) {
@@ -80,6 +110,6 @@ struct DetailView: View, ResultsDelegator {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(selectedPace: 0)
+        DetailView(selectedPace: 0, selectedDrink: drinks[0])
     }
 }
