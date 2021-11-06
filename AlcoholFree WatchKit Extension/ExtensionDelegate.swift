@@ -3,7 +3,6 @@ import UserNotifications
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
     func applicationDidFinishLaunching() {
-        print("HI Launching")
         UNUserNotificationCenter.current().delegate = self
     }
     
