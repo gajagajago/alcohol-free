@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		427626F22717F639003C558F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F12717F639003C558F /* DetailView.swift */; };
-		427626F42718017D003C558F /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F32718017D003C558F /* PaceView.swift */; };
-		427626F627180191003C558F /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F527180191003C558F /* EndView.swift */; };
-		427626F827180286003C558F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427626F727180286003C558F /* SummaryView.swift */; };
+		4291E3FC2736E3610025320E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F62736E3610025320E /* DetailView.swift */; };
+		4291E3FD2736E3610025320E /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F72736E3610025320E /* SummaryView.swift */; };
+		4291E3FE2736E3610025320E /* SetPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F82736E3610025320E /* SetPaceView.swift */; };
+		4291E3FF2736E3610025320E /* SetDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F92736E3610025320E /* SetDrinkView.swift */; };
+		4291E4002736E3610025320E /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3FA2736E3610025320E /* PaceView.swift */; };
+		4291E4012736E3610025320E /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3FB2736E3610025320E /* EndView.swift */; };
+		4291E4042736E37F0025320E /* drinkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4291E4032736E37F0025320E /* drinkData.json */; };
+		4291E4082736E3850025320E /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E4062736E3850025320E /* Drink.swift */; };
+		4291E4092736E3850025320E /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E4072736E3850025320E /* ModelData.swift */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -90,10 +95,15 @@
 		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
-		427626F12717F639003C558F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		427626F32718017D003C558F /* PaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
-		427626F527180191003C558F /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
-		427626F727180286003C558F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		4291E3F62736E3610025320E /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4291E3F72736E3610025320E /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		4291E3F82736E3610025320E /* SetPaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPaceView.swift; sourceTree = "<group>"; };
+		4291E3F92736E3610025320E /* SetDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDrinkView.swift; sourceTree = "<group>"; };
+		4291E3FA2736E3610025320E /* PaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
+		4291E3FB2736E3610025320E /* EndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		4291E4032736E37F0025320E /* drinkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinkData.json; sourceTree = "<group>"; };
+		4291E4062736E3850025320E /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		4291E4072736E3850025320E /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +174,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4291E3F52736E3610025320E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4291E3F62736E3610025320E /* DetailView.swift */,
+				4291E3F72736E3610025320E /* SummaryView.swift */,
+				4291E3F82736E3610025320E /* SetPaceView.swift */,
+				4291E3F92736E3610025320E /* SetDrinkView.swift */,
+				4291E3FA2736E3610025320E /* PaceView.swift */,
+				4291E3FB2736E3610025320E /* EndView.swift */,
+			);
+			name = Views;
+			path = ../../Desktop/Views;
+			sourceTree = "<group>";
+		};
+		4291E4022736E37F0025320E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4291E4032736E37F0025320E /* drinkData.json */,
+			);
+			name = Resources;
+			path = ../../Desktop/Resources;
+			sourceTree = "<group>";
+		};
+		4291E4052736E3850025320E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4291E4062736E3850025320E /* Drink.swift */,
+				4291E4072736E3850025320E /* ModelData.swift */,
+			);
+			name = Model;
+			path = ../../Desktop/Model;
+			sourceTree = "<group>";
+		};
 		42EC4C292705F0110052B1CF = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +243,9 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				427626F727180286003C558F /* SummaryView.swift */,
-				427626F12717F639003C558F /* DetailView.swift */,
-				427626F527180191003C558F /* EndView.swift */,
-				427626F32718017D003C558F /* PaceView.swift */,
+				4291E4052736E3850025320E /* Model */,
+				4291E4022736E37F0025320E /* Resources */,
+				4291E3F52736E3610025320E /* Views */,
 				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
@@ -438,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4291E4042736E37F0025320E /* drinkData.json in Resources */,
 				42EC4C522705F0140052B1CF /* Preview Assets.xcassets in Resources */,
 				42EC4C4F2705F0140052B1CF /* Assets.xcassets in Resources */,
 			);
@@ -577,19 +620,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4291E4092736E3850025320E /* ModelData.swift in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
-				427626F22717F639003C558F /* DetailView.swift in Sources */,
+				4291E3FD2736E3610025320E /* SummaryView.swift in Sources */,
+				4291E3FC2736E3610025320E /* DetailView.swift in Sources */,
 				CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */,
-				427626F627180191003C558F /* EndView.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
-				427626F42718017D003C558F /* PaceView.swift in Sources */,
 				CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */,
 				CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
+				4291E4012736E3610025320E /* EndView.swift in Sources */,
+				4291E3FF2736E3610025320E /* SetDrinkView.swift in Sources */,
+				4291E3FE2736E3610025320E /* SetPaceView.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
-				427626F827180286003C558F /* SummaryView.swift in Sources */,
+				4291E4082736E3850025320E /* Drink.swift in Sources */,
+				4291E4002736E3610025320E /* PaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
