@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4291E3FC2736E3610025320E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F62736E3610025320E /* DetailView.swift */; };
-		4291E3FD2736E3610025320E /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F72736E3610025320E /* SummaryView.swift */; };
-		4291E3FE2736E3610025320E /* SetPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F82736E3610025320E /* SetPaceView.swift */; };
-		4291E3FF2736E3610025320E /* SetDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3F92736E3610025320E /* SetDrinkView.swift */; };
-		4291E4002736E3610025320E /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3FA2736E3610025320E /* PaceView.swift */; };
-		4291E4012736E3610025320E /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E3FB2736E3610025320E /* EndView.swift */; };
-		4291E4042736E37F0025320E /* drinkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4291E4032736E37F0025320E /* drinkData.json */; };
-		4291E4082736E3850025320E /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E4062736E3850025320E /* Drink.swift */; };
-		4291E4092736E3850025320E /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4291E4072736E3850025320E /* ModelData.swift */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -29,6 +20,19 @@
 		42EC4C5E2705F0140052B1CF /* AlcoholFreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C5D2705F0140052B1CF /* AlcoholFreeTests.swift */; };
 		42EC4C682705F0140052B1CF /* AlcoholFreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C672705F0140052B1CF /* AlcoholFreeUITests.swift */; };
 		42EC4C6A2705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C692705F0150052B1CF /* AlcoholFreeUITestsLaunchTests.swift */; };
+		BE1FF3B62737934700E32C80 /* drinkData.json in Resources */ = {isa = PBXBuildFile; fileRef = BE1FF3AB2737934700E32C80 /* drinkData.json */; };
+		BE1FF3B72737934700E32C80 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3AD2737934700E32C80 /* Drink.swift */; };
+		BE1FF3B82737934700E32C80 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3AE2737934700E32C80 /* ModelData.swift */; };
+		BE1FF3B92737934700E32C80 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B02737934700E32C80 /* DetailView.swift */; };
+		BE1FF3BA2737934700E32C80 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B12737934700E32C80 /* SummaryView.swift */; };
+		BE1FF3BB2737934700E32C80 /* SetPaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B22737934700E32C80 /* SetPaceView.swift */; };
+		BE1FF3BC2737934700E32C80 /* SetDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B32737934700E32C80 /* SetDrinkView.swift */; };
+		BE1FF3BD2737934700E32C80 /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B42737934700E32C80 /* PaceView.swift */; };
+		BE1FF3BE2737934700E32C80 /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3B52737934700E32C80 /* EndView.swift */; };
+		BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C0273793B200E32C80 /* HealthKitSessionManager.swift */; };
+		BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C2273793B200E32C80 /* PredictionData.swift */; };
+		BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */; };
+		BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */; };
 		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
@@ -95,15 +99,6 @@
 		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
-		4291E3F62736E3610025320E /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		4291E3F72736E3610025320E /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
-		4291E3F82736E3610025320E /* SetPaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPaceView.swift; sourceTree = "<group>"; };
-		4291E3F92736E3610025320E /* SetDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDrinkView.swift; sourceTree = "<group>"; };
-		4291E3FA2736E3610025320E /* PaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
-		4291E3FB2736E3610025320E /* EndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
-		4291E4032736E37F0025320E /* drinkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinkData.json; sourceTree = "<group>"; };
-		4291E4062736E3850025320E /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
-		4291E4072736E3850025320E /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +122,20 @@
 		A677339FD5797CAAD384A704 /* Pods-AlcoholFree WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit Extension/Pods-AlcoholFree WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		A99EBB011D599AE41633A0B2 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA62E525176CA42697C2E971 /* Pods-AlcoholFreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFreeTests.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFreeTests/Pods-AlcoholFreeTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE1FF3AB2737934700E32C80 /* drinkData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drinkData.json; sourceTree = "<group>"; };
+		BE1FF3AD2737934700E32C80 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		BE1FF3AE2737934700E32C80 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		BE1FF3B02737934700E32C80 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BE1FF3B12737934700E32C80 /* SummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		BE1FF3B22737934700E32C80 /* SetPaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetPaceView.swift; sourceTree = "<group>"; };
+		BE1FF3B32737934700E32C80 /* SetDrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetDrinkView.swift; sourceTree = "<group>"; };
+		BE1FF3B42737934700E32C80 /* PaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
+		BE1FF3B52737934700E32C80 /* EndView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		BE1FF3C0273793B200E32C80 /* HealthKitSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSessionManager.swift; sourceTree = "<group>"; };
+		BE1FF3C2273793B200E32C80 /* PredictionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionData.swift; sourceTree = "<group>"; };
+		BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionClassifier.swift; sourceTree = "<group>"; };
+		BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModel.mlmodel; sourceTree = "<group>"; };
+		BE1FF3C927379A2C00E32C80 /* AlcoholFree WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "AlcoholFree WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -174,39 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4291E3F52736E3610025320E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4291E3F62736E3610025320E /* DetailView.swift */,
-				4291E3F72736E3610025320E /* SummaryView.swift */,
-				4291E3F82736E3610025320E /* SetPaceView.swift */,
-				4291E3F92736E3610025320E /* SetDrinkView.swift */,
-				4291E3FA2736E3610025320E /* PaceView.swift */,
-				4291E3FB2736E3610025320E /* EndView.swift */,
-			);
-			name = Views;
-			path = ../../Desktop/Views;
-			sourceTree = "<group>";
-		};
-		4291E4022736E37F0025320E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4291E4032736E37F0025320E /* drinkData.json */,
-			);
-			name = Resources;
-			path = ../../Desktop/Resources;
-			sourceTree = "<group>";
-		};
-		4291E4052736E3850025320E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4291E4062736E3850025320E /* Drink.swift */,
-				4291E4072736E3850025320E /* ModelData.swift */,
-			);
-			name = Model;
-			path = ../../Desktop/Model;
-			sourceTree = "<group>";
-		};
 		42EC4C292705F0110052B1CF = {
 			isa = PBXGroup;
 			children = (
@@ -243,11 +219,14 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4291E4052736E3850025320E /* Model */,
-				4291E4022736E37F0025320E /* Resources */,
-				4291E3F52736E3610025320E /* Views */,
+				BE1FF3C927379A2C00E32C80 /* AlcoholFree WatchKit Extension.entitlements */,
+				BE1FF3BF273793B200E32C80 /* HealthKit */,
+				BE1FF3C1273793B200E32C80 /* MotionClassification */,
+				BE1FF3AC2737934700E32C80 /* Model */,
 				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
+				BE1FF3AA2737934700E32C80 /* Resources */,
+				BE1FF3AF2737934700E32C80 /* Views */,
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
 				42EC4C4A2705F0130052B1CF /* NotificationView.swift */,
 				42EC4C4C2705F0130052B1CF /* ComplicationController.swift */,
@@ -293,6 +272,54 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE1FF3AA2737934700E32C80 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FF3AB2737934700E32C80 /* drinkData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE1FF3AC2737934700E32C80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FF3AD2737934700E32C80 /* Drink.swift */,
+				BE1FF3AE2737934700E32C80 /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE1FF3AF2737934700E32C80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FF3B02737934700E32C80 /* DetailView.swift */,
+				BE1FF3B12737934700E32C80 /* SummaryView.swift */,
+				BE1FF3B22737934700E32C80 /* SetPaceView.swift */,
+				BE1FF3B32737934700E32C80 /* SetDrinkView.swift */,
+				BE1FF3B42737934700E32C80 /* PaceView.swift */,
+				BE1FF3B52737934700E32C80 /* EndView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE1FF3BF273793B200E32C80 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FF3C0273793B200E32C80 /* HealthKitSessionManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		BE1FF3C1273793B200E32C80 /* MotionClassification */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FF3C2273793B200E32C80 /* PredictionData.swift */,
+				BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */,
+				BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */,
+			);
+			path = MotionClassification;
 			sourceTree = "<group>";
 		};
 		CED1472F3CFBA119AD2D9C04 /* Pods */ = {
@@ -480,7 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4291E4042736E37F0025320E /* drinkData.json in Resources */,
+				BE1FF3B62737934700E32C80 /* drinkData.json in Resources */,
 				42EC4C522705F0140052B1CF /* Preview Assets.xcassets in Resources */,
 				42EC4C4F2705F0140052B1CF /* Assets.xcassets in Resources */,
 			);
@@ -620,23 +647,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4291E4092736E3850025320E /* ModelData.swift in Sources */,
+				BE1FF3BC2737934700E32C80 /* SetDrinkView.swift in Sources */,
+				BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
+				BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */,
+				BE1FF3B82737934700E32C80 /* ModelData.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
-				4291E3FD2736E3610025320E /* SummaryView.swift in Sources */,
-				4291E3FC2736E3610025320E /* DetailView.swift in Sources */,
+				BE1FF3BD2737934700E32C80 /* PaceView.swift in Sources */,
 				CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */,
 				42EC4C472705F0130052B1CF /* ContentView.swift in Sources */,
+				BE1FF3BA2737934700E32C80 /* SummaryView.swift in Sources */,
 				CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */,
 				CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
-				4291E4012736E3610025320E /* EndView.swift in Sources */,
-				4291E3FF2736E3610025320E /* SetDrinkView.swift in Sources */,
-				4291E3FE2736E3610025320E /* SetPaceView.swift in Sources */,
+				BE1FF3B72737934700E32C80 /* Drink.swift in Sources */,
+				BE1FF3B92737934700E32C80 /* DetailView.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
+				BE1FF3BE2737934700E32C80 /* EndView.swift in Sources */,
+				BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */,
+				BE1FF3BB2737934700E32C80 /* SetPaceView.swift in Sources */,
+				BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
-				4291E4082736E3850025320E /* Drink.swift in Sources */,
-				4291E4002736E3610025320E /* PaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -805,13 +836,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlcoholFree_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -819,7 +851,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -843,8 +875,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = AlcoholFree_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -872,13 +905,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -921,9 +954,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
