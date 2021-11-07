@@ -23,7 +23,7 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     @State var bloodAlcPercent = 0.00
     
     @State var timerIntervalCnt = 0
-    @State var drinkingMotionDetectedCnt = 1
+    @State var drinkingMotionDetectedCnt = 0
     
     var motionClassifier = MotionClassifier()
     
