@@ -135,6 +135,7 @@
 		BE1FF3C2273793B200E32C80 /* PredictionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionData.swift; sourceTree = "<group>"; };
 		BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionClassifier.swift; sourceTree = "<group>"; };
 		BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModel.mlmodel; sourceTree = "<group>"; };
+		BE1FF3C927379A2C00E32C80 /* AlcoholFree WatchKit Extension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "AlcoholFree WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -218,6 +219,7 @@
 		42EC4C432705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BE1FF3C927379A2C00E32C80 /* AlcoholFree WatchKit Extension.entitlements */,
 				BE1FF3BF273793B200E32C80 /* HealthKit */,
 				BE1FF3C1273793B200E32C80 /* MotionClassification */,
 				BE1FF3AC2737934700E32C80 /* Model */,

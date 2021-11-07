@@ -67,13 +67,17 @@ class MotionClassifier {
         let modelPrediction = try? motionClassifierModel.prediction(input: predictionData.getPredictionInput())
         guard let modelPrediction = modelPrediction else { return nil }
         
-        print(modelPrediction.labelProbability)
+        let drinkProb = modelPrediction.labelProbability["just_drink"]
         
         // this stateOut becomes input for the next prediction
         predictionData.feedback(stateOut: modelPrediction.stateOut)
-
-        // Return the predicted activity - the activity with the highest probability
-        return modelPrediction.label
+        
+        guard let drinkProb = drinkProb else { return nil }
+        if drinkProb > 0.9 {
+            return "just_drink"
+        } else {
+            return "others"
+        }
     }
 }
 
