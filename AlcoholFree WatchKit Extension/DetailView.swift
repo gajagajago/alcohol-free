@@ -9,13 +9,15 @@ import SwiftUI
 
 var timerInterval = 1 // timer check 하는 주기
 var timerThreshold = 10 // 초기 기준 시간
-struct DetailView: View, ResultsDelegator {
+struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     var selectedPace: Int
     @State var count = 0
     @State var currentPace = 0.0
     
     @State var timerIntervalCnt = 0
     @State var drinkingMotionDetectedCnt = 1
+    var motionClassifier = MotionClassifier()
+    
     
     let timer = Timer.publish(every: 1*60*Double(timerInterval), on: .main, in: .common) // Last 10 should be set to timerInterval
     var body: some View {
@@ -27,13 +29,14 @@ struct DetailView: View, ResultsDelegator {
                 }
             EndView()
         }.onAppear {
+            motionClassifier.delegator = self
             // 모니터링 시작 전 백그라운드 세션 활성화
             HealthKitSessionManager.shared.startBackgroundSession()
-            MotionClassifier.shared.startMotionUpdates()
+            motionClassifier.startMotionUpdates()
             SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
         }.onDisappear {
             SoundClassifier.shared.stop()
-            MotionClassifier.shared.stopMotionUpdates()
+            motionClassifier.stopMotionUpdates()
             HealthKitSessionManager.shared.endBackgroundSession()
         }
     }

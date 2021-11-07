@@ -21,6 +21,7 @@ class MotionClassifier {
     let motionClassifierModel = try! MotionClassifierModel(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
+    var delegator: IncreaseDrinkingMotionCnt?
 
     init() {
         let interval = TimeInterval(MotionClassifier.sensorUpdateInterval)
@@ -50,7 +51,7 @@ class MotionClassifier {
                 
                 if (predictedActivity == "just_drink") {
                     // increase drinkMotionDetectedCnt by 1
-                    delegator.increaseDrinkingMotionDetectedCnt()
+                    delegator?.increaseDrinkingMotionDetectedCnt()
                 }
                 
                 // Use the predicted activity here
