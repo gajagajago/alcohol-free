@@ -25,6 +25,8 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     @State var timerIntervalCnt = 0
     @State var drinkingMotionDetectedCnt = 0
     
+    @State var timerConnected = false
+    
     var motionClassifier = MotionClassifier()
     
     let timer = Timer.publish(
@@ -107,7 +109,8 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     func delegate(identifier: String, confidence: Double) {
         if (identifier == "glass_clink") {
             // Init timer at first clink
-            if (currentPace == 0.0) {
+            if (!timerConnected) {
+                timerConnected = true
                 timer.connect()
             }
             count += 1
