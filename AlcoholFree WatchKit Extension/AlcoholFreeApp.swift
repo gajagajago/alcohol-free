@@ -16,6 +16,7 @@ struct AlcoholFreeApp: App {
                 ContentView()
             }.onAppear {
                 LocalNotificationManager().requestPermission()
+                LocalNotificationManager().initNotiCategory()
             }
         }
 
