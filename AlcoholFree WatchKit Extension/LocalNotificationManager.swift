@@ -10,13 +10,17 @@ class LocalNotificationManager {
     var notifications = [Notification]()
     
     func requestPermission() -> Void {
-        UNUserNotificationCenter
-            .current()
-            .requestAuthorization(options: [.alert, .badge, .alert]) { granted, error in
-                if granted == true && error == nil {
-                    // We have permission
+        let center = UNUserNotificationCenter.current()
+        
+        center.getNotificationSettings{ (settings) in
+            if (settings.authorizationStatus == .authorized) {
+                print("푸시 알림이 허용되었습니다.")
+            } else {
+                print("푸시 알림이 거부되었습니다.")
+                center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                 }
             }
+        }
     }
     
     func addNotification(title: String) -> Void {

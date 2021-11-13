@@ -14,9 +14,11 @@ struct AlcoholFreeApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+            }.onAppear {
+                LocalNotificationManager().requestPermission()
             }
         }
 
-        WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+        WKNotificationScene(controller: NotificationController.self, category: "alcoholFree")
     }
 }
