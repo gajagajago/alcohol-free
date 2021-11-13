@@ -10,15 +10,16 @@ struct Notification {
 class LocalNotificationManager {
     var notifications = [Notification]()
     
+    let center = UNUserNotificationCenter.current()
+    let drinkDetectNotiIdentifier = "DrinkDetect"
+
     func requestPermission() -> Void {
-        let center = UNUserNotificationCenter.current()
-        
         center.getNotificationSettings{ (settings) in
             if (settings.authorizationStatus == .authorized) {
                 print("푸시 알림이 허용되었습니다.")
             } else {
                 print("푸시 알림이 거부되었습니다.")
-                center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                 }
             }
         }
@@ -26,6 +27,25 @@ class LocalNotificationManager {
     
     func addNotification(title: String) -> Void {
         notifications.append(Notification(id: UUID().uuidString, title: title))
+    }
+    
+    func addDrinkDetectNoti() {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "술 마심이 감지되었습니다. 마신 양을 체크해주세요."
+        notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
+        
+        // 감지 후 노티 주기까지 인터벌 설정 가능
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.0, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: drinkDetectNotiIdentifier, content: notificationContent, trigger: notificationTrigger)
+        
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            } else {
+                print("마신 양 체크 노티가 발송되었습니다.")
+            }
+        })
     }
     
     func schedule() -> Void {
@@ -39,7 +59,6 @@ class LocalNotificationManager {
                   break
             }
         }
-        
     }
     
     func scheduleNotifications() -> Void {
@@ -59,12 +78,12 @@ class LocalNotificationManager {
     }
     
     func initNotiCategory() {
-        UNUserNotificationCenter.current().setNotificationCategories([mkDrinkDetectNotiCategory()])
+        center.setNotificationCategories([mkDrinkDetectNotiCategory()])
         print("푸시 알림 카테고리를 생성했습니다.")
     }
     
     func mkDrinkDetectNotiCategory() -> UNNotificationCategory {
-        let category = UNNotificationCategory(identifier: "감지", actions: mkDrinkDetectNotiActions(), intentIdentifiers: [], options: [])
+        let category = UNNotificationCategory(identifier: drinkDetectNotiIdentifier, actions: mkDrinkDetectNotiActions(), intentIdentifiers: [], options: [])
         
         return category
     }
