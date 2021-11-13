@@ -35,17 +35,48 @@ class LocalNotificationManager {
         notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
         
         // 감지 후 노티 주기까지 인터벌 설정 가능
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.0, repeats: false)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
         
         let request = UNNotificationRequest(identifier: drinkDetectNotiIdentifier, content: notificationContent, trigger: notificationTrigger)
         
-        center.add(request, withCompletionHandler: { (error) in
-            if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-            } else {
-                print("마신 양 체크 노티가 발송되었습니다.")
+        center.add(request, withCompletionHandler: nil)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                didReceive response: UNNotificationResponse,
+                withCompletionHandler completionHandler:
+                   @escaping () -> Void) {
+        print("유저 응답을 받았습니다.")
+        
+        if response.notification.request.content.categoryIdentifier == drinkDetectNotiIdentifier {
+            print("\(response.actionIdentifier)")
+            switch response.actionIdentifier {
+            case "full":
+                print("풀샷이 선택되었습니다.")
+                break
+                    
+            case "half":
+                print("반샷이 선택되었습니다.")
+                break
+              
+            case "sip":
+                print("홀짝이 선택되었습니다.")
+                break
+                    
+            case "no":
+                print("안마심이 선택되었습니다.")
+                break
+
+            default:
+                break
             }
-        })
+       }
+       else {
+          // Handle other notification types...
+       }
+            
+       // Always call the completion handler when done.
+       completionHandler()
     }
     
     func schedule() -> Void {
@@ -89,10 +120,10 @@ class LocalNotificationManager {
     }
     
     func mkDrinkDetectNotiActions() -> [UNNotificationAction] {
-        let fullshot = UNNotificationAction(identifier: "full", title: "풀샷", options: [])
-        let halfshot = UNNotificationAction(identifier: "half", title: "반샷", options: [])
-        let sipshot = UNNotificationAction(identifier: "sip", title: "홀짝", options: [])
-        let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: [])
+        let fullshot = UNNotificationAction(identifier: "full", title: "풀샷", options: UNNotificationActionOptions(rawValue: 0))
+        let halfshot = UNNotificationAction(identifier: "half", title: "반샷", options: UNNotificationActionOptions(rawValue: 0))
+        let sipshot = UNNotificationAction(identifier: "sip", title: "홀짝", options: UNNotificationActionOptions(rawValue: 0))
+        let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: UNNotificationActionOptions(rawValue: 0))
         
         return [fullshot, halfshot, sipshot, noshot]
     }
