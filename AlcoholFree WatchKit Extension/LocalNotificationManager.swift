@@ -127,4 +127,16 @@ class LocalNotificationManager {
         
         return [fullshot, halfshot, sipshot, noshot]
     }
+    
+    func sendHandsNoti() {
+        let content = UNMutableNotificationContent()
+        content.title = "술 마시는 손에 워치를 착용해주세요"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        center.add(request) { error in
+            guard error == nil else { return }
+        }
+    }
 }

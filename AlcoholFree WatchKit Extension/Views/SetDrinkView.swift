@@ -47,6 +47,9 @@ struct SetDrinkView: View {
             .buttonStyle(PlainButtonStyle())
             .frame(width: 150.0)
             .navigationBarBackButtonHidden(true)
+            .simultaneousGesture(TapGesture().onEnded {
+                LocalNotificationManager().sendHandsNoti()
+            })
         }
         .ignoresSafeArea(edges: .bottom)
     }

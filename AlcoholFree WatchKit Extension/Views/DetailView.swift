@@ -29,7 +29,7 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     
     var motionClassifier = MotionClassifier()
     
-    let timer = Timer.publish(
+    @State var timer = Timer.publish(
         every: 60*Double(timerInterval),
         tolerance: 0.1,
         on: .main,
@@ -43,14 +43,18 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
                 timerThreshold: timerThreshold,
                 bloodAlcPercent: $bloodAlcPercent)
                 .onReceive(timer) { time in
-                    print("Timer !! Update stats")
-                    // Update current pace
-                    setCurrentPace()
-                    // Update blood alcohol percent
-                    setBloodAlcPercent()
-                    timerIntervalCnt = timerIntervalCnt+1
+                    if !timerConnected {
+                        timer.connect().cancel()
+                    } else {
+                        print("Timer !! Update stats")
+                        // Update current pace
+                        setCurrentPace()
+                        // Update blood alcohol percent
+                        setBloodAlcPercent()
+                        timerIntervalCnt = timerIntervalCnt+1
+                    }
                 }
-            EndView()
+            EndView(timerConnected: $timerConnected)
         }
         .onAppear {
             motionClassifier.delegator = self
