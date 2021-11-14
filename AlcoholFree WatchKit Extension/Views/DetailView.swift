@@ -118,7 +118,6 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
             
             // 임시로 여기에 마신 양 체크 노티 달아놓겠습니다.
             LocalNotificationManager().addDrinkDetectNoti()
-            
         }
     }
     
