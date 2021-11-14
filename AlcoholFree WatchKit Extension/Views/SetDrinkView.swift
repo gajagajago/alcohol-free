@@ -48,7 +48,7 @@ struct SetDrinkView: View {
             .frame(width: 150.0)
             .navigationBarBackButtonHidden(true)
             .simultaneousGesture(TapGesture().onEnded {
-                LocalNotificationManager().sendHandsNoti()
+                LocalNotificationManager().addNormalNoti(title: "술 마시는 손에 워치를 착용해주세요")
             })
         }
         .ignoresSafeArea(edges: .bottom)

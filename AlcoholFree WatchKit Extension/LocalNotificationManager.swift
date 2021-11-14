@@ -8,8 +8,8 @@ struct Notification {
 }
 
 class LocalNotificationManager {
-//    var notifications = [Notification]()
     let center = UNUserNotificationCenter.current()
+    let drinkNormalNotiIdentifier = "Normal"
     let drinkDetectNotiIdentifier = "DrinkDetect"
     
     func initNotification() {
@@ -27,6 +27,24 @@ class LocalNotificationManager {
                 }
             }
         }
+    }
+    
+    func addNormalNoti(title: String) -> Void {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = title
+        notificationContent.categoryIdentifier = drinkNormalNotiIdentifier
+        
+        // 감지 후 노티 주기까지 인터벌 설정 가능
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: notificationTrigger)
+                
+        center.add(request, withCompletionHandler: { (error) in
+            if let err = error {
+                print(err.localizedDescription)
+            }
+        })
+        print("알림 등록 완료")
     }
     
     func addDrinkDetectNoti() {
@@ -48,14 +66,20 @@ class LocalNotificationManager {
     }
     
     func initNotiCategory() {
-        center.setNotificationCategories([mkDrinkDetectNotiCategory()])
+        center.setNotificationCategories(mkNotiCategory())
         print("푸시 알림 카테고리를 생성했습니다.")
     }
     
-    func mkDrinkDetectNotiCategory() -> UNNotificationCategory {
-        let category = UNNotificationCategory(identifier: drinkDetectNotiIdentifier, actions: mkDrinkDetectNotiActions(), intentIdentifiers: [], options: [])
+    func mkNotiCategory() -> Set<UNNotificationCategory> {
+        var categories = Set<UNNotificationCategory>();
         
-        return category
+        let categoryNormal = UNNotificationCategory(identifier: drinkNormalNotiIdentifier, actions: [], intentIdentifiers: [], options: [])
+        
+        let categoryDrinkDetect = UNNotificationCategory(identifier: drinkDetectNotiIdentifier, actions: mkDrinkDetectNotiActions(), intentIdentifiers: [], options: [])
+        
+        categories = [categoryNormal, categoryDrinkDetect]
+        
+        return categories
     }
     
     func mkDrinkDetectNotiActions() -> [UNNotificationAction] {
@@ -65,17 +89,5 @@ class LocalNotificationManager {
         let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: [])
         
         return [fullshot, halfshot, sipshot, noshot]
-    }
-        
-    func sendHandsNoti() {
-        let content = UNMutableNotificationContent()
-        content.title = "술 마시는 손에 워치를 착용해주세요"
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        
-        center.add(request) { error in
-            guard error == nil else { return }
-        }
     }
 }
