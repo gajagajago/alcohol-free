@@ -128,8 +128,8 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
     
     func setNotification(){
         let manager = LocalNotificationManager()
-        manager.addNotification(title: "현재 페이스가 목표 페이스를 초과했어요!")
-        manager.schedule()
+//        manager.addNotification(title: "현재 페이스가 목표 페이스를 초과했어요!")
+//        manager.schedule()
     }
 }
 
