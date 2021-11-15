@@ -56,10 +56,13 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
             motionClassifier.delegator = self
             HealthKitSessionManager.shared.startBackgroundSession()
             motionClassifier.startMotionUpdates()
-            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+            DispatchQueue.global(qos: .background).async {
+                SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+            }
         }
         .onDisappear {
             motionClassifier.stopMotionUpdates()
+            SoundClassifier.shared.stop()
             HealthKitSessionManager.shared.endBackgroundSession()
         }
     }

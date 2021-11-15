@@ -26,9 +26,6 @@ struct SummaryView: View {
             .frame(width: 150.0)
             .navigationBarBackButtonHidden(true)
         }
-        .onAppear {
-            SoundClassifier.shared.stop()
-        }
     }
 }
 
