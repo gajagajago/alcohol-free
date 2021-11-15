@@ -18,7 +18,7 @@ class MotionClassifier {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifierModel(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     var delegator: IncreaseDrinkingMotionCnt?
@@ -67,7 +67,8 @@ class MotionClassifier {
         let modelPrediction = try? motionClassifierModel.prediction(input: predictionData.getPredictionInput())
         guard let modelPrediction = modelPrediction else { return nil }
         
-        let drinkProb = modelPrediction.labelProbability["just_drink"]
+        let drinkProb = modelPrediction.labelProbability["left_drink"]
+        print(modelPrediction.labelProbability)
         
         // this stateOut becomes input for the next prediction
         predictionData.feedback(stateOut: modelPrediction.stateOut)

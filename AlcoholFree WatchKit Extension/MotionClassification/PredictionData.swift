@@ -61,8 +61,8 @@ class PredictionData {
         currentIndexInPredictionWindow = 0
     }
     
-    func getPredictionInput() -> MotionClassifierModelInput {
-        return MotionClassifierModelInput(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
+    func getPredictionInput() -> MotionClassifierModelRInput {
+        return MotionClassifierModelRInput(motionQuaternionX_R_: motionQuaternionX, motionQuaternionY_R_: motionQuaternionY, motionQuaternionZ_R_: motionQuaternionZ, motionRotationRateX_rad_s_: motionRotationRateX, motionRotationRateY_rad_s_: motionRotationRateY, motionRotationRateZ_rad_s_: motionRotationRateZ, motionUserAccelerationX_G_: accelDataX, motionUserAccelerationY_G_: accelDataY, motionUserAccelerationZ_G_: accelDataZ, stateIn: stateOutput)
     }
     
     func feedback(stateOut: MLMultiArray) {
