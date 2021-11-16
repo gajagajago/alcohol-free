@@ -1,5 +1,6 @@
 import Foundation
 import UserNotifications
+import UIKit
 
 struct Notification {
     var id: String
@@ -7,50 +8,86 @@ struct Notification {
 }
 
 class LocalNotificationManager {
-    var notifications = [Notification]()
+    let center = UNUserNotificationCenter.current()
+    let drinkNormalNotiIdentifier = "Normal"
+    let drinkDetectNotiIdentifier = "DrinkDetect"
+    
+    func initNotification() {
+        requestPermission()
+        initNotiCategory()
+    }
     
     func requestPermission() -> Void {
-        UNUserNotificationCenter
-            .current()
-            .requestAuthorization(options: [.alert, .badge, .alert]) { granted, error in
-                if granted == true && error == nil {
-                    // We have permission
+        center.getNotificationSettings{ (settings) in
+            if (settings.authorizationStatus == .authorized) {
+                print("푸시 알림이 허용되었습니다.")
+            } else {
+                print("푸시 알림이 거부되었습니다.")
+                self.center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
                 }
             }
-    }
-    
-    func addNotification(title: String) -> Void {
-        notifications.append(Notification(id: UUID().uuidString, title: title))
-    }
-    
-    func schedule() -> Void {
-          UNUserNotificationCenter.current().getNotificationSettings { settings in
-              switch settings.authorizationStatus {
-              case .notDetermined:
-                  self.requestPermission()
-              case .authorized, .provisional:
-                  self.scheduleNotifications()
-              default:
-                  break
-                
-            }
         }
+    }
+    
+    func addNormalNoti(title: String) -> Void {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = title
+        notificationContent.categoryIdentifier = drinkNormalNotiIdentifier
         
+        // 감지 후 노티 주기까지 인터벌 설정 가능
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: notificationTrigger)
+                
+        center.add(request, withCompletionHandler: { (error) in
+            if let err = error {
+                print(err.localizedDescription)
+            }
+        })
+        print("알림 등록 완료")
     }
     
-    func scheduleNotifications() -> Void {
-        for notification in notifications {
-            let content = UNMutableNotificationContent()
-            content.title = notification.title
-            content.categoryIdentifier = "myCategory"
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-            let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
-            
-            UNUserNotificationCenter.current().add(request) { error in
-                guard error == nil else { return }
-                print("Scheduling notification with id: \(notification.id)")
+    func addDrinkDetectNoti() {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "술 마심이 감지되었습니다. 마신 양을 체크해주세요."
+        notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
+        
+        // 감지 후 노티 주기까지 인터벌 설정 가능
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: notificationContent, trigger: notificationTrigger)
+                
+        center.add(request, withCompletionHandler: { (error) in
+            if let err = error {
+                print(err.localizedDescription)
             }
-        }
+        })
+        print("알림 등록 완료")
+    }
+    
+    func initNotiCategory() {
+        center.setNotificationCategories(mkNotiCategory())
+        print("푸시 알림 카테고리를 생성했습니다.")
+    }
+    
+    func mkNotiCategory() -> Set<UNNotificationCategory> {
+        var categories = Set<UNNotificationCategory>();
+        
+        let categoryNormal = UNNotificationCategory(identifier: drinkNormalNotiIdentifier, actions: [], intentIdentifiers: [], options: [])
+        
+        let categoryDrinkDetect = UNNotificationCategory(identifier: drinkDetectNotiIdentifier, actions: mkDrinkDetectNotiActions(), intentIdentifiers: [], options: [])
+        
+        categories = [categoryNormal, categoryDrinkDetect]
+        
+        return categories
+    }
+    
+    func mkDrinkDetectNotiActions() -> [UNNotificationAction] {
+        let fullshot = UNNotificationAction(identifier: "full", title: "풀샷", options: [])
+        let halfshot = UNNotificationAction(identifier: "half", title: "반샷", options: [])
+        let sipshot = UNNotificationAction(identifier: "sip", title: "홀짝", options: [])
+        let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: [])
+        
+        return [fullshot, halfshot, sipshot, noshot]
     }
 }

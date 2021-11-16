@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EndView: View {
+    @Binding var timerConnected: Bool
+    
     var body: some View {
         NavigationLink(destination: SummaryView().navigationBarBackButtonHidden(true)){
             ZStack {
@@ -21,11 +23,14 @@ struct EndView: View {
         .buttonStyle(PlainButtonStyle())
         .frame(width: 150.0)
         .navigationBarBackButtonHidden(true)
+        .simultaneousGesture(TapGesture().onEnded {
+            timerConnected = false
+        })
     }
 }
 
 struct EndView_Previews: PreviewProvider {
     static var previews: some View {
-        EndView()
+        EndView(timerConnected: .constant(false))
     }
 }
