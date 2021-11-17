@@ -13,7 +13,7 @@ var standardAlcConstant = 0.7964 // 표준 알코올 계수
 var gender = 0.7 // 임시 성별 계수
 var weight = 70.0 // 임시 몸무게 계수
 
-struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
+struct DetailView: View, ResultsDelegator, MotionClassifierDelegate {
     var selectedPace: Int
     var selectedDrink: Drink
     
@@ -60,10 +60,13 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
             motionClassifier.delegator = self
             HealthKitSessionManager.shared.startBackgroundSession()
             motionClassifier.startMotionUpdates()
-            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+            DispatchQueue.global(qos: .background).async {
+                SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+            }
         }
         .onDisappear {
             motionClassifier.stopMotionUpdates()
+            SoundClassifier.shared.stop()
             HealthKitSessionManager.shared.endBackgroundSession()
         }
     }
@@ -72,7 +75,7 @@ struct DetailView: View, ResultsDelegator, IncreaseDrinkingMotionCnt {
         totalCount = totalCount + count
     }
     
-    func increaseDrinkingMotionDetectedCnt() {
+    func drinkMotionDetected() {
         drinkingMotionDetectedCnt += 1
     }
     
