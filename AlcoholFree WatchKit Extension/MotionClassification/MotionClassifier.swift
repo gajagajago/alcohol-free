@@ -18,10 +18,12 @@ class MotionClassifier {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifierModel(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
-    var delegator: IncreaseDrinkingMotionCnt?
+    var delegator: MotionClassifierDelegate?
+    
+    var lastDetected = NSDate().timeIntervalSince1970 - 10
 
     init() {
         let interval = TimeInterval(MotionClassifier.sensorUpdateInterval)
@@ -49,12 +51,16 @@ class MotionClassifier {
         if (predictionData.isPredictionDataReady()) {
             if let predictedActivity = performModelPrediction() {
                 
-                if (predictedActivity == "just_drink") {
+                if (predictedActivity == "drink") {
                     // increase drinkMotionDetectedCnt by 1
-                    delegator?.increaseDrinkingMotionDetectedCnt()
+                    let now = NSDate().timeIntervalSince1970
+                    if now - lastDetected > 10 {
+                        // 마지막 짠으로부터 10초 이상 지나야 감지된 것으로 한다.
+                        print("Drink Motion 이벤트 발생")
+                        delegator?.drinkMotionDetected()
+                        lastDetected = NSDate().timeIntervalSince1970
+                    }
                 }
-                
-                // Use the predicted activity here
                 
                 // Start a new prediction window
                 predictionData.resetIndexInPredictionWindow()
@@ -67,20 +73,24 @@ class MotionClassifier {
         let modelPrediction = try? motionClassifierModel.prediction(input: predictionData.getPredictionInput())
         guard let modelPrediction = modelPrediction else { return nil }
         
-        let drinkProb = modelPrediction.labelProbability["just_drink"]
+        let left = modelPrediction.labelProbability["left_drink"]
+        let right = modelPrediction.labelProbability["right_drink"]
+        let others = modelPrediction.labelProbability["others"]
+        
+        print("left: \(String(format:"%.2f", left! * 100))% | right: \(String(format:"%.2f", right! * 100))% | others: \(String(format:"%.2f", others! * 100))%")
         
         // this stateOut becomes input for the next prediction
         predictionData.feedback(stateOut: modelPrediction.stateOut)
         
-        guard let drinkProb = drinkProb else { return nil }
-        if drinkProb > 0.9 {
-            return "just_drink"
+        guard let leftProb = left, let rightProb = right else { return nil }
+        if leftProb > 0.8 || rightProb > 0.9 {
+            return "drink"
         } else {
             return "others"
         }
     }
 }
 
-protocol IncreaseDrinkingMotionCnt {
-    func increaseDrinkingMotionDetectedCnt()
+protocol MotionClassifierDelegate {
+    func drinkMotionDetected()
 }
