@@ -21,7 +21,9 @@ class MotionClassifier {
     let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
-    var delegator: IncreaseDrinkingMotionCnt?
+    var delegator: MotionClassifierDelegate?
+    
+    var lastDetected = NSDate().timeIntervalSince1970 - 10
 
     init() {
         let interval = TimeInterval(MotionClassifier.sensorUpdateInterval)
@@ -51,10 +53,14 @@ class MotionClassifier {
                 
                 if (predictedActivity == "drink") {
                     // increase drinkMotionDetectedCnt by 1
-                    delegator?.increaseDrinkingMotionDetectedCnt()
+                    let now = NSDate().timeIntervalSince1970
+                    if now - lastDetected > 10 {
+                        // 마지막 짠으로부터 10초 이상 지나야 감지된 것으로 한다.
+                        print("Drink Motion 이벤트 발생")
+                        delegator?.drinkMotionDetected()
+                        lastDetected = NSDate().timeIntervalSince1970
+                    }
                 }
-                
-                // Use the predicted activity here
                 
                 // Start a new prediction window
                 predictionData.resetIndexInPredictionWindow()
@@ -77,7 +83,7 @@ class MotionClassifier {
         predictionData.feedback(stateOut: modelPrediction.stateOut)
         
         guard let leftProb = left, let rightProb = right else { return nil }
-        if leftProb > 0.9 || rightProb > 0.9 {
+        if leftProb > 0.8 || rightProb > 0.9 {
             return "drink"
         } else {
             return "others"
@@ -85,6 +91,6 @@ class MotionClassifier {
     }
 }
 
-protocol IncreaseDrinkingMotionCnt {
-    func increaseDrinkingMotionDetectedCnt()
+protocol MotionClassifierDelegate {
+    func drinkMotionDetected()
 }
