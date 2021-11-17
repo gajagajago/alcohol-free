@@ -49,7 +49,7 @@ class MotionClassifier {
         if (predictionData.isPredictionDataReady()) {
             if let predictedActivity = performModelPrediction() {
                 
-                if (predictedActivity == "just_drink") {
+                if (predictedActivity == "drink") {
                     // increase drinkMotionDetectedCnt by 1
                     delegator?.increaseDrinkingMotionDetectedCnt()
                 }
@@ -67,15 +67,18 @@ class MotionClassifier {
         let modelPrediction = try? motionClassifierModel.prediction(input: predictionData.getPredictionInput())
         guard let modelPrediction = modelPrediction else { return nil }
         
-        let drinkProb = modelPrediction.labelProbability["left_drink"]
-        print(modelPrediction.labelProbability)
+        let left = modelPrediction.labelProbability["left_drink"]
+        let right = modelPrediction.labelProbability["right_drink"]
+        let others = modelPrediction.labelProbability["others"]
+        
+        print("left: \(String(format:"%.2f", left! * 100))% | right: \(String(format:"%.2f", right! * 100))% | others: \(String(format:"%.2f", others! * 100))%")
         
         // this stateOut becomes input for the next prediction
         predictionData.feedback(stateOut: modelPrediction.stateOut)
         
-        guard let drinkProb = drinkProb else { return nil }
-        if drinkProb > 0.9 {
-            return "just_drink"
+        guard let leftProb = left, let rightProb = right else { return nil }
+        if leftProb > 0.9 || rightProb > 0.9 {
+            return "drink"
         } else {
             return "others"
         }

@@ -34,7 +34,7 @@
 		BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */; };
 		BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */; };
 		BEEE162B2742B5A700D6F60A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
-		BEEE16312742C7A200D6F60A /* MotionClassifierModelR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16302742C7A200D6F60A /* MotionClassifierModelR.mlmodel */; };
+		BEEE1637274563D700D6F60A /* MotionClassifierModelR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */; };
 		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
@@ -138,7 +138,7 @@
 		BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionClassifier.swift; sourceTree = "<group>"; };
 		BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModel.mlmodel; sourceTree = "<group>"; };
 		BEEE162A2742B5A600D6F60A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
-		BEEE16302742C7A200D6F60A /* MotionClassifierModelR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModelR.mlmodel; sourceTree = "<group>"; };
+		BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModelR.mlmodel; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -319,7 +319,7 @@
 		BE1FF3C1273793B200E32C80 /* MotionClassification */ = {
 			isa = PBXGroup;
 			children = (
-				BEEE16302742C7A200D6F60A /* MotionClassifierModelR.mlmodel */,
+				BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */,
 				BE1FF3C2273793B200E32C80 /* PredictionData.swift */,
 				BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */,
 				BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */,
@@ -652,7 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEE16312742C7A200D6F60A /* MotionClassifierModelR.mlmodel in Sources */,
+				BEEE1637274563D700D6F60A /* MotionClassifierModelR.mlmodel in Sources */,
 				BE1FF3BC2737934700E32C80 /* SetDrinkView.swift in Sources */,
 				BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
