@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>0NanumSquareRoundOTFL.otf</string>
+		<string>1NanumSquareRoundOTFR.otf</string>
+		<string>2NanumSquareRoundOTFB.otf</string>
+		<string>3NanumSquareRoundOTFEB.otf</string>
+	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
