@@ -23,10 +23,17 @@ struct SetTargetAmoutView: View {
                 .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 28))
                 .foregroundColor(.init(red: 0, green: 0.8, blue: 1))
             
-            Text(targetNumberOfGlasses.toStringInBottle(drink: selectedDrinkType))
-                .font(Font.custom(NanumFontNames.bold.rawValue, size: 14))
-                .foregroundColor(.gray)
-                .padding(.top, 0.1)
+            let bottle = targetNumberOfGlasses.convertToBottle(drink: selectedDrinkType)
+            HStack {
+                if bottle >= 2 {
+                    Text("⚠️").font(.system(size: 12))
+                }
+                Text("\(targetNumberOfGlasses.toStringInBottle(drink: selectedDrinkType))")
+                    .font(Font.custom(NanumFontNames.bold.rawValue, size: 14))
+                    .foregroundColor(.gray)
+                    .padding(.top, 0.1)
+            }
+            .animation(.easeInOut(duration: 0.5), value: bottle >= 2)
             
             Spacer()
             

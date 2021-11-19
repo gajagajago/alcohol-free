@@ -13,6 +13,7 @@ struct WaveBackground<Content: View>: View {
     @State private var waveOffset = Angle(degrees: 0)
     @State private var waveOffset2 = Angle(degrees: 0)
     let percent: Double
+    let waveColor: Color = Color(red: 0, green: 0.8, blue: 1)
     
     init(percent: Double = 0, @ViewBuilder content: () -> Content) {
         self.percent = percent
@@ -27,16 +28,17 @@ struct WaveBackground<Content: View>: View {
                         .foregroundColor(.black)
                         .font(Font.system(size: 0.25 * min(geo.size.width, geo.size.height) ))
                     Wave(offset: Angle(degrees: self.waveOffset.degrees), percent: percent)
-                        .fill(Color(red: 0, green: 0.8, blue: 1))
+                        .fill(waveColor)
                         .onAppear {
                             withAnimation(Animation.linear(duration: 5).repeatForever(autoreverses: false)) {
                                 self.waveOffset = Angle(degrees: 360)
                             }
                         }
                     Wave(offset: Angle(degrees: self.waveOffset2.degrees - 120), percent: percent)
-                        .fill(Color(red: 0, green: 0.8, blue: 1, opacity: 0.5))
+                        .fill(waveColor)
+                        .opacity(0.5)
                         .onAppear {
-                            withAnimation(Animation.easeInOut(duration: 5).repeatForever(autoreverses: true)) {
+                            withAnimation(Animation.easeInOut(duration: 4).repeatForever(autoreverses: true)) {
                                 self.waveOffset2 = Angle(degrees: 360)
                             }
                         }

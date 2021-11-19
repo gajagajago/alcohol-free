@@ -14,10 +14,18 @@ extension Double {
     }
     
     func toStringInBottle(drink: Drink) -> String {
-        return "\(drink.category) \(String(format: "%.2f", self.convertToMilliliters(drink: drink) / drink.volumeMl))병"
+        return "\(drink.category) \(String(format: "%.2f", self.convertToBottle(drink: drink)))병"
     }
     
-    func convertToMilliliters(drink: Drink) -> Double {
+    func convertToMilliliters(drink: Drink) -> Double {  // 잔 -> ml
         return self * Double(drink.volumePerGlass)
+    }
+    
+    func convertToGlasses(drink: Drink) -> Double {  // ml -> 잔
+        return self / Double(drink.volumePerGlass)
+    }
+    
+    func convertToBottle(drink: Drink) -> Double {  // 잔 -> 병
+        return self.convertToMilliliters(drink: drink) / drink.volumeMl
     }
 }
