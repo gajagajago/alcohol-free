@@ -250,7 +250,7 @@
 				BEEE164F2747318C00D6F60A /* Widgets */,
 				BEEE16482746BDE600D6F60A /* Extensions */,
 				BEEE163B2746AE7600D6F60A /* Fonts */,
-				BEEE16382746A23A00D6F60A /* NewViews */,
+				BEEE16382746A23A00D6F60A /* Views */,
 				BE1FF3BF273793B200E32C80 /* HealthKit */,
 				BE1FF3C1273793B200E32C80 /* MotionClassification */,
 				BE1FF3AC2737934700E32C80 /* Model */,
@@ -349,7 +349,7 @@
 			path = MotionClassification;
 			sourceTree = "<group>";
 		};
-		BEEE16382746A23A00D6F60A /* NewViews */ = {
+		BEEE16382746A23A00D6F60A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				BEEE16392746A27100D6F60A /* SetDrinkTypeView.swift */,
@@ -358,7 +358,7 @@
 				BEEE16622747D60100D6F60A /* DetailContainerView.swift */,
 				BEEE16642747D6CE00D6F60A /* EndView.swift */,
 			);
-			path = NewViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BEEE163B2746AE7600D6F60A /* Fonts */ = {
