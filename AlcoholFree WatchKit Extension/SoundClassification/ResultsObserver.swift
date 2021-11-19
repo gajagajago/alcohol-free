@@ -3,9 +3,9 @@ import SoundAnalysis
 
 /// An observer that receives results from a classify sound request.
 class ResultsObserver: NSObject, SNResultsObserving {
-    let delegate: ResultsDelegate
+    let delegate: SoundClassifierDelegate
     
-    init(delegator: ResultsDelegate) {
+    init(delegate: SoundClassifierDelegate) {
         self.delegate = delegator
     }
     
@@ -37,6 +37,6 @@ class ResultsObserver: NSObject, SNResultsObserving {
     }
 }
 
-protocol ResultsDelegate {
+protocol SoundClassifierDelegate {
     func drinkSoundDetected(confidence: Double)
 }

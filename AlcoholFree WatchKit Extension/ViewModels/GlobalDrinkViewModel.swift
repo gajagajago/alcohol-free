@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Properties
 class GlobalDrinkViewModel: ObservableObject {
     // 전역 상태 관리 변수
     var motionClassifier = MotionClassifier()
@@ -56,15 +57,21 @@ class GlobalDrinkViewModel: ObservableObject {
     var alcoholConsumptionAsString: String {
         return "\(String(format: "%.1f", alcoholConsumption))g"
     }
+    
+    var warningMessage: String? {
+        // TODO wavePercentage에 따라 다른 경고 메시지 내보낼 것
+        return "너무 많이 마시고 있어요!"
+    }
 }
 
-extension GlobalDrinkViewModel: MotionClassifierDelegate, ResultsDelegate {
+// MARK: - Classifiers
+extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegate {
     func startDrinkClassification() {
         motionClassifier.delegator = self
         HealthKitSessionManager.shared.startBackgroundSession()
         motionClassifier.startMotionUpdates()
         DispatchQueue.global(qos: .background).async {
-            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
         }
     }
     
@@ -85,4 +92,9 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, ResultsDelegate {
         currentNumberOfGlasses += 1
         print("[GlobalDrinkViewModel] Drink Sound Detected")
     }
+}
+
+// MARK: - Other Logics
+extension GlobalDrinkViewModel {
+    // 기타 비즈니스 로직은 여기에
 }
