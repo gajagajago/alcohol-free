@@ -15,6 +15,7 @@ struct WavePaceView: View {
             VStack {
                 
                 Spacer()
+                Spacer()
                 
                 Group {
                     HStack(alignment: .firstTextBaseline) {
@@ -67,13 +68,13 @@ struct WavePaceView: View {
                 .padding(.horizontal, 10)
                 .padding(.bottom, 5)
             }
-            .ignoresSafeArea(.container, edges: .bottom)
+            .ignoresSafeArea(.container, edges: .all)
         }
     }
 }
 
 struct WavePaceView_Previews: PreviewProvider {
     static var previews: some View {
-        WavePaceView()
+        WavePaceView().environmentObject(GlobalDrinkViewModel())
     }
 }

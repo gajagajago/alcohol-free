@@ -15,6 +15,7 @@ struct DetailContainerView: View {
             WavePaceView()
             EndView()
         }
+        .ignoresSafeArea(.container, edges: .all)
         .onAppear {
             globalViewModel.startDrinkClassification()
         }
@@ -26,6 +27,6 @@ struct DetailContainerView: View {
 
 struct DetailContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailContainerView()
+        DetailContainerView().environmentObject(GlobalDrinkViewModel())
     }
 }
