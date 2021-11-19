@@ -18,7 +18,9 @@ class ResultsObserver: NSObject, SNResultsObserving {
         guard let classification = result.classifications.first else { return }
         
         if classification.identifier == "glass_clink" {
-            delegate.drinkSoundDetected(confidence: classification.confidence)
+            DispatchQueue.main.async {
+                delegate.drinkSoundDetected(confidence: classification.confidence)
+            }
         }
         
     }

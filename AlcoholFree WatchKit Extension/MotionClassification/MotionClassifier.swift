@@ -57,8 +57,10 @@ class MotionClassifier {
                     if now - lastDetected > 10 {
                         // 마지막 짠으로부터 10초 이상 지나야 감지된 것으로 한다.
                         print("Drink Motion 이벤트 발생")
-                        delegator?.drinkMotionDetected()
-                        lastDetected = NSDate().timeIntervalSince1970
+                        DispatchQueue.main.async {
+                            self.delegator?.drinkMotionDetected()
+                            self.lastDetected = NSDate().timeIntervalSince1970
+                        }
                     }
                 }
                 

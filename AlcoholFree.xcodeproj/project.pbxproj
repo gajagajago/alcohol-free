@@ -36,7 +36,6 @@
 		BEEE16432746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */; };
 		BEEE16452746AFDF00D6F60A /* NanumFontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */; };
 		BEEE16472746B9C100D6F60A /* SetTargetAmoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16462746B9C100D6F60A /* SetTargetAmoutView.swift */; };
-		BEEE164A2746BDF600D6F60A /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16492746BDF600D6F60A /* Double+Extensions.swift */; };
 		BEEE164E2747317E00D6F60A /* WavePaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE164D2747317E00D6F60A /* WavePaceView.swift */; };
 		BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */; };
 		BEEE165827474E6500D6F60A /* WaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165727474E6500D6F60A /* WaveBackground.swift */; };
@@ -151,7 +150,6 @@
 		BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3NanumSquareRoundOTFEB.otf; sourceTree = "<group>"; };
 		BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumFontNames.swift; sourceTree = "<group>"; };
 		BEEE16462746B9C100D6F60A /* SetTargetAmoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTargetAmoutView.swift; sourceTree = "<group>"; };
-		BEEE16492746BDF600D6F60A /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		BEEE164D2747317E00D6F60A /* WavePaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavePaceView.swift; sourceTree = "<group>"; };
 		BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BEEE165727474E6500D6F60A /* WaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground.swift; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 		BEEE16482746BDE600D6F60A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BEEE16492746BDF600D6F60A /* Double+Extensions.swift */,
 				BEEE165D2747BB0700D6F60A /* Color+Extension.swift */,
 			);
 			path = Extensions;
@@ -745,7 +742,6 @@
 				BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				BEEE165A2747976100D6F60A /* Wave.swift in Sources */,
-				BEEE164A2746BDF600D6F60A /* Double+Extensions.swift in Sources */,
 				BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */,
 				BE1FF3B82737934700E32C80 /* ModelData.swift in Sources */,
 				42EC4C492705F0130052B1CF /* NotificationController.swift in Sources */,
