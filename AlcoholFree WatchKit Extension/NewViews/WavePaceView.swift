@@ -36,7 +36,7 @@ struct WavePaceView: View {
                             .font(Font.custom(NanumFontNames.bold.rawValue, size: 13))
                             .opacity(0.8)
                         
-                        Text("4.8g")
+                        Text(globalViewModel.alcoholConsumptionAsString)
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 14))
                     }
                     .padding(.bottom, 1)
@@ -58,10 +58,10 @@ struct WavePaceView: View {
                 // 아래 버튼은 디버깅 & 데모용입니다.
                 HStack {
                     DrinkButton(text: "모션", iconName: "hand.draw") {
-                        // action
+                        globalViewModel.drinkMotionDetected()
                     }
                     DrinkButton(text: "소리", iconName: "waveform.and.mic") {
-                        // action
+                        globalViewModel.drinkSoundDetected(confidence: 100)
                     }
                 }
                 .padding(.horizontal, 10)
@@ -74,8 +74,6 @@ struct WavePaceView: View {
 
 struct WavePaceView_Previews: PreviewProvider {
     static var previews: some View {
-        StatefulPreviewWrapper(300.0) {
-            WavePaceView()
-        }
+        WavePaceView()
     }
 }

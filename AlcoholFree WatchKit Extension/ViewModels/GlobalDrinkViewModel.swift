@@ -9,9 +9,10 @@ import Foundation
 
 class GlobalDrinkViewModel: ObservableObject {
     // 전역 상태 관리 변수
+    var motionClassifier = MotionClassifier()
     
     @Published var selectedDrinkType = drinks[0]
-    @Published var targetNumberOfGlasses: Double = 10.0
+    @Published var targetNumberOfGlasses: Double = 20.0
     @Published var currentNumberOfGlasses: Double = 0.0
     
     var targetMilliliters: Double {
@@ -29,7 +30,7 @@ class GlobalDrinkViewModel: ObservableObject {
     }
     
     var currentNumberOfGlassesAsString: String {
-        return "\(Int(currentNumberOfGlasses).description)잔"
+        return "\(String(format: "%.1f", currentNumberOfGlasses))잔"
     }
     
     var targetNumberOfBottlesAsString: String {
@@ -44,5 +45,44 @@ class GlobalDrinkViewModel: ObservableObject {
     var wavePercentage: Double {
         // 물결의 높이를 결정
         return currentNumberOfGlasses / targetNumberOfGlasses
+    }
+    
+    var alcoholConsumption: Double {
+        // TODO
+        // 알코올 섭취량(g)
+        return 4.8
+    }
+    
+    var alcoholConsumptionAsString: String {
+        return "\(String(format: "%.1f", alcoholConsumption))g"
+    }
+}
+
+extension GlobalDrinkViewModel: MotionClassifierDelegate, ResultsDelegate {
+    func startDrinkClassification() {
+        motionClassifier.delegator = self
+        HealthKitSessionManager.shared.startBackgroundSession()
+        motionClassifier.startMotionUpdates()
+        DispatchQueue.global(qos: .background).async {
+            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegator: self))
+        }
+    }
+    
+    func stopDrinkClassification() {
+        motionClassifier.stopMotionUpdates()
+        SoundClassifier.shared.stop()
+        HealthKitSessionManager.shared.endBackgroundSession()
+    }
+    
+    func drinkMotionDetected() {
+        // TODO
+        currentNumberOfGlasses += 0.5
+        print("[GlobalDrinkViewModel] Drink Motion Detected")
+    }
+    
+    func drinkSoundDetected(confidence: Double) {
+        // TODO
+        currentNumberOfGlasses += 0.5
+        print("[GlobalDrinkViewModel] Drink Sound Detected")
     }
 }

@@ -2,16 +2,14 @@
 //  EndView.swift
 //  AlcoholFree WatchKit Extension
 //
-//  Created by 유준열 on 2021/10/14.
+//  Created by 박신홍 on 2021/11/19.
 //
 
 import SwiftUI
 
 struct EndView: View {
-    @Binding var timerConnected: Bool
-    
     var body: some View {
-        NavigationLink(destination: SummaryView().navigationBarBackButtonHidden(true)){
+        NavigationLink(destination: EndView()){
             ZStack {
                 Circle()
                     .frame(width: 100.0, height: 100.0)
@@ -22,15 +20,11 @@ struct EndView: View {
         }
         .buttonStyle(PlainButtonStyle())
         .frame(width: 150.0)
-        .navigationBarBackButtonHidden(true)
-        .simultaneousGesture(TapGesture().onEnded {
-            timerConnected = false
-        })
     }
 }
 
 struct EndView_Previews: PreviewProvider {
     static var previews: some View {
-        EndView(timerConnected: .constant(false))
+        EndView()
     }
 }

@@ -3,10 +3,10 @@ import SoundAnalysis
 
 /// An observer that receives results from a classify sound request.
 class ResultsObserver: NSObject, SNResultsObserving {
-    let delegator: ResultsDelegator
+    let delegate: ResultsDelegate
     
-    init(delegator: ResultsDelegator) {
-        self.delegator = delegator
+    init(delegator: ResultsDelegate) {
+        self.delegate = delegator
     }
     
     /// Notifies the observer when a request generates a prediction.
@@ -16,22 +16,11 @@ class ResultsObserver: NSObject, SNResultsObserving {
 
         // Get the prediction with the highest confidence.
         guard let classification = result.classifications.first else { return }
-
-        // Get the starting time.
-        let timeInSeconds = result.timeRange.start.seconds
-
-        // Convert the time to a human-readable string.
-        let formattedTime = String(format: "%.2f", timeInSeconds)
-//        print("Analysis result for audio at time: \(formattedTime)")
-
-        // Convert the confidence to a percentage string.
-        let percent = classification.confidence * 100.0
-        let percentString = String(format: "%.2f%%", percent)
-
-        // Print the classification's name (label) with its confidence.
-//        print("\(classification.identifier): \(percentString) confidence.\n")
         
-        delegator.delegate(identifier: classification.identifier, confidence: classification.confidence)
+        if classification.identifier == "glass_clink" {
+            delegate.drinkSoundDetected(confidence: classification.confidence)
+        }
+        
     }
 
 
@@ -46,6 +35,6 @@ class ResultsObserver: NSObject, SNResultsObserving {
     }
 }
 
-protocol ResultsDelegator {
-    func delegate(identifier: String, confidence: Double)
+protocol ResultsDelegate {
+    func drinkSoundDetected(confidence: Double)
 }
