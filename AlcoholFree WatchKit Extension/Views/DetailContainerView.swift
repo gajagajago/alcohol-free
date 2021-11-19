@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct DetailContainerView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     
@@ -15,13 +16,13 @@ struct DetailContainerView: View {
             WavePaceView()
             EndView()
         }
-        .ignoresSafeArea(.container, edges: .all)
         .onAppear {
             globalViewModel.startDrinkClassification()
         }
         .onDisappear {
             globalViewModel.stopDrinkClassification()
         }
+        
     }
 }
 

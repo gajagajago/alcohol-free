@@ -32,5 +32,6 @@ struct DrinkButton_Previews: PreviewProvider {
             DrinkButton(text: "소리", iconName: "waveform.and.mic") { }
         }
         .padding(.horizontal, 10)
+        .background(Color.blue)
     }
 }

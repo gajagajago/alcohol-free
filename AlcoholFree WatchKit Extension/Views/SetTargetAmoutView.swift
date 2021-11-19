@@ -37,7 +37,7 @@ struct SetTargetAmoutView: View {
             
             Spacer()
             
-            NavigationLink(destination: DetailContainerView()) {
+            NavigationLink(destination: DetailContainerView().navigationBarHidden(true)) {
                 Text("시작")
                     .font(NanumFont.buttonLabel)
             }

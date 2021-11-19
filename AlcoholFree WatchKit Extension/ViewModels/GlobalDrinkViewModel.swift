@@ -76,7 +76,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, ResultsDelegate {
     
     func drinkMotionDetected() {
         // TODO
-        currentNumberOfGlasses += 0.5
+        currentNumberOfGlasses += 20
         print("[GlobalDrinkViewModel] Drink Motion Detected")
     }
     
