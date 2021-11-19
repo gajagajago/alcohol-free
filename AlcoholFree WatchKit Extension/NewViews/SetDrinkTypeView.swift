@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SetDrinkTypeView: View {
-    @State var selectedDrinkType = drinks[2]
+    @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     var body: some View {
         VStack {
             Text("오늘은 어떤 술로 달리시나요?")
@@ -18,7 +18,7 @@ struct SetDrinkTypeView: View {
             
             Spacer()
             
-            Picker(selection: $selectedDrinkType, label: Text("Select drink")){
+            Picker(selection: $globalViewModel.selectedDrinkType, label: Text("Select drink")){
                 ForEach(drinks, id: \.self) { drink in
                     Text(drink.name)
                         .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 17))
@@ -30,7 +30,7 @@ struct SetDrinkTypeView: View {
             
             Spacer()
             
-            NavigationLink(destination: SetTargetAmoutView(selectedDrinkType: selectedDrinkType, targetNumberOfGlasses: 1)) {
+            NavigationLink(destination: SetTargetAmoutView()) {
                 Text("다음")
                     .font(NanumFont.buttonLabel)
             }

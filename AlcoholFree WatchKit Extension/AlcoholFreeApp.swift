@@ -13,7 +13,7 @@ struct AlcoholFreeApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView().environmentObject(GlobalDrinkViewModel())
             }.onAppear {
                 LocalNotificationManager().initNotification()
             }

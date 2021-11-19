@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedPace = 1
     
     var body: some View {
         NavigationView {

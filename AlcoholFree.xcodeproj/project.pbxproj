@@ -49,7 +49,7 @@
 		BEEE165A2747976100D6F60A /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16592747976100D6F60A /* Wave.swift */; };
 		BEEE165C27479ECE00D6F60A /* DrinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165B27479ECE00D6F60A /* DrinkButton.swift */; };
 		BEEE165E2747BB0700D6F60A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165D2747BB0700D6F60A /* Color+Extension.swift */; };
-		BEEE16612747C49D00D6F60A /* PaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16602747C49D00D6F60A /* PaceViewModel.swift */; };
+		BEEE16612747C49D00D6F60A /* GlobalDrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16602747C49D00D6F60A /* GlobalDrinkViewModel.swift */; };
 		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
@@ -168,7 +168,7 @@
 		BEEE16592747976100D6F60A /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
 		BEEE165B27479ECE00D6F60A /* DrinkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkButton.swift; sourceTree = "<group>"; };
 		BEEE165D2747BB0700D6F60A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		BEEE16602747C49D00D6F60A /* PaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceViewModel.swift; sourceTree = "<group>"; };
+		BEEE16602747C49D00D6F60A /* GlobalDrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDrinkViewModel.swift; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 		BEEE165F2747C46200D6F60A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				BEEE16602747C49D00D6F60A /* PaceViewModel.swift */,
+				BEEE16602747C49D00D6F60A /* GlobalDrinkViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -769,7 +769,7 @@
 				BE1FF3BA2737934700E32C80 /* SummaryView.swift in Sources */,
 				CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */,
 				CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */,
-				BEEE16612747C49D00D6F60A /* PaceViewModel.swift in Sources */,
+				BEEE16612747C49D00D6F60A /* GlobalDrinkViewModel.swift in Sources */,
 				42EC4C4D2705F0130052B1CF /* ComplicationController.swift in Sources */,
 				BEEE163A2746A27100D6F60A /* SetDrinkTypeView.swift in Sources */,
 				BE1FF3B72737934700E32C80 /* Drink.swift in Sources */,

@@ -8,30 +8,24 @@
 import SwiftUI
 
 struct WavePaceView: View {
-    let targetNumberOfGlasses: Double
-    let selectedDrinkType: Drink
-    @Binding var currentDrinkAmount: Double
-    
-    var fillRatio: Double {
-        return currentDrinkAmount / targetNumberOfGlasses.convertToMilliliters(drink: selectedDrinkType)
-    }
+    @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     
     var body: some View {
-        WaveBackground(percent: fillRatio) {
+        WaveBackground(percent: globalViewModel.wavePercentage) {
             VStack {
                 
                 Spacer()
                 
                 Group {
                     HStack(alignment: .firstTextBaseline) {
-                        Text("9잔")
+                        Text(globalViewModel.currentNumberOfGlassesAsString)
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 30))
                         
                         Text("/")
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 20))
                             .opacity(0.8)
                         
-                        Text("24잔")
+                        Text(globalViewModel.targetNumberOfGlassesAsString)
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 15))
                             .opacity(0.8)
                     }
@@ -59,7 +53,6 @@ struct WavePaceView: View {
                 }
                 .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 0)
                 
-                
                 Spacer()
                 
                 // 아래 버튼은 디버깅 & 데모용입니다.
@@ -82,8 +75,7 @@ struct WavePaceView: View {
 struct WavePaceView_Previews: PreviewProvider {
     static var previews: some View {
         StatefulPreviewWrapper(300.0) {
-            WavePaceView(targetNumberOfGlasses: 10, selectedDrinkType: drinks[2], currentDrinkAmount: $0)
-            
+            WavePaceView()
         }
     }
 }
