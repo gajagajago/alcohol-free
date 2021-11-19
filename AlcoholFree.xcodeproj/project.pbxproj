@@ -35,7 +35,7 @@
 		BEEE16422746AE8900D6F60A /* 2NanumSquareRoundOTFB.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163E2746AE8800D6F60A /* 2NanumSquareRoundOTFB.otf */; };
 		BEEE16432746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */; };
 		BEEE16452746AFDF00D6F60A /* NanumFontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */; };
-		BEEE16472746B9C100D6F60A /* SetTargetAmoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16462746B9C100D6F60A /* SetTargetAmoutView.swift */; };
+		BEEE16472746B9C100D6F60A /* SetTargetAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */; };
 		BEEE164E2747317E00D6F60A /* WavePaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE164D2747317E00D6F60A /* WavePaceView.swift */; };
 		BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */; };
 		BEEE165827474E6500D6F60A /* WaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165727474E6500D6F60A /* WaveBackground.swift */; };
@@ -149,7 +149,7 @@
 		BEEE163E2746AE8800D6F60A /* 2NanumSquareRoundOTFB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2NanumSquareRoundOTFB.otf; sourceTree = "<group>"; };
 		BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3NanumSquareRoundOTFEB.otf; sourceTree = "<group>"; };
 		BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumFontNames.swift; sourceTree = "<group>"; };
-		BEEE16462746B9C100D6F60A /* SetTargetAmoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTargetAmoutView.swift; sourceTree = "<group>"; };
+		BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTargetAmountView.swift; sourceTree = "<group>"; };
 		BEEE164D2747317E00D6F60A /* WavePaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavePaceView.swift; sourceTree = "<group>"; };
 		BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BEEE165727474E6500D6F60A /* WaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEE16392746A27100D6F60A /* SetDrinkTypeView.swift */,
-				BEEE16462746B9C100D6F60A /* SetTargetAmoutView.swift */,
+				BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */,
 				BEEE164D2747317E00D6F60A /* WavePaceView.swift */,
 				BEEE16622747D60100D6F60A /* DetailContainerView.swift */,
 				BEEE16642747D6CE00D6F60A /* EndView.swift */,
@@ -736,7 +736,7 @@
 			files = (
 				BEEE1637274563D700D6F60A /* MotionClassifierModelR.mlmodel in Sources */,
 				BEEE165C27479ECE00D6F60A /* DrinkButton.swift in Sources */,
-				BEEE16472746B9C100D6F60A /* SetTargetAmoutView.swift in Sources */,
+				BEEE16472746B9C100D6F60A /* SetTargetAmountView.swift in Sources */,
 				BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */,
 				BEEE16652747D6CE00D6F60A /* EndView.swift in Sources */,
 				BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetTargetAmoutView: View {
+struct SetTargetAmountView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     
     var body: some View {
@@ -51,6 +51,6 @@ struct SetTargetAmoutView: View {
 
 struct SetTargetAmoutView_Previews: PreviewProvider {
     static var previews: some View {
-        SetTargetAmoutView()
+        SetTargetAmountView()
     }
 }
