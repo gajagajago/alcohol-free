@@ -30,7 +30,7 @@ struct SetDrinkTypeView: View {
             
             Spacer()
             
-            NavigationLink(destination: SetTargetAmoutView(selectedDrinkType: selectedDrinkType, numberOfGlasses: 1)) {
+            NavigationLink(destination: SetTargetAmoutView(selectedDrinkType: selectedDrinkType, targetNumberOfGlasses: 1)) {
                 Text("다음")
                     .font(NanumFont.buttonLabel)
             }

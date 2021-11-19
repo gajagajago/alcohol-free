@@ -9,11 +9,15 @@ import Foundation
 
 
 extension Double {
-    func asNumberOfGlasses() -> String {
+    func toStringInGlasses() -> String {
         return "\(Int(self).description)잔"
     }
     
-    func asNumberOfBottle(drink: Drink) -> String {
-        return "\(drink.category) \(String(format: "%.2f", self * Double(drink.volumePerGlass) / drink.volumeMl))병"
+    func toStringInBottle(drink: Drink) -> String {
+        return "\(drink.category) \(String(format: "%.2f", self.convertToMilliliters(drink: drink) / drink.volumeMl))병"
+    }
+    
+    func convertToMilliliters(drink: Drink) -> Double {
+        return self * Double(drink.volumePerGlass)
     }
 }
