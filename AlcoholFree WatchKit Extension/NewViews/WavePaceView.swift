@@ -62,55 +62,17 @@ struct WavePaceView: View {
                 
                 Spacer()
                 
+                // 아래 버튼은 디버깅 & 데모용입니다.
                 HStack {
-                    Button(action: {
-                        withAnimation {
-                            // action
-                        }
-                    }) {
-                        HStack(spacing: 5) {
-                            Image(systemName: "hand.draw")
-                                .resizable()
-                                .symbolRenderingMode(.hierarchical)
-                                .frame(width: 20, height: 20)
-                            Text("모션")
-                                .font(NanumFont.buttonLabel)
-                                .lineLimit(1)
-                        }
+                    DrinkButton(text: "모션", iconName: "hand.draw") {
+                        // action
                     }
-                    .frame(height: 50)
-                    .foregroundColor(Color.white)
-                    .buttonStyle(BorderedButtonStyle(tint: Color.black))
-                    
-                    Button(action: {
-                        withAnimation {
-                            // action
-                        }
-                    }) {
-                        HStack(spacing: 5) {
-                            Image(systemName: "waveform.and.mic")
-                                .resizable()
-                                .symbolRenderingMode(.hierarchical)
-                                .frame(width: 20, height: 20)
-                            Text("소리")
-                                .font(NanumFont.buttonLabel)
-                                .lineLimit(1)
-                        }
+                    DrinkButton(text: "소리", iconName: "waveform.and.mic") {
+                        // action
                     }
-                    .frame(height: 50)
-                    .foregroundColor(Color.white)
-                    .buttonStyle(BorderedButtonStyle(tint: Color.black))
                 }
                 .padding(.horizontal, 10)
-                .padding(.bottom, 10)
-                
-                
-                //                targetLabel()
-                //                if viewModel.isGoalReached {
-                //                    resetButton()
-                //                } else {
-                //                    DrinkButton(text: viewModel.drinkText, action: viewModel.didTapDrink)
-                //                }
+                .padding(.bottom, 5)
             }
             .ignoresSafeArea(.container, edges: .bottom)
         }
