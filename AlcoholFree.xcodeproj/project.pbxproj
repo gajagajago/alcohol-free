@@ -257,7 +257,7 @@
 				42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				BE1FF3AA2737934700E32C80 /* Resources */,
-				BE1FF3AF2737934700E32C80 /* Views */,
+				BE1FF3AF2737934700E32C80 /* DeprecatedViews */,
 				42EC4C482705F0130052B1CF /* NotificationController.swift */,
 				42EC4C4A2705F0130052B1CF /* NotificationView.swift */,
 				42EC4C4C2705F0130052B1CF /* ComplicationController.swift */,
@@ -323,11 +323,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BE1FF3AF2737934700E32C80 /* Views */ = {
+		BE1FF3AF2737934700E32C80 /* DeprecatedViews */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = DeprecatedViews;
 			sourceTree = "<group>";
 		};
 		BE1FF3BF273793B200E32C80 /* HealthKit */ = {
