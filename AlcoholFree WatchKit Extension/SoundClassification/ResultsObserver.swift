@@ -6,7 +6,7 @@ class ResultsObserver: NSObject, SNResultsObserving {
     let delegate: SoundClassifierDelegate
     
     init(delegate: SoundClassifierDelegate) {
-        self.delegate = delegator
+        self.delegate = delegate
     }
     
     /// Notifies the observer when a request generates a prediction.
