@@ -13,7 +13,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var motionClassifier = MotionClassifier()
     
     @Published var selectedDrinkType = drinks[0]
-    @Published var targetNumberOfGlasses: Double = 20.0
+    @Published var targetNumberOfGlasses: Double = 1.0
     @Published var currentNumberOfGlasses: Double = 0.0
     
     var targetMilliliters: Double {
@@ -83,14 +83,14 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     
     func drinkMotionDetected() {
         // TODO
-        currentNumberOfGlasses += 1
-        print("[GlobalDrinkViewModel] Drink Motion Detected")
+        currentNumberOfGlasses += 1  // you can delete this line
+        print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
     }
     
     func drinkSoundDetected(confidence: Double) {
         // TODO
-        currentNumberOfGlasses += 1
-        print("[GlobalDrinkViewModel] Drink Sound Detected")
+        currentNumberOfGlasses += 1  // you can delete this line
+        print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
     }
 }
 

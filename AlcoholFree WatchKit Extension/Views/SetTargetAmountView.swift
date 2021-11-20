@@ -12,7 +12,7 @@ struct SetTargetAmountView: View {
     
     var body: some View {
         VStack {
-            Text("오늘의 목표는 몇 잔인가요?")
+            Text("오늘의 목표는\n몇 잔인가요?")
                 .multilineTextAlignment(.center)
                 .font(NanumFont.title)
                 .lineSpacing(2)
@@ -51,6 +51,6 @@ struct SetTargetAmountView: View {
 
 struct SetTargetAmoutView_Previews: PreviewProvider {
     static var previews: some View {
-        SetTargetAmountView()
+        SetTargetAmountView().environmentObject(GlobalDrinkViewModel())
     }
 }
