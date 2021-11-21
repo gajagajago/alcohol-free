@@ -12,22 +12,17 @@ struct DetailContainerView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     
     var body: some View {
-        TabView {
-            WavePaceView()
-            EndView()
+        WaveBackground(percent: globalViewModel.wavePercentage) {
+            ScrollView {
+                PaceView().frame(height: 170)
+                EndButtonView()
+            }
         }
-        .onAppear {
-            globalViewModel.startDrinkClassification()
-        }
-        .onDisappear {
-            globalViewModel.stopDrinkClassification()
-        }
-        
     }
 }
 
 struct DetailContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailContainerView().environmentObject(GlobalDrinkViewModel())
+        DetailContainerView().environmentObject(GlobalDrinkViewModel(targetNumberOfGlasses: 20))
     }
 }

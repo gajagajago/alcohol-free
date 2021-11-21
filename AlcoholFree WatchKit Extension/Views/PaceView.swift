@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-struct WavePaceView: View {
+struct PaceView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
     
     var body: some View {
-        WaveBackground(percent: globalViewModel.wavePercentage) {
             VStack {
                 
                 Spacer()
@@ -69,12 +68,11 @@ struct WavePaceView: View {
                 .padding(.bottom, 5)
             }
             .ignoresSafeArea(.container, edges: .all)
-        }
     }
 }
 
 struct WavePaceView_Previews: PreviewProvider {
     static var previews: some View {
-        WavePaceView().environmentObject(GlobalDrinkViewModel())
+        PaceView().environmentObject(GlobalDrinkViewModel())
     }
 }

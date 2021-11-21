@@ -13,8 +13,13 @@ class GlobalDrinkViewModel: ObservableObject {
     var motionClassifier = MotionClassifier()
     
     @Published var selectedDrinkType = drinks[0]
-    @Published var targetNumberOfGlasses: Double = 1.0
+    @Published var targetNumberOfGlasses: Double
     @Published var currentNumberOfGlasses: Double = 0.0
+    @Published var showChildNavigationViews: Bool = false  // true이면 root view로 pop된다.
+    
+    init(targetNumberOfGlasses: Double = 10) {
+        self.targetNumberOfGlasses = targetNumberOfGlasses
+    }
     
     var targetMilliliters: Double {
         // 목표 잔 -> 목표 m
@@ -70,13 +75,11 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         motionClassifier.delegator = self
         HealthKitSessionManager.shared.startBackgroundSession()
         motionClassifier.startMotionUpdates()
-        DispatchQueue.global(qos: .background).async {
-            SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
-        }
+        SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
     }
     
     func stopDrinkClassification() {
-        motionClassifier.stopMotionUpdates()
+        self.motionClassifier.stopMotionUpdates()
         SoundClassifier.shared.stop()
         HealthKitSessionManager.shared.endBackgroundSession()
     }
@@ -97,4 +100,10 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
 // MARK: - Other Logics
 extension GlobalDrinkViewModel {
     // 기타 비즈니스 로직은 여기에
+    
+    func resetToInitialState() {
+        selectedDrinkType = drinks[0]
+        targetNumberOfGlasses = 10
+        currentNumberOfGlasses = 0
+    }
 }

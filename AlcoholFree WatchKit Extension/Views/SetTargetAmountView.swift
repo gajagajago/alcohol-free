@@ -42,6 +42,9 @@ struct SetTargetAmountView: View {
                     .font(NanumFont.buttonLabel)
             }
             .padding(.horizontal, 20)
+            .simultaneousGesture(TapGesture().onEnded{
+                globalViewModel.startDrinkClassification()
+            })
         }
         .ignoresSafeArea(.container, edges: .bottom)
         .focusable()

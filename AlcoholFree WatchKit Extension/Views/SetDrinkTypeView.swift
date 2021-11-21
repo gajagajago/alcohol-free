@@ -30,7 +30,7 @@ struct SetDrinkTypeView: View {
             
             Spacer()
             
-            NavigationLink(destination: SetTargetAmountView()) {
+            NavigationLink(destination: SetTargetAmountView(), isActive: $globalViewModel.showChildNavigationViews) {
                 Text("다음")
                     .font(NanumFont.buttonLabel)
             }

@@ -21,6 +21,7 @@ struct DrinkButton: View {
         .frame(height: 50)
         .foregroundColor(Color.white)
         .buttonStyle(BorderedButtonStyle(tint: Color.black))
+        .buttonBorderShape(ButtonBorderShape.capsule)
         
     }
 }

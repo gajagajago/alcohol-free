@@ -36,7 +36,7 @@
 		BEEE16432746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */; };
 		BEEE16452746AFDF00D6F60A /* NanumFontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */; };
 		BEEE16472746B9C100D6F60A /* SetTargetAmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */; };
-		BEEE164E2747317E00D6F60A /* WavePaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE164D2747317E00D6F60A /* WavePaceView.swift */; };
+		BEEE164E2747317E00D6F60A /* PaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE164D2747317E00D6F60A /* PaceView.swift */; };
 		BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */; };
 		BEEE165827474E6500D6F60A /* WaveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165727474E6500D6F60A /* WaveBackground.swift */; };
 		BEEE165A2747976100D6F60A /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16592747976100D6F60A /* Wave.swift */; };
@@ -44,7 +44,7 @@
 		BEEE165E2747BB0700D6F60A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE165D2747BB0700D6F60A /* Color+Extension.swift */; };
 		BEEE16612747C49D00D6F60A /* GlobalDrinkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16602747C49D00D6F60A /* GlobalDrinkViewModel.swift */; };
 		BEEE16632747D60100D6F60A /* DetailContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16622747D60100D6F60A /* DetailContainerView.swift */; };
-		BEEE16652747D6CE00D6F60A /* EndView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16642747D6CE00D6F60A /* EndView.swift */; };
+		BEEE16652747D6CE00D6F60A /* EndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16642747D6CE00D6F60A /* EndButtonView.swift */; };
 		CE363913271BA46D001B9B0D /* SoundClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE363912271BA46D001B9B0D /* SoundClassifier.swift */; };
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
@@ -150,7 +150,7 @@
 		BEEE163F2746AE8900D6F60A /* 3NanumSquareRoundOTFEB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3NanumSquareRoundOTFEB.otf; sourceTree = "<group>"; };
 		BEEE16442746AFDF00D6F60A /* NanumFontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanumFontNames.swift; sourceTree = "<group>"; };
 		BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTargetAmountView.swift; sourceTree = "<group>"; };
-		BEEE164D2747317E00D6F60A /* WavePaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WavePaceView.swift; sourceTree = "<group>"; };
+		BEEE164D2747317E00D6F60A /* PaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceView.swift; sourceTree = "<group>"; };
 		BEEE1655274735FC00D6F60A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		BEEE165727474E6500D6F60A /* WaveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBackground.swift; sourceTree = "<group>"; };
 		BEEE16592747976100D6F60A /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 		BEEE165D2747BB0700D6F60A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		BEEE16602747C49D00D6F60A /* GlobalDrinkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDrinkViewModel.swift; sourceTree = "<group>"; };
 		BEEE16622747D60100D6F60A /* DetailContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContainerView.swift; sourceTree = "<group>"; };
-		BEEE16642747D6CE00D6F60A /* EndView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndView.swift; sourceTree = "<group>"; };
+		BEEE16642747D6CE00D6F60A /* EndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndButtonView.swift; sourceTree = "<group>"; };
 		CE363912271BA46D001B9B0D /* SoundClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundClassifier.swift; sourceTree = "<group>"; };
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
@@ -367,10 +367,10 @@
 			children = (
 				BEEE16392746A27100D6F60A /* SetDrinkTypeView.swift */,
 				BEEE16462746B9C100D6F60A /* SetTargetAmountView.swift */,
-				BEEE164D2747317E00D6F60A /* WavePaceView.swift */,
+				BEEE164D2747317E00D6F60A /* PaceView.swift */,
 				BEEE16622747D60100D6F60A /* DetailContainerView.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
-				BEEE16642747D6CE00D6F60A /* EndView.swift */,
+				BEEE16642747D6CE00D6F60A /* EndButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -754,7 +754,7 @@
 				BEEE165C27479ECE00D6F60A /* DrinkButton.swift in Sources */,
 				BEEE16472746B9C100D6F60A /* SetTargetAmountView.swift in Sources */,
 				BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */,
-				BEEE16652747D6CE00D6F60A /* EndView.swift in Sources */,
+				BEEE16652747D6CE00D6F60A /* EndButtonView.swift in Sources */,
 				BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				BEEE165A2747976100D6F60A /* Wave.swift in Sources */,
@@ -774,7 +774,7 @@
 				BEEE165E2747BB0700D6F60A /* Color+Extension.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */,
-				BEEE164E2747317E00D6F60A /* WavePaceView.swift in Sources */,
+				BEEE164E2747317E00D6F60A /* PaceView.swift in Sources */,
 				BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
 				BEEE16632747D60100D6F60A /* DetailContainerView.swift in Sources */,
@@ -982,7 +982,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
@@ -997,7 +997,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
