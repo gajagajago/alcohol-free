@@ -13,10 +13,15 @@ struct DetailContainerView: View {
     
     var body: some View {
         WaveBackground(percent: globalViewModel.wavePercentage) {
-            ScrollView {
-                PaceView().frame(height: 170)
-                EndButtonView()
-            }
+            GeometryReader { proxy in
+                ScrollView {
+                    VStack(spacing: 0) {
+                        PaceView().frame(height: proxy.size.height)
+                        EndButtonView()
+                    }
+                }
+            }.ignoresSafeArea()
+            
         }
     }
 }

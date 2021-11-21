@@ -20,6 +20,7 @@ struct EndButtonView: View {
             
         }
         .padding(.horizontal, 10)
+        .padding(.bottom, 5)
         .alert(
             "모니터링을 종료하시겠습니까?", isPresented: $isAlertPresented, presenting: false
         ) { detail in

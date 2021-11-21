@@ -71,7 +71,7 @@ struct PaceView: View {
     }
 }
 
-struct WavePaceView_Previews: PreviewProvider {
+struct PaceView_Previews: PreviewProvider {
     static var previews: some View {
         PaceView().environmentObject(GlobalDrinkViewModel())
     }
