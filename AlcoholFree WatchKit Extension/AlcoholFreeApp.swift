@@ -12,11 +12,11 @@ struct AlcoholFreeApp: App {
     @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-            }.onAppear {
-                LocalNotificationManager().initNotification()
-            }
+            ContentView()
+                .environmentObject(GlobalDrinkViewModel())
+                .onAppear {
+                    LocalNotificationManager().initNotification()
+                }
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "alcoholFree")

@@ -9,10 +9,22 @@ import Foundation
 import SwiftUI
 
 struct Drink: Hashable, Codable {
-    var id: Int
-    var name: String
-//    var aliases: Array<String>
-    var category: String
-    var alcoholPercent: Double
-    var volumeMl: Double
+    let id: Int
+    let name: String
+    let category: String
+    let alcoholPercent: Double
+    let volumeMl: Double
+    
+    var volumePerGlass: Int {
+        switch category {
+        case "소주":
+            return 50
+        case "소맥":
+            return 200
+        case "맥주":
+            return 200
+        default:
+            return 100
+        }
+    }
 }

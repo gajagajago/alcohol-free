@@ -13,7 +13,7 @@ var standardAlcConstant = 0.7964 // 표준 알코올 계수
 var gender = 0.7 // 임시 성별 계수
 var weight = 70.0 // 임시 몸무게 계수
 
-struct DetailView: View, ResultsDelegator, MotionClassifierDelegate {
+struct DetailView: View, ResultsDelegate, MotionClassifierDelegate {
     var selectedPace: Int
     var selectedDrink: Drink
     

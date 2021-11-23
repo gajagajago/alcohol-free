@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EndView: View {
+struct EndViewDeprecated: View {
     @Binding var timerConnected: Bool
     
     var body: some View {
@@ -29,8 +29,8 @@ struct EndView: View {
     }
 }
 
-struct EndView_Previews: PreviewProvider {
+struct EndViewDeprecated_Previews: PreviewProvider {
     static var previews: some View {
-        EndView(timerConnected: .constant(false))
+        EndViewDeprecated(timerConnected: .constant(false))
     }
 }

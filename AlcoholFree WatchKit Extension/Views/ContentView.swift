@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedPace = 1
     
     var body: some View {
         NavigationView {
-            SetPaceView()
+            SetDrinkTypeView()
         }
     }
 }
@@ -20,7 +19,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView().environmentObject(GlobalDrinkViewModel())
         }
     }
 }
