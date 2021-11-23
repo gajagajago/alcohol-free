@@ -8,6 +8,8 @@ struct Notification {
 }
 
 class LocalNotificationManager {
+    static let shared = LocalNotificationManager()
+    
     let center = UNUserNotificationCenter.current()
     let drinkNormalNotiIdentifier = "Normal"
     let drinkDetectNotiIdentifier = "DrinkDetect"

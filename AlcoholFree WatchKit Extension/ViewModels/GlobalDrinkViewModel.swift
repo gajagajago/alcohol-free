@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WatchKit
 
 // MARK: - Properties
 class GlobalDrinkViewModel: ObservableObject {
@@ -19,6 +20,8 @@ class GlobalDrinkViewModel: ObservableObject {
     
     init(targetNumberOfGlasses: Double = 10) {
         self.targetNumberOfGlasses = targetNumberOfGlasses
+        
+        DrinkDetectedDelegateManager.shared = self
     }
     
     var targetMilliliters: Double {
@@ -53,10 +56,16 @@ class GlobalDrinkViewModel: ObservableObject {
         return currentNumberOfGlasses / targetNumberOfGlasses
     }
     
+    var volumeOfGlass: Double {
+        if selectedDrinkType.category == "소주" {
+            return 50
+        } else {
+            return 200
+        }
+    }
+    
     var alcoholConsumption: Double {
-        // TODO
-        // 알코올 섭취량(g)
-        return 4.8
+        return currentNumberOfGlasses * volumeOfGlass * selectedDrinkType.alcoholPercent / 100
     }
     
     var alcoholConsumptionAsString: String {
@@ -70,7 +79,7 @@ class GlobalDrinkViewModel: ObservableObject {
 }
 
 // MARK: - Classifiers
-extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegate {
+extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegate, DrinkDetectedDelegate {
     func startDrinkClassification() {
         motionClassifier.delegator = self
         HealthKitSessionManager.shared.startBackgroundSession()
@@ -85,15 +94,35 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     }
     
     func drinkMotionDetected() {
-        // TODO
-        currentNumberOfGlasses += 1  // you can delete this line
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
+        LocalNotificationManager.shared.addDrinkDetectNoti()
     }
     
     func drinkSoundDetected(confidence: Double) {
-        // TODO
-        currentNumberOfGlasses += 1  // you can delete this line
         print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
+        LocalNotificationManager.shared.addDrinkDetectNoti()
+    }
+    
+    func drinkDetected(identifier: String) {
+        switch identifier {
+        case "full":
+            print("풀샷이 선택되었습니다.")
+            currentNumberOfGlasses += 1
+            break;
+        case "half":
+            print("반샷이 선택되었습니다.")
+            currentNumberOfGlasses += 0.5
+            break;
+        case "sip":
+            print("홀짝이 선택되었습니다.")
+            currentNumberOfGlasses += 0.2
+            break;
+        case "no":
+            print("안마심이 선택되었습니다.")
+            break;
+        default:
+            break;
+        }
     }
 }
 

@@ -15,7 +15,8 @@ struct AlcoholFreeApp: App {
             ContentView()
                 .environmentObject(GlobalDrinkViewModel())
                 .onAppear {
-                    LocalNotificationManager().initNotification()
+                    LocalNotificationManager.shared.initNotification()
+                    
                 }
         }
 
