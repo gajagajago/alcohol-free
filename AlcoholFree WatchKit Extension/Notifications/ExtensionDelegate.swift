@@ -2,6 +2,11 @@ import WatchKit
 import UserNotifications
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenterDelegate {
+    var delegate: DrinkDetectedDelegate?
+    
+    func registerDelgate(delegate: DrinkDetectedDelegate) {
+        self.delegate = delegate
+    }
     
     func applicationDidFinishLaunching() {
         setUNUserNotificationDelegate()
@@ -20,26 +25,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, UNUserNotificationCenter
     
     // Method triggered for async action notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
         if (response.notification.request.content.categoryIdentifier == "DrinkDetect") {
-            switch response.actionIdentifier {
-            case "full":
-                print("풀샷이 선택되었습니다.")
-                break;
-            case "half":
-                print("반샷이 선택되었습니다.")
-                break;
-            case "sip":
-                print("홀짝이 선택되었습니다.")
-                break;
-            case "no":
-                print("안마심이 선택되었습니다.")
-                break;
-            default:
-                break;
-            }
+            DrinkDetectedDelegateManager.shared?.drinkDetected(identifier: response.actionIdentifier)
         }
         
         completionHandler()
     }
+}
+
+class DrinkDetectedDelegateManager {
+    static var shared: DrinkDetectedDelegate?
+}
+
+protocol DrinkDetectedDelegate {
+    func drinkDetected(identifier: String)
 }
