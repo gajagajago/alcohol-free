@@ -18,6 +18,10 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var currentNumberOfGlasses: Double = 0.0
     @Published var showChildNavigationViews: Bool = false  // true이면 root view로 pop된다.
     
+    @Published var timerConnected: Bool = false // 첫 잔 인식 시 true되며, 절대 다시 false되지 않는다.
+    @Published var minutelyPaces: [Double] = [1.5, 2.4, 1.3, 1.0, 0.8, 1.4, 1.5]
+    @Published var timer: Timer?
+    
     init(targetNumberOfGlasses: Double = 10) {
         self.targetNumberOfGlasses = targetNumberOfGlasses
         
@@ -107,14 +111,17 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         switch identifier {
         case "full":
             print("풀샷이 선택되었습니다.")
+            if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 1
             break;
         case "half":
             print("반샷이 선택되었습니다.")
+            if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 0.5
             break;
         case "sip":
             print("홀짝이 선택되었습니다.")
+            if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 0.2
             break;
         case "no":
@@ -123,6 +130,16 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         default:
             break;
         }
+    }
+    
+    func initTimer() {
+        print("Timer를 생성합니다.")
+        timerConnected = true
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerCallback() {
+        print("timer!")
     }
 }
 
@@ -134,5 +151,6 @@ extension GlobalDrinkViewModel {
         selectedDrinkType = drinks[0]
         targetNumberOfGlasses = 10
         currentNumberOfGlasses = 0
+        timer?.invalidate()
     }
 }
