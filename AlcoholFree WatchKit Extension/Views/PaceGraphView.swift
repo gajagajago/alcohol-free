@@ -19,16 +19,13 @@ struct PaceGraphView: View {
         dropShadowColor: Color.black)
 
     var body: some View {
-        BarChartView(
-            data: ChartData(points: globalViewModel.minutelyPaces),
-            title: "페이스",
-            style: Styles.barChartMidnightGreenDark,
-            dropShadow: false)
+        MultiLineChartView(data: [(globalViewModel.minutelyPaces, GradientColors.purple)], title: "페이스")
+
     }
 }
 
 struct PaceGraphView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceGraphView().environmentObject(GlobalDrinkViewModel())
+        PaceGraphView()
     }
 }

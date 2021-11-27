@@ -18,8 +18,9 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var currentNumberOfGlasses: Double = 0.0
     @Published var showChildNavigationViews: Bool = false  // true이면 root view로 pop된다.
     
+    @Published var interValNumberOfGlasses: Double = 0.0 // timer interval의 glass = pace
     @Published var timerConnected: Bool = false // 첫 잔 인식 시 true되며, 절대 다시 false되지 않는다.
-    @Published var minutelyPaces: [Double] = [1.5, 2.4, 1.3, 1.0, 0.8, 1.4, 1.5]
+    @Published var minutelyPaces: [Double] = []
     @Published var timer: Timer?
     
     init(targetNumberOfGlasses: Double = 10) {
@@ -113,16 +114,19 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
             print("풀샷이 선택되었습니다.")
             if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 1
+            interValNumberOfGlasses += 1
             break;
         case "half":
             print("반샷이 선택되었습니다.")
             if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 0.5
+            interValNumberOfGlasses += 0.5
             break;
         case "sip":
             print("홀짝이 선택되었습니다.")
             if(!timerConnected) {initTimer()}
             currentNumberOfGlasses += 0.2
+            interValNumberOfGlasses += 0.2
             break;
         case "no":
             print("안마심이 선택되었습니다.")
@@ -135,11 +139,13 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     func initTimer() {
         print("Timer를 생성합니다.")
         timerConnected = true
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
     }
     
     @objc func timerCallback() {
-        print("timer!")
+        print("이번 분 당 페이스(\(interValNumberOfGlasses)를 추가합니다 ")
+        minutelyPaces.append(interValNumberOfGlasses)
+        interValNumberOfGlasses = 0.0
     }
 }
 
@@ -151,6 +157,9 @@ extension GlobalDrinkViewModel {
         selectedDrinkType = drinks[0]
         targetNumberOfGlasses = 10
         currentNumberOfGlasses = 0
+        interValNumberOfGlasses = 0
+        minutelyPaces = []
+        timerConnected = false
         timer?.invalidate()
     }
 }
