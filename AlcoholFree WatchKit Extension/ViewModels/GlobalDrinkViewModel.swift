@@ -21,6 +21,7 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var interValNumberOfGlasses: Double = 0.0 // timer interval의 glass = pace
     @Published var timerConnected: Bool = false // 첫 잔 인식 시 true되며, 절대 다시 false되지 않는다.
     @Published var minutelyPaces: [Double] = []
+    @Published var lastDrinkMinutesPassed: Int = 0
     @Published var timer: Timer?
     
     init(targetNumberOfGlasses: Double = 10) {
@@ -143,8 +144,12 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     }
     
     @objc func timerCallback() {
-        print("이번 분 당 페이스(\(interValNumberOfGlasses)를 추가합니다 ")
+        print("이번 분 당 페이스(\(interValNumberOfGlasses))를 추가합니다 ")
         minutelyPaces.append(interValNumberOfGlasses)
+        
+        if(interValNumberOfGlasses == 0) { lastDrinkMinutesPassed += 1}
+        else {lastDrinkMinutesPassed = 0}
+            
         interValNumberOfGlasses = 0.0
     }
 }
@@ -158,6 +163,7 @@ extension GlobalDrinkViewModel {
         targetNumberOfGlasses = 10
         currentNumberOfGlasses = 0
         interValNumberOfGlasses = 0
+        lastDrinkMinutesPassed = 0
         minutelyPaces = []
         timerConnected = false
         timer?.invalidate()
