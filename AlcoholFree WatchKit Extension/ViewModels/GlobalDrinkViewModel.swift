@@ -106,8 +106,9 @@ class GlobalDrinkViewModel: ObservableObject {
         let minute = 1
         let avg = averageDrinkAmount(per: minute)
         let color: Color = avg > 2 ? .red : (avg >= 1 ? .orange : .green)
-        if avg > currentNumberOfGlasses {
-            return DataPoint(value: datapoints.max()?.endValue ?? 0, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
+        let maxValue = datapoints.max()?.endValue ?? 0
+        if avg > maxValue {
+            return DataPoint(value: maxValue, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
         }
         return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
     }
