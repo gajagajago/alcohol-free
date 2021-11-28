@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42AE997727526C1D00062B3F /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 42AE997627526C1D00062B3F /* SwiftUICharts */; };
 		42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE997827526D9D00062B3F /* PaceGraphView.swift */; };
-		42AE997B27526EB000062B3F /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 42AE997A27526EB000062B3F /* SwiftUICharts */; };
 		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
@@ -31,6 +29,7 @@
 		BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C2273793B200E32C80 /* PredictionData.swift */; };
 		BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */; };
 		BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */; };
+		BE6BC15B2753227000D454DE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = BE6BC15A2753227000D454DE /* SwiftUICharts */; };
 		BEEE1637274563D700D6F60A /* MotionClassifierModelR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */; };
 		BEEE163A2746A27100D6F60A /* SetDrinkTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16392746A27100D6F60A /* SetDrinkTypeView.swift */; };
 		BEEE16402746AE8900D6F60A /* 0NanumSquareRoundOTFL.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163C2746AE8800D6F60A /* 0NanumSquareRoundOTFL.otf */; };
@@ -176,7 +175,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42AE997727526C1D00062B3F /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42AE997B27526EB000062B3F /* SwiftUICharts in Frameworks */,
 				42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */,
+				BE6BC15B2753227000D454DE /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +462,6 @@
 			);
 			name = AlcoholFree;
 			packageProductDependencies = (
-				42AE997627526C1D00062B3F /* SwiftUICharts */,
 			);
 			productName = AlcoholFree;
 			productReference = 42EC4C302705F0110052B1CF /* AlcoholFree.app */;
@@ -504,7 +501,7 @@
 			);
 			name = "AlcoholFree WatchKit Extension";
 			packageProductDependencies = (
-				42AE997A27526EB000062B3F /* SwiftUICharts */,
+				BE6BC15A2753227000D454DE /* SwiftUICharts */,
 			);
 			productName = "AlcoholFree WatchKit Extension";
 			productReference = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */;
@@ -587,7 +584,7 @@
 			);
 			mainGroup = 42EC4C292705F0110052B1CF;
 			packageReferences = (
-				42AE997527526C1D00062B3F /* XCRemoteSwiftPackageReference "ChartView" */,
+				BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 42EC4C312705F0110052B1CF /* Products */;
 			projectDirPath = "";
@@ -1269,25 +1266,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		42AE997527526C1D00062B3F /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
+			repositoryURL = "https://github.com/shp7724/SwiftUICharts";
 			requirement = {
-				kind = exactVersion;
-				version = 1.5.5;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		42AE997627526C1D00062B3F /* SwiftUICharts */ = {
+		BE6BC15A2753227000D454DE /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42AE997527526C1D00062B3F /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
-		};
-		42AE997A27526EB000062B3F /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42AE997527526C1D00062B3F /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

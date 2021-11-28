@@ -46,7 +46,7 @@ struct PaceView: View {
                             .font(Font.custom(NanumFontNames.bold.rawValue, size: 13))
                             .opacity(0.8)
                         
-                        Text("\(globalViewModel.lastDrinkMinutesPassed)분 전")
+                        Text("\(globalViewModel.lastDrinkMinutesPassed.flatMap(String.init) ?? "- ")분 전")
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 14))
                     }
                     

@@ -7,26 +7,33 @@
 
 import Foundation
 import WatchKit
+import SwiftUICharts
+import SwiftUI
 
 // MARK: - Properties
 class GlobalDrinkViewModel: ObservableObject {
     // 전역 상태 관리 변수
     var motionClassifier = MotionClassifier()
+    var firstDrinkTimestamp: TimeInterval?
     
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
     @Published var currentNumberOfGlasses: Double = 0.0
     @Published var showChildNavigationViews: Bool = false  // true이면 root view로 pop된다.
     
-    @Published var interValNumberOfGlasses: Double = 0.0 // timer interval의 glass = pace
-    @Published var timerConnected: Bool = false // 첫 잔 인식 시 true되며, 절대 다시 false되지 않는다.
-    @Published var minutelyPaces: [Double] = []
-    @Published var lastDrinkMinutesPassed: Int = 0
-    @Published var timer: Timer?
+    @Published var lastDrinkTimestamp: TimeInterval?
+    @Published var datapoints: [DataPoint] = []  // 술 마시는 히스토리 기록
+    
+    var refreshingTimer: Timer?
+    
+    // Chart에 사용될 카테고리
+    let sipLegend = Legend(color: .white, label: "홀짝", order: 3)
+    let halfLegend = Legend(color: .white, label: "반샷", order: 2)
+    let fullLegend = Legend(color: .orange, label: "원샷", order: 1)
+    let placeholderLegend = Legend(color: .white.opacity(0.1), label: "NaN", order: 0)
     
     init(targetNumberOfGlasses: Double = 10) {
         self.targetNumberOfGlasses = targetNumberOfGlasses
-        
         DrinkDetectedDelegateManager.shared = self
     }
     
@@ -62,16 +69,8 @@ class GlobalDrinkViewModel: ObservableObject {
         return currentNumberOfGlasses / targetNumberOfGlasses
     }
     
-    var volumeOfGlass: Double {
-        if selectedDrinkType.category == "소주" {
-            return 50
-        } else {
-            return 200
-        }
-    }
-    
     var alcoholConsumption: Double {
-        return currentNumberOfGlasses * volumeOfGlass * selectedDrinkType.alcoholPercent / 100
+        return currentNumberOfGlasses * Double(selectedDrinkType.volumePerGlass) * selectedDrinkType.alcoholPercent / 100
     }
     
     var alcoholConsumptionAsString: String {
@@ -82,21 +81,57 @@ class GlobalDrinkViewModel: ObservableObject {
         // TODO wavePercentage에 따라 다른 경고 메시지 내보낼 것
         return "너무 많이 마시고 있어요!"
     }
+    
+    var lastDrinkMinutesPassed: Int? {
+        // 마지막 짠 몇 분 전이었는지
+        guard let lastDrinkTimestamp = lastDrinkTimestamp else {
+            return nil
+        }
+        return Int((NSDate().timeIntervalSince1970 - lastDrinkTimestamp) / 60)
+    }
+    
+    var drinkHistoryDataPoints: [DataPoint] {
+        if datapoints.count > 25 {
+            return datapoints.suffix(25)
+        } else {
+            var paddedDatapoints = datapoints
+            for i in 1...(25 - datapoints.count) {
+                paddedDatapoints.append(.init(value: 0.01, label: LocalizedStringKey(String(i)), legend: placeholderLegend))
+            }
+            return paddedDatapoints
+        }
+    }
+    
+    var averagePaceDataPoint: DataPoint? {
+        let minute = 1
+        let avg = averageDrinkAmount(per: minute)
+        let color: Color = avg > 2 ? .red : (avg >= 1 ? .orange : .green)
+        if avg > currentNumberOfGlasses {
+            return DataPoint(value: datapoints.max()?.endValue ?? 0, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
+        }
+        return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
+    }
 }
 
 // MARK: - Classifiers
 extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegate, DrinkDetectedDelegate {
     func startDrinkClassification() {
         motionClassifier.delegator = self
+        
         HealthKitSessionManager.shared.startBackgroundSession()
         motionClassifier.startMotionUpdates()
         SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
+        
+        firstDrinkTimestamp = NSDate().timeIntervalSince1970
+        refreshingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
     }
     
     func stopDrinkClassification() {
         self.motionClassifier.stopMotionUpdates()
         SoundClassifier.shared.stop()
         HealthKitSessionManager.shared.endBackgroundSession()
+        
+        refreshingTimer?.invalidate()
     }
     
     func drinkMotionDetected() {
@@ -110,24 +145,24 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     }
     
     func drinkDetected(identifier: String) {
+        
+        if let _ = firstDrinkTimestamp { } else {
+            firstDrinkTimestamp = NSDate().timeIntervalSince1970
+        }
+        
+        var numberOfGlassesAdded: Double = 0
         switch identifier {
         case "full":
             print("풀샷이 선택되었습니다.")
-            if(!timerConnected) {initTimer()}
-            currentNumberOfGlasses += 1
-            interValNumberOfGlasses += 1
+            numberOfGlassesAdded = 1
             break;
         case "half":
             print("반샷이 선택되었습니다.")
-            if(!timerConnected) {initTimer()}
-            currentNumberOfGlasses += 0.5
-            interValNumberOfGlasses += 0.5
+            numberOfGlassesAdded = 0.5
             break;
         case "sip":
             print("홀짝이 선택되었습니다.")
-            if(!timerConnected) {initTimer()}
-            currentNumberOfGlasses += 0.2
-            interValNumberOfGlasses += 0.2
+            numberOfGlassesAdded = 0.2
             break;
         case "no":
             print("안마심이 선택되었습니다.")
@@ -135,22 +170,11 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         default:
             break;
         }
-    }
-    
-    func initTimer() {
-        print("Timer를 생성합니다.")
-        timerConnected = true
-        timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
-    }
-    
-    @objc func timerCallback() {
-        print("이번 분 당 페이스(\(interValNumberOfGlasses))를 추가합니다 ")
-        minutelyPaces.append(interValNumberOfGlasses)
-        
-        if(interValNumberOfGlasses == 0) { lastDrinkMinutesPassed += 1}
-        else {lastDrinkMinutesPassed = 0}
-            
-        interValNumberOfGlasses = 0.0
+        currentNumberOfGlasses += numberOfGlassesAdded
+        if numberOfGlassesAdded != 0 {
+            updateLastDrinkTimestamp()
+            appendDrinkHistory(with: numberOfGlassesAdded)
+        }
     }
 }
 
@@ -162,10 +186,39 @@ extension GlobalDrinkViewModel {
         selectedDrinkType = drinks[0]
         targetNumberOfGlasses = 10
         currentNumberOfGlasses = 0
-        interValNumberOfGlasses = 0
-        lastDrinkMinutesPassed = 0
-        minutelyPaces = []
-        timerConnected = false
-        timer?.invalidate()
+        lastDrinkTimestamp = nil
+        firstDrinkTimestamp = nil
+    }
+    
+    func getLegend(of numberOfGlassesAdded: Double) -> Legend {
+        switch numberOfGlassesAdded {
+        case 1:
+            return fullLegend
+        case 0.5:
+            return halfLegend
+        case 0.2:
+            return sipLegend
+        default:
+            return halfLegend
+        }
+    }
+    
+    @objc func timerCallback() {
+        objectWillChange.send()
+    }
+    
+    private func updateLastDrinkTimestamp() {
+        lastDrinkTimestamp = NSDate().timeIntervalSince1970
+    }
+    
+    private func appendDrinkHistory(with numberOfGlassesAdded: Double) {
+        datapoints.append(.init(value: numberOfGlassesAdded, label: LocalizedStringKey(String(NSDate().timeIntervalSince1970)), legend: getLegend(of: numberOfGlassesAdded)))
+    }
+    
+    private func averageDrinkAmount(per minute: Int) -> Double {
+        guard let first = firstDrinkTimestamp  else { return 0 }
+        let now = NSDate().timeIntervalSince1970
+        let avgPerSec = currentNumberOfGlasses / (now - first)
+        return avgPerSec * 60 * Double(minute)
     }
 }

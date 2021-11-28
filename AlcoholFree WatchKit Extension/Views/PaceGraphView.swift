@@ -10,22 +10,18 @@ import SwiftUICharts
 
 struct PaceGraphView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
-    let chartStyle = ChartStyle(
-        backgroundColor: Color.white,
-        accentColor: Colors.OrangeStart,
-        secondGradientColor: Colors.OrangeEnd,
-        textColor: Color.white,
-        legendTextColor: Color.white,
-        dropShadowColor: Color.black)
-
+    
     var body: some View {
-        MultiLineChartView(data: [(globalViewModel.minutelyPaces, GradientColors.purple)], title: "페이스")
-
+        BarChartView(dataPoints: globalViewModel.drinkHistoryDataPoints, limit: globalViewModel.averagePaceDataPoint)
+            .chartStyle(BarChartStyle(barMinHeight: 75, showAxis: false, showLabels: false, showLegends: false))
+            .padding(.horizontal, 15)
+            .padding(.vertical, 15)
+            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 0)
     }
 }
 
 struct PaceGraphView_Previews: PreviewProvider {
     static var previews: some View {
-        PaceGraphView()
+        PaceGraphView().environmentObject(GlobalDrinkViewModel(targetNumberOfGlasses: 20))
     }
 }

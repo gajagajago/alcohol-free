@@ -64,7 +64,7 @@
 		8E70F93729CB45B98F2D0165967DBF6D /* Pods-AlcoholFreeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlcoholFreeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8F964EED6DA1C6F826552E35E34EF0F9 /* Pods-AlcoholFree WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AlcoholFree WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9B96D888BCAE7393CF7C27F089DCD42F /* Pods-AlcoholFree-AlcoholFreeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlcoholFree-AlcoholFreeUITests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBDB94B02744AA5819F682729B10A53 /* Pods-AlcoholFree WatchKit App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlcoholFree WatchKit App-Info.plist"; sourceTree = "<group>"; };
 		9DE4742218832C0B23BB2E3AA651691F /* Pods-AlcoholFree WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlcoholFree WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
 		A09000CE74842CFA423477FAD9C5C794 /* Pods-AlcoholFree-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlcoholFree-Info.plist"; sourceTree = "<group>"; };
@@ -72,6 +72,7 @@
 		B82B888B80A58ECE0D6DA96628B94052 /* Pods-AlcoholFree WatchKit Extension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AlcoholFree WatchKit Extension"; path = Pods_AlcoholFree_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D0C90CBFB99F0D65E0E83EB5C67C72 /* Pods-AlcoholFreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlcoholFreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF543EB8A6EB89C8C1D350D60BA588C /* Pods-AlcoholFree-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AlcoholFree-umbrella.h"; sourceTree = "<group>"; };
+		BE6BC14927531A0400D454DE /* SwiftUICharts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftUICharts; path = ../../../../Downloads/SwiftUICharts; sourceTree = "<group>"; };
 		C7180B732AD30D058B6B77F43F70E70B /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		C77ACD5D9BF3435BFFAE37CC0B515E96 /* Pods-AlcoholFree WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AlcoholFree WatchKit App-dummy.m"; sourceTree = "<group>"; };
 		C8327A70CD19418A78E0B84AFCBD5D38 /* Pods-AlcoholFree WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AlcoholFree WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		0E329CEEA5B278C684F6F0402B1AAA92 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE6BC14927531A0400D454DE /* SwiftUICharts */,
 				2D0EF84EF7BFCDF5ACFFFE6E99262A3C /* Pods-AlcoholFree */,
 				D49E05C7E9BFA19F4C09A0A3892A4D4D /* Pods-AlcoholFree WatchKit App */,
 				4BED3A40E0F0293F203E41F98ACA0B4A /* Pods-AlcoholFree WatchKit Extension */,
