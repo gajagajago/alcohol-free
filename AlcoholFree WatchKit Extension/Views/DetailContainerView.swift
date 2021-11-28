@@ -18,7 +18,6 @@ struct DetailContainerView: View {
                     VStack(spacing: 0) {
                         PaceView().frame(height: proxy.size.height)
                         PaceGraphView()
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                         EndButtonView()
                     }
                 }

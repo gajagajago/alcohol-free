@@ -46,12 +46,12 @@ struct PaceView: View {
                             .font(Font.custom(NanumFontNames.bold.rawValue, size: 13))
                             .opacity(0.8)
                         
-                        Text("\(globalViewModel.lastDrinkMinutesPassed)분 전")
+                        Text("\(globalViewModel.lastDrinkMinutesPassed.flatMap(String.init) ?? "- ")분 전")
                             .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 14))
                     }
-                    
                 }
                 .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 0)
+                .animation(.easeInOut(duration: 0.5), value: globalViewModel.warningMessage)
                 
                 Spacer()
                 
