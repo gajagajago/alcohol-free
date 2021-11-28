@@ -135,8 +135,6 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         self.motionClassifier.stopMotionUpdates()
         SoundClassifier.shared.stop()
         HealthKitSessionManager.shared.endBackgroundSession()
-        
-        refreshingTimer?.invalidate()
     }
     
     func drinkMotionDetected() {
@@ -193,6 +191,8 @@ extension GlobalDrinkViewModel {
         currentNumberOfGlasses = 0
         lastDrinkTimestamp = nil
         firstDrinkTimestamp = nil
+        refreshingTimer?.invalidate()
+        datapoints = []
     }
     
     func getLegend(of numberOfGlassesAdded: Double) -> Legend {
