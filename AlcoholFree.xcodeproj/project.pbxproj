@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE997827526D9D00062B3F /* PaceGraphView.swift */; };
+		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -27,7 +29,7 @@
 		BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C2273793B200E32C80 /* PredictionData.swift */; };
 		BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */; };
 		BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE1FF3C4273793B200E32C80 /* MotionClassifierModel.mlmodel */; };
-		BEEE162B2742B5A700D6F60A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
+		BE6BC15B2753227000D454DE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = BE6BC15A2753227000D454DE /* SwiftUICharts */; };
 		BEEE1637274563D700D6F60A /* MotionClassifierModelR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */; };
 		BEEE163A2746A27100D6F60A /* SetDrinkTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE16392746A27100D6F60A /* SetDrinkTypeView.swift */; };
 		BEEE16402746AE8900D6F60A /* 0NanumSquareRoundOTFL.otf in Resources */ = {isa = PBXBuildFile; fileRef = BEEE163C2746AE8800D6F60A /* 0NanumSquareRoundOTFL.otf */; };
@@ -111,6 +113,7 @@
 		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
+		42AE997827526D9D00062B3F /* PaceGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceGraphView.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlcoholFree WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,7 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEE162B2742B5A700D6F60A /* HealthKit.framework in Frameworks */,
+				42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */,
+				BE6BC15B2753227000D454DE /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +375,7 @@
 				BEEE16622747D60100D6F60A /* DetailContainerView.swift */,
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				BEEE16642747D6CE00D6F60A /* EndButtonView.swift */,
+				42AE997827526D9D00062B3F /* PaceGraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -456,6 +461,8 @@
 				42EC4C372705F0110052B1CF /* PBXTargetDependency */,
 			);
 			name = AlcoholFree;
+			packageProductDependencies = (
+			);
 			productName = AlcoholFree;
 			productReference = 42EC4C302705F0110052B1CF /* AlcoholFree.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
@@ -493,6 +500,9 @@
 			dependencies = (
 			);
 			name = "AlcoholFree WatchKit Extension";
+			packageProductDependencies = (
+				BE6BC15A2753227000D454DE /* SwiftUICharts */,
+			);
 			productName = "AlcoholFree WatchKit Extension";
 			productReference = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -573,6 +583,9 @@
 				Base,
 			);
 			mainGroup = 42EC4C292705F0110052B1CF;
+			packageReferences = (
+				BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = 42EC4C312705F0110052B1CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -778,6 +791,7 @@
 				BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
 				BEEE16632747D60100D6F60A /* DetailContainerView.swift in Sources */,
+				42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1250,6 +1264,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shp7724/SwiftUICharts";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE6BC15A2753227000D454DE /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE6BC1592753227000D454DE /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42EC4C2A2705F0110052B1CF /* Project object */;
 }

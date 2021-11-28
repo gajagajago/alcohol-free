@@ -51,7 +51,7 @@ class LocalNotificationManager {
     
     func addDrinkDetectNoti() {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "술 마심이 감지되었습니다. 마신 양을 체크해주세요."
+        notificationContent.title = "음주가 감지되었습니다. 마신 양을 기록해주세요."
         notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
         
         // 감지 후 노티 주기까지 인터벌 설정 가능
@@ -85,7 +85,7 @@ class LocalNotificationManager {
     }
     
     func mkDrinkDetectNotiActions() -> [UNNotificationAction] {
-        let fullshot = UNNotificationAction(identifier: "full", title: "풀샷", options: [])
+        let fullshot = UNNotificationAction(identifier: "full", title: "원샷", options: [])
         let halfshot = UNNotificationAction(identifier: "half", title: "반샷", options: [])
         let sipshot = UNNotificationAction(identifier: "sip", title: "홀짝", options: [])
         let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: [])

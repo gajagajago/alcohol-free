@@ -10,13 +10,14 @@ import SwiftUI
 
 struct DetailContainerView: View {
     @EnvironmentObject var globalViewModel: GlobalDrinkViewModel
-    
-    var body: some View {
+
+    var body: some View {        
         WaveBackground(percent: globalViewModel.wavePercentage) {
             GeometryReader { proxy in
                 ScrollView {
                     VStack(spacing: 0) {
                         PaceView().frame(height: proxy.size.height)
+                        PaceGraphView()
                         EndButtonView()
                     }
                 }
