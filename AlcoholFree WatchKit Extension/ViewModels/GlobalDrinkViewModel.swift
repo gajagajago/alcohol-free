@@ -78,8 +78,12 @@ class GlobalDrinkViewModel: ObservableObject {
     }
     
     var warningMessage: String? {
-        // TODO wavePercentage에 따라 다른 경고 메시지 내보낼 것
-        return "너무 많이 마시고 있어요!"
+        if wavePercentage >= 1.0 {
+            return "⛔️ 목표 주량을 초과했어요."
+        } else if wavePercentage >= 0.8 {
+            return "⚠️ 목표 주량에 근접해가고 있어요."
+        }
+        return nil
     }
     
     var lastDrinkMinutesPassed: Int? {
