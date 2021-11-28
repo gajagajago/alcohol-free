@@ -110,7 +110,7 @@ class GlobalDrinkViewModel: ObservableObject {
         if avg > maxValue {
             return DataPoint(value: maxValue, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
         }
-        return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
+        return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔/분", legend: .init(color: color, label: "avgLegend"))
     }
 }
 
@@ -154,7 +154,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         var numberOfGlassesAdded: Double = 0
         switch identifier {
         case "full":
-            print("풀샷이 선택되었습니다.")
+            print("원샷이 선택되었습니다.")
             numberOfGlassesAdded = 1
             break;
         case "half":

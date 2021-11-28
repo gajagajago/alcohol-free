@@ -85,7 +85,7 @@ class LocalNotificationManager {
     }
     
     func mkDrinkDetectNotiActions() -> [UNNotificationAction] {
-        let fullshot = UNNotificationAction(identifier: "full", title: "풀샷", options: [])
+        let fullshot = UNNotificationAction(identifier: "full", title: "원샷", options: [])
         let halfshot = UNNotificationAction(identifier: "half", title: "반샷", options: [])
         let sipshot = UNNotificationAction(identifier: "sip", title: "홀짝", options: [])
         let noshot = UNNotificationAction(identifier: "no", title: "안마심", options: [])
