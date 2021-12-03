@@ -16,7 +16,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var motionClassifier = MotionClassifier()
     var firstDrinkTimestamp: TimeInterval?
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
-    
+        
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
     @Published var currentNumberOfGlasses: Double = 0.0
@@ -175,6 +175,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
             break;
         case "no":
             print("안마심이 선택되었습니다.")
+            motionClassifier.changeThreshold()
             break;
         default:
             break;
