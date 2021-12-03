@@ -18,7 +18,7 @@ class MotionClassifier {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModelNew(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     var delegator: MotionClassifierDelegate?

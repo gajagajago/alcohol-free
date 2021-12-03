@@ -15,6 +15,7 @@ class GlobalDrinkViewModel: ObservableObject {
     // 전역 상태 관리 변수
     var motionClassifier = MotionClassifier()
     var firstDrinkTimestamp: TimeInterval?
+    var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
@@ -120,6 +121,7 @@ class GlobalDrinkViewModel: ObservableObject {
 
 // MARK: - Classifiers
 extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegate, DrinkDetectedDelegate {
+    
     func startDrinkClassification() {
         motionClassifier.delegator = self
         
@@ -139,11 +141,15 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     
     func drinkMotionDetected() {
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
-        LocalNotificationManager.shared.addDrinkDetectNoti()
+        if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
+            LocalNotificationManager.shared.addDrinkDetectNoti()
+        }
     }
     
     func drinkSoundDetected(confidence: Double) {
         print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
+        notiTimestamp = NSDate().timeIntervalSince1970
+        
         LocalNotificationManager.shared.addDrinkDetectNoti()
     }
     
