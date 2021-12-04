@@ -16,6 +16,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var motionClassifier = MotionClassifier()
     var firstDrinkTimestamp: TimeInterval?
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
+    var isMotionDetectedToSendNoti: Bool = true
         
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
@@ -141,6 +142,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     
     func drinkMotionDetected() {
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
+        isMotionDetectedToSendNoti = true
         if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
             LocalNotificationManager.shared.addDrinkDetectNoti()
         }
@@ -149,7 +151,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     func drinkSoundDetected(confidence: Double) {
         print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
         notiTimestamp = NSDate().timeIntervalSince1970
-        
+        isMotionDetectedToSendNoti = false
         LocalNotificationManager.shared.addDrinkDetectNoti()
     }
     
@@ -175,7 +177,9 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
             break;
         case "no":
             print("안마심이 선택되었습니다.")
-            motionClassifier.changeThreshold()
+            if isMotionDetectedToSendNoti {
+                motionClassifier.changeThreshold()
+            }
             break;
         default:
             break;
