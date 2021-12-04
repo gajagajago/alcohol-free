@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09F5CB0C2758FCA80070A105 /* MotionClassifierModelNew.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 09F5CB0B2758FCA80070A105 /* MotionClassifierModelNew.mlmodel */; };
+		09481E5A275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 09481E59275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel */; };
 		42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE997827526D9D00062B3F /* PaceGraphView.swift */; };
 		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
 		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -111,7 +111,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09F5CB0B2758FCA80070A105 /* MotionClassifierModelNew.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MotionClassifierModelNew.mlmodel; path = ../../../../Downloads/MotionClassifierModelNew.mlmodel; sourceTree = "<group>"; };
+		09481E59275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MotionClassifierModelNew.mlmodel; sourceTree = "<group>"; };
 		0C8DF0416B29D4A30480092E /* Pods-AlcoholFree WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2132ECB96AA147270A8344D2 /* Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree-AlcoholFreeUITests/Pods-AlcoholFree-AlcoholFreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		29C70110E3A238750FF1DDFE /* Pods-AlcoholFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.debug.xcconfig"; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 		BE1FF3C1273793B200E32C80 /* MotionClassification */ = {
 			isa = PBXGroup;
 			children = (
-				09F5CB0B2758FCA80070A105 /* MotionClassifierModelNew.mlmodel */,
+				09481E59275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel */,
 				BEEE1636274563D700D6F60A /* MotionClassifierModelR.mlmodel */,
 				BE1FF3C2273793B200E32C80 /* PredictionData.swift */,
 				BE1FF3C3273793B200E32C80 /* MotionClassifier.swift */,
@@ -772,6 +772,7 @@
 				BE1FF3C5273793B200E32C80 /* HealthKitSessionManager.swift in Sources */,
 				BEEE16652747D6CE00D6F60A /* EndButtonView.swift in Sources */,
 				BEEE1656274735FC00D6F60A /* StatefulPreviewWrapper.swift in Sources */,
+				09481E5A275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel in Sources */,
 				CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */,
 				BEEE165A2747976100D6F60A /* Wave.swift in Sources */,
 				BE1FF3C8273793B200E32C80 /* MotionClassifierModel.mlmodel in Sources */,
@@ -791,7 +792,6 @@
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
 				BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */,
 				BEEE164E2747317E00D6F60A /* PaceView.swift in Sources */,
-				09F5CB0C2758FCA80070A105 /* MotionClassifierModelNew.mlmodel in Sources */,
 				BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */,
 				42EC4C4B2705F0130052B1CF /* NotificationView.swift in Sources */,
 				BEEE16632747D60100D6F60A /* DetailContainerView.swift in Sources */,

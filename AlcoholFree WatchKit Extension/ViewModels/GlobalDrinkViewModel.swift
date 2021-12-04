@@ -17,6 +17,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var firstDrinkTimestamp: TimeInterval?
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     var isMotionDetectedToSendNoti: Bool = true
+    var initialSoundDetectConfidence: Double = 0.9
         
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
@@ -152,7 +153,13 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
         notiTimestamp = NSDate().timeIntervalSince1970
         isMotionDetectedToSendNoti = false
-        LocalNotificationManager.shared.addDrinkDetectNoti()
+        print(confidence)
+        print(initialSoundDetectConfidence)
+        if confidence >= initialSoundDetectConfidence {
+            LocalNotificationManager.shared.addDrinkDetectNoti()
+        }
+        print(confidence)
+        print(initialSoundDetectConfidence)
     }
     
     func drinkDetected(identifier: String) {
@@ -179,6 +186,16 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
             print("안마심이 선택되었습니다.")
             if isMotionDetectedToSendNoti {
                 motionClassifier.changeThreshold()
+            }
+            else {
+                print(initialSoundDetectConfidence)
+                if 0.95 <= initialSoundDetectConfidence && initialSoundDetectConfidence < 1.0 {
+                    initialSoundDetectConfidence = 1.0
+                }
+                else if initialSoundDetectConfidence < 0.95 {
+                    initialSoundDetectConfidence += 0.05
+                }
+                print(initialSoundDetectConfidence)
             }
             break;
         default:

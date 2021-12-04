@@ -95,8 +95,6 @@ class MotionClassifier {
     }
     
     func changeThreshold() {
-        print(leftThreshold)
-        print(rightThreshold)
         if 0.95 <= leftThreshold && leftThreshold < 1.0 {
             leftThreshold = 1.0
         }
@@ -110,9 +108,6 @@ class MotionClassifier {
         else if rightThreshold < 0.95 {
             rightThreshold += 0.05
         }
-        
-        print(leftThreshold)
-        print(rightThreshold)
     }
 }
 
