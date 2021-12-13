@@ -24,6 +24,8 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var lastDrinkTimestamp: TimeInterval?
     @Published var datapoints: [DataPoint] = []  // 술 마시는 히스토리 기록
     
+    @Published var concentrationDataPoints: [DataPoint] = []
+    
     var refreshingTimer: Timer?
     
     // Chart에 사용될 카테고리
@@ -115,6 +117,16 @@ class GlobalDrinkViewModel: ObservableObject {
             return DataPoint(value: maxValue, label: "\(String(format: "%.2f", avg))잔", legend: .init(color: color, label: "avgLegend"))
         }
         return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔/분", legend: .init(color: color, label: "avgLegend"))
+    }
+    
+    var bloodAlcoholConcentration: Double {
+        guard let first = firstDrinkTimestamp else { return 0 }
+        // https://namu.wiki/w/%EC%9C%84%EB%93%9C%EB%A7%88%ED%81%AC%20%EA%B3%B5%EC%8B%9D#toc
+        let weight = 72.2 // 남성 평균 체중
+        let r = 0.86 // 음주한 남성의 성별 계수
+        let beta = 0.015 / 60 / 60 // 초당 혈중알코올농도 감소량
+        let secondsAfterFirstDrink = Int((NSDate().timeIntervalSince1970 - first))
+        return max(alcoholConsumption / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
     }
 }
 
@@ -210,6 +222,7 @@ extension GlobalDrinkViewModel {
     
     @objc func timerCallback() {
         objectWillChange.send()
+        appendBloodAlcoholConcentration(with: bloodAlcoholConcentration)
     }
     
     private func updateLastDrinkTimestamp() {
@@ -221,9 +234,23 @@ extension GlobalDrinkViewModel {
     }
     
     private func averageDrinkAmount(per minute: Int) -> Double {
-        guard let first = firstDrinkTimestamp  else { return 0 }
+        guard let first = firstDrinkTimestamp else { return 0 }
         let now = NSDate().timeIntervalSince1970
         let avgPerSec = currentNumberOfGlasses / (now - first)
         return avgPerSec * 60 * Double(minute)
+    }
+    
+    private func appendBloodAlcoholConcentration(with concentration: Double) {
+        let exponentialAvg: Double
+        if let prev = concentrationDataPoints.last {
+            exponentialAvg = prev.endValue * 0.9 + concentration * 0.1
+        } else {
+            exponentialAvg = concentration
+        }
+        // TODO fix legend
+        concentrationDataPoints.append(.init(value: exponentialAvg, label: LocalizedStringKey(String(NSDate().timeIntervalSince1970)), legend: getLegend(of: exponentialAvg)))
+        if concentrationDataPoints.count > 25 {
+            concentrationDataPoints.remove(at: 0)
+        }
     }
 }
