@@ -35,6 +35,7 @@ class LocalNotificationManager {
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = title
         notificationContent.categoryIdentifier = drinkNormalNotiIdentifier
+        notificationContent.sound = UNNotificationSound.default
         
         // 감지 후 노티 주기까지 인터벌 설정 가능
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)
@@ -53,6 +54,7 @@ class LocalNotificationManager {
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "음주가 감지되었습니다. 마신 양을 기록해주세요."
         notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
+        notificationContent.sound = UNNotificationSound.default
         
         // 감지 후 노티 주기까지 인터벌 설정 가능
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 1.0, repeats: false)

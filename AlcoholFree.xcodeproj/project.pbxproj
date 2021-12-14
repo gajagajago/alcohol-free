@@ -965,7 +965,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 35YJCVHHN3;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
@@ -980,7 +980,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1000,7 +1000,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AlcoholFree WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 35YJCVHHN3;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "AlcoholFree WatchKit Extension/Info.plist";
@@ -1015,7 +1015,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1035,13 +1035,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 35YJCVHHN3;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1061,13 +1061,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 35YJCVHHN3;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = AlcoholFree_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "AlcoholFree WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1084,9 +1084,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 35YJCVHHN3;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1100,7 +1100,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 35YJCVHHN3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFree;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1114,7 +1114,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1122,7 +1122,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFreeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1141,7 +1141,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1149,7 +1149,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFreeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1166,7 +1166,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1174,7 +1174,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFreeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -1191,7 +1191,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V36KPM3TT;
+				DEVELOPMENT_TEAM = GB5CDMBZQB;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1199,7 +1199,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jeongsik12345.AlcoholFreeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shp7724.AlcoholFreeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
