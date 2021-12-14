@@ -12,7 +12,7 @@
         "name": "맥주",
         "aliases": [],
         "category": "맥주",
-        "alcoholPercent": 17.0,
+        "alcoholPercent": 5.0,
         "volumeMl": 500.0,
     },
     {
@@ -20,7 +20,7 @@
         "name": "소맥",
         "aliases": [],
         "category": "소맥",
-        "alcoholPercent": 4.5,
+        "alcoholPercent": 7.75,
         "volumeMl": 500.0,
     },
     {
@@ -28,7 +28,7 @@
         "name": "과일소주",
         "aliases": [],
         "category": "소주",
-        "alcoholPercent": 14.0,
+        "alcoholPercent": 13.0,
         "volumeMl": 360.0,
     },
 ]
