@@ -18,10 +18,12 @@ class MotionClassifier {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModelNew(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     var delegator: MotionClassifierDelegate?
+    var leftThreshold: Double = 0.8
+    var rightThreshold: Double = 0.9
     
     var lastDetected = NSDate().timeIntervalSince1970 - 10
 
@@ -85,10 +87,26 @@ class MotionClassifier {
         predictionData.feedback(stateOut: modelPrediction.stateOut)
         
         guard let leftProb = left, let rightProb = right else { return nil }
-        if leftProb > 0.8 || rightProb > 0.9 {
+        if leftProb > leftThreshold || rightProb > rightThreshold {
             return "drink"
         } else {
             return "others"
+        }
+    }
+    
+    func changeThreshold() {
+        if 0.95 <= leftThreshold && leftThreshold < 1.0 {
+            leftThreshold = 1.0
+        }
+        else if leftThreshold < 0.95 {
+            leftThreshold += 0.05
+        }
+        
+        if 0.95 <= rightThreshold && rightThreshold < 1.0 {
+            rightThreshold = 1.0
+        }
+        else if rightThreshold < 0.95 {
+            rightThreshold += 0.05
         }
     }
 }
