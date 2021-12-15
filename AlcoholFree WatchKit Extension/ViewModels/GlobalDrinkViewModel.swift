@@ -18,6 +18,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     var isMotionDetectedToSendNoti: Bool = true
     var initialSoundDetectConfidence: Double = 0.9
+    var isFirstMotionDetected: Bool = false
         
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
@@ -151,10 +152,13 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         HealthKitSessionManager.shared.endBackgroundSession()
     }
     
-    func drinkMotionDetected() {
+    func drinkMotionDetected(activity: String) {
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
         isMotionDetectedToSendNoti = true
-        if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
+        if !isFirstMotionDetected {
+            LocalNotificationManager.shared.addDrinkDetectNotiFirst(activity: activity)
+            isFirstMotionDetected = true
+        } else if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
             LocalNotificationManager.shared.addDrinkDetectNoti()
         }
     }
@@ -231,6 +235,7 @@ extension GlobalDrinkViewModel {
         firstDrinkTimestamp = nil
         refreshingTimer?.invalidate()
         datapoints = []
+        isFirstMotionDetected = false
     }
     
     func getLegend(of numberOfGlassesAdded: Double) -> Legend {
