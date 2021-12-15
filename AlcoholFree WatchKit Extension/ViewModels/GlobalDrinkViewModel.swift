@@ -132,7 +132,10 @@ class GlobalDrinkViewModel: ObservableObject {
         var absorbed = Double(0.0)
         for datapoint in datapoints {
             let secondsAfterDrink = Int(now - Double(datapoint.label.stringKey)!)
-            let rate = min(Double(secondsAfterDrink) / Double(90 * 60), Double(1))
+            let x = Double(secondsAfterDrink)
+            let a = Double(90 * 60)
+            let exp = Double(10)
+            let rate = min( 1 / pow(a, 1 / exp) * pow(x, 1 / 10) , Double(1))
             let consumption = Double(datapoint.endValue) * Double(selectedDrinkType.volumePerGlass) * selectedDrinkType.alcoholPercent / 100
             absorbed += consumption * rate
         }
@@ -144,6 +147,7 @@ class GlobalDrinkViewModel: ObservableObject {
     }
     
     var bloodAlcoholConcentrationAsString: String {
+        print(bloodAlcoholConcentration)
         return "\(String(format: "%.3f", bloodAlcoholConcentration))%"
     }
 }
@@ -185,13 +189,9 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         print("[GlobalDrinkViewModel] Drink Sound Detected")  // you can delete this line
         notiTimestamp = NSDate().timeIntervalSince1970
         isMotionDetectedToSendNoti = false
-        print(confidence)
-        print(initialSoundDetectConfidence)
         if confidence >= initialSoundDetectConfidence {
             LocalNotificationManager.shared.addDrinkDetectNoti()
         }
-        print(confidence)
-        print(initialSoundDetectConfidence)
     }
     
     func drinkDetected(identifier: String) {
