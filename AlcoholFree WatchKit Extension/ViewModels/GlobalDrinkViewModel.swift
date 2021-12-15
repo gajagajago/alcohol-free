@@ -17,7 +17,7 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var firstDrinkTimestamp: TimeInterval?
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     var isMotionDetectedToSendNoti: Bool = true
-    var initialSoundDetectConfidence: Double = 0.9
+    var initialSoundDetectConfidence: Double = 0.5
         
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double

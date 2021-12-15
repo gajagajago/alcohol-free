@@ -16,13 +16,14 @@ struct PaceGraphView: View {
             Text("현재 페이스")
                 .font(Font.custom(NanumFontNames.extraBold.rawValue, size: 15))
                 .padding(.horizontal, 15)
+                .padding(.top, 10)
                 .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 0)
             Spacer()
         }
         BarChartView(dataPoints: globalViewModel.drinkHistoryDataPoints, limit: globalViewModel.averagePaceDataPoint)
             .chartStyle(BarChartStyle(barMinHeight: 75, showAxis: false, showLabels: false, showLegends: false))
             .padding(.horizontal, 15)
-            .padding(.top, 15)
+            .padding(.top, 10)
             .padding(.bottom, 15)
             .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 0)
     }
