@@ -155,11 +155,13 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     func drinkMotionDetected(activity: String) {
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
         isMotionDetectedToSendNoti = true
-        if !isFirstMotionDetected {
-            LocalNotificationManager.shared.addDrinkDetectNotiFirst(activity: activity)
-            isFirstMotionDetected = true
-        } else if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
-            LocalNotificationManager.shared.addDrinkDetectNoti()
+        if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
+            if isFirstMotionDetected {
+                LocalNotificationManager.shared.addDrinkDetectNoti()
+            } else {
+                LocalNotificationManager.shared.addDrinkDetectNotiFirst(activity: activity)
+                isFirstMotionDetected = true
+            }
         }
     }
     
