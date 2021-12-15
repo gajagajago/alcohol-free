@@ -129,7 +129,7 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         
         HealthKitSessionManager.shared.startBackgroundSession()
         motionClassifier.startMotionUpdates()
-//        SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
+        SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
         
         firstDrinkTimestamp = NSDate().timeIntervalSince1970
         refreshingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCallback), userInfo: nil, repeats: true)
