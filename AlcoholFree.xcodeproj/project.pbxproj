@@ -51,7 +51,6 @@
 		CE5DD644270B46210047FF64 /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5DD643270B46210047FF64 /* ResultsObserver.swift */; };
 		CE7AFCB72736140D000B7C5F /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */; };
 		CE7AFCB927361C22000B7C5F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7AFCB827361C22000B7C5F /* ExtensionDelegate.swift */; };
-		CEAF615F276797AA00AD8428 /* WidmarkGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAF615E276797AA00AD8428 /* WidmarkGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,7 +166,6 @@
 		CE5DD643270B46210047FF64 /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
 		CE7AFCB62736140D000B7C5F /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		CE7AFCB827361C22000B7C5F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		CEAF615E276797AA00AD8428 /* WidmarkGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidmarkGraphView.swift; sourceTree = "<group>"; };
 		DAD360B2904116F0B3D05F80 /* Pods-AlcoholFree WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-AlcoholFree WatchKit App/Pods-AlcoholFree WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		E0A47EB176A8CDEC2A050469 /* Pods-AlcoholFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlcoholFree.release.xcconfig"; path = "Target Support Files/Pods-AlcoholFree/Pods-AlcoholFree.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -378,7 +376,6 @@
 				42EC4C462705F0130052B1CF /* ContentView.swift */,
 				BEEE16642747D6CE00D6F60A /* EndButtonView.swift */,
 				42AE997827526D9D00062B3F /* PaceGraphView.swift */,
-				CEAF615E276797AA00AD8428 /* WidmarkGraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -789,7 +786,6 @@
 				BE1FF3B72737934700E32C80 /* Drink.swift in Sources */,
 				BEEE165E2747BB0700D6F60A /* Color+Extension.swift in Sources */,
 				42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */,
-				CEAF615F276797AA00AD8428 /* WidmarkGraphView.swift in Sources */,
 				BE1FF3C7273793B200E32C80 /* MotionClassifier.swift in Sources */,
 				BEEE164E2747317E00D6F60A /* PaceView.swift in Sources */,
 				BE1FF3C6273793B200E32C80 /* PredictionData.swift in Sources */,

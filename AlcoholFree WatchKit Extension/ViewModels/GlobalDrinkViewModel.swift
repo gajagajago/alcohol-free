@@ -24,8 +24,6 @@ class GlobalDrinkViewModel: ObservableObject {
     @Published var lastDrinkTimestamp: TimeInterval?
     @Published var datapoints: [DataPoint] = []  // 술 마시는 히스토리 기록
     
-    @Published var concentrationDataPoints: [DataPoint] = []
-    
     var refreshingTimer: Timer?
     
     // Chart에 사용될 카테고리
@@ -222,7 +220,6 @@ extension GlobalDrinkViewModel {
     
     @objc func timerCallback() {
         objectWillChange.send()
-        appendBloodAlcoholConcentration(with: bloodAlcoholConcentration)
     }
     
     private func updateLastDrinkTimestamp() {
@@ -238,19 +235,5 @@ extension GlobalDrinkViewModel {
         let now = NSDate().timeIntervalSince1970
         let avgPerSec = currentNumberOfGlasses / (now - first)
         return avgPerSec * 60 * Double(minute)
-    }
-    
-    private func appendBloodAlcoholConcentration(with concentration: Double) {
-        let exponentialAvg: Double
-        if let prev = concentrationDataPoints.last {
-            exponentialAvg = prev.endValue * 0.9 + concentration * 0.1
-        } else {
-            exponentialAvg = concentration
-        }
-        // TODO fix legend
-        concentrationDataPoints.append(.init(value: exponentialAvg, label: LocalizedStringKey(String(NSDate().timeIntervalSince1970)), legend: getLegend(of: exponentialAvg)))
-        if concentrationDataPoints.count > 25 {
-            concentrationDataPoints.remove(at: 0)
-        }
     }
 }

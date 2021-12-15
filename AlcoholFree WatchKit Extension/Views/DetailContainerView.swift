@@ -18,7 +18,6 @@ struct DetailContainerView: View {
                     VStack(spacing: 0) {
                         PaceView().frame(height: proxy.size.height)
                         PaceGraphView()
-                        WidmarkGraphView()
                         EndButtonView()
                     }
                 }
