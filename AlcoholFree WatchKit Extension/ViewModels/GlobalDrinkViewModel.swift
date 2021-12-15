@@ -14,7 +14,7 @@ import SwiftUI
 class GlobalDrinkViewModel: ObservableObject {
     // 전역 상태 관리 변수
     var motionClassifier = MotionClassifier()
-    var firstDrinkTimestamp: TimeInterval?
+    @Published var firstDrinkTimestamp: TimeInterval?
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     var isMotionDetectedToSendNoti: Bool = true
     var initialSoundDetectConfidence: Double = 0.9
@@ -128,6 +128,10 @@ class GlobalDrinkViewModel: ObservableObject {
         let beta = 0.015 / 60 / 60 // 초당 혈중알코올농도 감소량
         let secondsAfterFirstDrink = Int((NSDate().timeIntervalSince1970 - first))
         return max(alcoholConsumption / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
+    }
+    
+    var bloodAlcoholConcentrationAsString: String {
+        return "\(String(format: "%.3f", bloodAlcoholConcentration))%"
     }
 }
 
