@@ -52,9 +52,9 @@ class LocalNotificationManager {
     
     func addDrinkDetectNotiFirst(activity: String) {
         if activity == "left" {
-            addDrinkDetectNotiInternal(msg: "왼손으로 술 마시는 동작이 감지됐어요. 마신 양을 기록해주세요. 원활한 인식을 위해 앞으로는 계속 왼손으로 마셔주세요.")
+            addDrinkDetectNotiInternal(msg: "마신 양을 기록해주세요. 정확한 음주량 기록을 위해 앞으로는 계속 왼손으로 마셔주세요!")
         } else {
-            addDrinkDetectNotiInternal(msg: "오른손으로 술 마시는 동작이 감지됐어요. 마신 양을 기록해주세요. 원활한 인식을 위해 앞으로는 계속 오른손으로 마셔주세요.")
+            addDrinkDetectNotiInternal(msg: "마신 양을 기록해주세요. 정확한 음주량 기록을 위해 앞으로는 계속 오른손으로 마셔주세요!")
         }
     }
     
