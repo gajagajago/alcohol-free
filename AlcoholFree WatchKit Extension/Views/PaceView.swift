@@ -58,7 +58,7 @@ struct PaceView: View {
                 // 아래 버튼은 디버깅 & 데모용입니다.
                 HStack {
                     DrinkButton(text: "모션", iconName: "hand.draw") {
-                        globalViewModel.drinkMotionDetected()
+                        globalViewModel.drinkMotionDetected(activity: "left")
                     }
                     DrinkButton(text: "소리", iconName: "waveform.and.mic") {
                         globalViewModel.drinkSoundDetected(confidence: 100)
