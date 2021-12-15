@@ -147,7 +147,7 @@ class GlobalDrinkViewModel: ObservableObject {
     }
     
     var bloodAlcoholConcentrationAsString: String {
-        print(bloodAlcoholConcentration)
+//        print(bloodAlcoholConcentration)
         return "\(String(format: "%.3f", bloodAlcoholConcentration))%"
     }
 }

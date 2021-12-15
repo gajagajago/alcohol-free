@@ -18,11 +18,11 @@ class MotionClassifier {
     static let sensorUpdateInterval = 1.0 / 50.0  // 50hz
     
     var predictionData = PredictionData()
-    let motionClassifierModel = try! MotionClassifierModelNew(configuration: .init())
+    let motionClassifierModel = try! MotionClassifierModelR(configuration: .init())
     var motionManager = CMMotionManager()
     var queue = OperationQueue()
     var delegator: MotionClassifierDelegate?
-    var leftThreshold: Double = 0.8
+    var leftThreshold: Double = 0.75
     var rightThreshold: Double = 0.9
     
     var lastDetected = NSDate().timeIntervalSince1970 - 10
@@ -35,6 +35,7 @@ class MotionClassifier {
     }
     
     func startMotionUpdates() {
+        predictionData.initializeStateOutput()
         motionManager.startDeviceMotionUpdates(to: self.queue) {
             (data: CMDeviceMotion?, error: Error?) in
             guard let data = data else {return}
@@ -48,6 +49,7 @@ class MotionClassifier {
     
     func addAccelSampleToDataArray (motionData: CMDeviceMotion) {
         predictionData.feed(motionData)
+//        print(motionData.rotationRate)
         
         // If the data array is full, call the prediction method to get a new model prediction.
         if (predictionData.isPredictionDataReady()) {
@@ -58,7 +60,7 @@ class MotionClassifier {
                     let now = NSDate().timeIntervalSince1970
                     if now - lastDetected > 10 {
                         // 마지막 짠으로부터 10초 이상 지나야 감지된 것으로 한다.
-                        print("Drink Motion 이벤트 발생")
+//                        print("Drink Motion 이벤트 발생")
                         DispatchQueue.main.async {
                             self.delegator?.drinkMotionDetected(activity: predictedActivity)
                             self.lastDetected = NSDate().timeIntervalSince1970
@@ -80,6 +82,11 @@ class MotionClassifier {
         let left = modelPrediction.labelProbability["left_drink"]
         let right = modelPrediction.labelProbability["right_drink"]
         let others = modelPrediction.labelProbability["others"]
+        
+//        print(left!, left!.isNaN)
+        if left!.isNaN {
+            predictionData.initializeStateOutput()
+        }
         
         print("left: \(String(format:"%.2f", left! * 100))% | right: \(String(format:"%.2f", right! * 100))% | others: \(String(format:"%.2f", others! * 100))%")
         
