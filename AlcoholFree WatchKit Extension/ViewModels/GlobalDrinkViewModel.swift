@@ -18,6 +18,7 @@ class GlobalDrinkViewModel: ObservableObject {
     var notiTimestamp: TimeInterval = NSDate().timeIntervalSince1970
     var isMotionDetectedToSendNoti: Bool = true
     var initialSoundDetectConfidence: Double = 0.9
+    var isFirstMotionDetected: Bool = false
         
     @Published var selectedDrinkType = drinks[0]
     @Published var targetNumberOfGlasses: Double
@@ -126,8 +127,20 @@ class GlobalDrinkViewModel: ObservableObject {
         let weight = 72.2 // 남성 평균 체중
         let r = 0.86 // 음주한 남성의 성별 계수
         let beta = 0.015 / 60 / 60 // 초당 혈중알코올농도 감소량
-        let secondsAfterFirstDrink = Int((NSDate().timeIntervalSince1970 - first))
-        return max(alcoholConsumption / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
+        let now = NSDate().timeIntervalSince1970
+        
+        var absorbed = Double(0.0)
+        for datapoint in datapoints {
+            let secondsAfterDrink = Int(now - Double(datapoint.label.stringKey)!)
+            let rate = min(Double(secondsAfterDrink) / Double(90 * 60), Double(1))
+            let consumption = Double(datapoint.endValue) * Double(selectedDrinkType.volumePerGlass) * selectedDrinkType.alcoholPercent / 100
+            absorbed += consumption * rate
+        }
+        
+        let secondsAfterFirstDrink = Int((now - first))
+        return max(0.7 * absorbed / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
+//        90분 미 적용 버전
+//        return max(0.7 * alcoholConsumption / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
     }
     
     var bloodAlcoholConcentrationAsString: String {
@@ -155,11 +168,16 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
         HealthKitSessionManager.shared.endBackgroundSession()
     }
     
-    func drinkMotionDetected() {
+    func drinkMotionDetected(activity: String) {
         print("[GlobalDrinkViewModel] Drink Motion Detected")  // you can delete this line
         isMotionDetectedToSendNoti = true
         if notiTimestamp + 5 < NSDate().timeIntervalSince1970 {
-            LocalNotificationManager.shared.addDrinkDetectNoti()
+            if isFirstMotionDetected {
+                LocalNotificationManager.shared.addDrinkDetectNoti()
+            } else {
+                LocalNotificationManager.shared.addDrinkDetectNotiFirst(activity: activity)
+                isFirstMotionDetected = true
+            }
         }
     }
     
@@ -235,6 +253,7 @@ extension GlobalDrinkViewModel {
         firstDrinkTimestamp = nil
         refreshingTimer?.invalidate()
         datapoints = []
+        isFirstMotionDetected = false
     }
     
     func getLegend(of numberOfGlassesAdded: Double) -> Legend {
@@ -267,5 +286,16 @@ extension GlobalDrinkViewModel {
         let now = NSDate().timeIntervalSince1970
         let avgPerSec = currentNumberOfGlasses / (now - first)
         return avgPerSec * 60 * Double(minute)
+    }
+}
+
+extension LocalizedStringKey {
+    var stringKey: String {
+        let description = "\(self)"
+
+        let components = description.components(separatedBy: "key: \"")
+            .map { $0.components(separatedBy: "\",") }
+
+        return components[1][0]
     }
 }

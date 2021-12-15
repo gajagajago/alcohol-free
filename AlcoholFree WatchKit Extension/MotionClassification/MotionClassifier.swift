@@ -53,14 +53,14 @@ class MotionClassifier {
         if (predictionData.isPredictionDataReady()) {
             if let predictedActivity = performModelPrediction() {
                 
-                if (predictedActivity == "drink") {
+                if (predictedActivity == "left" || predictedActivity == "right") {
                     // increase drinkMotionDetectedCnt by 1
                     let now = NSDate().timeIntervalSince1970
                     if now - lastDetected > 10 {
                         // 마지막 짠으로부터 10초 이상 지나야 감지된 것으로 한다.
                         print("Drink Motion 이벤트 발생")
                         DispatchQueue.main.async {
-                            self.delegator?.drinkMotionDetected()
+                            self.delegator?.drinkMotionDetected(activity: predictedActivity)
                             self.lastDetected = NSDate().timeIntervalSince1970
                         }
                     }
@@ -87,8 +87,10 @@ class MotionClassifier {
         predictionData.feedback(stateOut: modelPrediction.stateOut)
         
         guard let leftProb = left, let rightProb = right else { return nil }
-        if leftProb > leftThreshold || rightProb > rightThreshold {
-            return "drink"
+        if leftProb > leftThreshold {
+            return "left"
+        } else if rightProb > rightThreshold {
+            return "right"
         } else {
             return "others"
         }
@@ -112,5 +114,5 @@ class MotionClassifier {
 }
 
 protocol MotionClassifierDelegate {
-    func drinkMotionDetected()
+    func drinkMotionDetected(activity: String)
 }

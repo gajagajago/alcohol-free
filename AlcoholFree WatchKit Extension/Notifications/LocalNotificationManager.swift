@@ -50,9 +50,21 @@ class LocalNotificationManager {
         print("알림 등록 완료")
     }
     
+    func addDrinkDetectNotiFirst(activity: String) {
+        if activity == "left" {
+            addDrinkDetectNotiInternal(msg: "왼손으로 술 마시는 동작이 감지됐어요. 마신 양을 기록해주세요. 원활한 인식을 위해 앞으로는 계속 왼손으로 마셔주세요.")
+        } else {
+            addDrinkDetectNotiInternal(msg: "오른손으로 술 마시는 동작이 감지됐어요. 마신 양을 기록해주세요. 원활한 인식을 위해 앞으로는 계속 오른손으로 마셔주세요.")
+        }
+    }
+    
     func addDrinkDetectNoti() {
+        addDrinkDetectNotiInternal(msg: "음주가 감지되었습니다. 마신 양을 기록해주세요.")
+    }
+    
+    private func addDrinkDetectNotiInternal(msg: String) {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "음주가 감지되었습니다. 마신 양을 기록해주세요."
+        notificationContent.title = msg
         notificationContent.categoryIdentifier = drinkDetectNotiIdentifier
         notificationContent.sound = UNNotificationSound.default
         
