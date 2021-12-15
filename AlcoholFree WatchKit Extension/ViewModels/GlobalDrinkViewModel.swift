@@ -119,6 +119,16 @@ class GlobalDrinkViewModel: ObservableObject {
         }
         return DataPoint(value: avg, label: "\(String(format: "%.2f", avg))잔/분", legend: .init(color: color, label: "avgLegend"))
     }
+    
+    var bloodAlcoholConcentration: Double {
+        guard let first = firstDrinkTimestamp else { return 0 }
+        // https://namu.wiki/w/%EC%9C%84%EB%93%9C%EB%A7%88%ED%81%AC%20%EA%B3%B5%EC%8B%9D#toc
+        let weight = 72.2 // 남성 평균 체중
+        let r = 0.86 // 음주한 남성의 성별 계수
+        let beta = 0.015 / 60 / 60 // 초당 혈중알코올농도 감소량
+        let secondsAfterFirstDrink = Int((NSDate().timeIntervalSince1970 - first))
+        return max(alcoholConsumption / ( 10 * weight * r ) - beta * Double(secondsAfterFirstDrink), 0)
+    }
 }
 
 // MARK: - Classifiers
@@ -249,7 +259,7 @@ extension GlobalDrinkViewModel {
     }
     
     private func averageDrinkAmount(per minute: Int) -> Double {
-        guard let first = firstDrinkTimestamp  else { return 0 }
+        guard let first = firstDrinkTimestamp else { return 0 }
         let now = NSDate().timeIntervalSince1970
         let avgPerSec = currentNumberOfGlasses / (now - first)
         return avgPerSec * 60 * Double(minute)
