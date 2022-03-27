@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Your health data may later be used to calculate heart rate.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Your health data may later be used to calculate heart rate.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>짠 소리를 모니터링하기 위해 사용합니다.</string>
 	<key>NSExtension</key>
@@ -9,7 +15,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.shp7724.AlcoholFree.watchkitapp</string>
+			<string>com.ryu.AlcoholFree.watchkitapp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
