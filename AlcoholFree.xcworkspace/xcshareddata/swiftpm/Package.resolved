@@ -3,10 +3,10 @@
     "pins": [
       {
         "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/shp7724/SwiftUICharts",
+        "repositoryURL": "https://github.com/gajagajago/SwiftUICharts",
         "state": {
           "branch": "main",
-          "revision": "b7b2cbef02ac7c08a6c9ade401fb71d069fd3cfd",
+          "revision": "2fb67d979263ddc712a8e4ff3952cfc9e249c87c",
           "version": null
         }
       }
