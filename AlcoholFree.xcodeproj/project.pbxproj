@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		09481E5A275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 09481E59275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel */; };
 		42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE997827526D9D00062B3F /* PaceGraphView.swift */; };
-		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
-		42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */; };
@@ -54,7 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		42EC4C362705F0110052B1CF /* PBXContainerItemProxy */ = {
+		428FBF6727F2052D00CCD9E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
 			proxyType = 1;
@@ -102,7 +101,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				42EC4C352705F0110052B1CF /* AlcoholFree WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +450,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				42EC4C372705F0110052B1CF /* PBXTargetDependency */,
+				428FBF6827F2052D00CCD9E0 /* PBXTargetDependency */,
 			);
 			name = AlcoholFree;
 			packageProductDependencies = (
@@ -809,10 +807,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		42EC4C372705F0110052B1CF /* PBXTargetDependency */ = {
+		428FBF6827F2052D00CCD9E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */;
-			targetProxy = 42EC4C362705F0110052B1CF /* PBXContainerItemProxy */;
+			targetProxy = 428FBF6727F2052D00CCD9E0 /* PBXContainerItemProxy */;
 		};
 		42EC4C422705F0130052B1CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
