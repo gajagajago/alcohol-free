@@ -10,7 +10,7 @@
 		09481E5A275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 09481E59275B05C8005D8D41 /* MotionClassifierModelNew.mlmodel */; };
 		42AE997927526D9D00062B3F /* PaceGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE997827526D9D00062B3F /* PaceGraphView.swift */; };
 		42AE997C27526EB600062B3F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEE162A2742B5A600D6F60A /* HealthKit.framework */; };
-		42EC4C352705F0110052B1CF /* 알콜프리.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* 알콜프리.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42EC4C352705F0110052B1CF /* AlcoholFree.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 42EC4C342705F0110052B1CF /* AlcoholFree.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C3A2705F0130052B1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EC4C392705F0130052B1CF /* Assets.xcassets */; };
 		42EC4C402705F0130052B1CF /* AlcoholFree WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EC4C452705F0130052B1CF /* AlcoholFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */; };
@@ -103,7 +103,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				42EC4C352705F0110052B1CF /* 알콜프리.app in Embed Watch Content */,
+				42EC4C352705F0110052B1CF /* AlcoholFree.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +118,7 @@
 		426DC2B427F04EB900E4259B /* AlcoholFree WatchKit ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AlcoholFree WatchKit ExtensionRelease.entitlements"; sourceTree = "<group>"; };
 		42AE997827526D9D00062B3F /* PaceGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaceGraphView.swift; sourceTree = "<group>"; };
 		42EC4C302705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42EC4C342705F0110052B1CF /* 알콜프리.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "알콜프리.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EC4C342705F0110052B1CF /* AlcoholFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C392705F0130052B1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AlcoholFree WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EC4C442705F0130052B1CF /* AlcoholFreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholFreeApp.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				42EC4C302705F0110052B1CF /* AlcoholFree.app */,
-				42EC4C342705F0110052B1CF /* 알콜프리.app */,
+				42EC4C342705F0110052B1CF /* AlcoholFree.app */,
 				42EC4C3F2705F0130052B1CF /* AlcoholFree WatchKit Extension.appex */,
 				42EC4C592705F0140052B1CF /* AlcoholFreeTests.xctest */,
 				42EC4C632705F0140052B1CF /* AlcoholFreeUITests.xctest */,
@@ -488,7 +488,7 @@
 			);
 			name = "AlcoholFree WatchKit App";
 			productName = "AlcoholFree WatchKit App";
-			productReference = 42EC4C342705F0110052B1CF /* 알콜프리.app */;
+			productReference = 42EC4C342705F0110052B1CF /* AlcoholFree.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		42EC4C3E2705F0130052B1CF /* AlcoholFree WatchKit Extension */ = {
@@ -1044,7 +1044,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
-				PRODUCT_NAME = "알콜프리";
+				PRODUCT_NAME = AlcoholFree;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1070,7 +1070,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ryu.AlcoholFree.watchkitapp;
-				PRODUCT_NAME = "알콜프리";
+				PRODUCT_NAME = AlcoholFree;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
