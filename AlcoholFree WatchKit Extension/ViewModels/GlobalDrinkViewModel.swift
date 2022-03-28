@@ -158,7 +158,6 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     func startDrinkClassification() {
         motionClassifier.delegator = self
         
-        HealthKitSessionManager.shared.startBackgroundSession()
         motionClassifier.startMotionUpdates()
         SoundClassifier.shared.start(resultsObserver: ResultsObserver(delegate: self))
         
@@ -169,7 +168,6 @@ extension GlobalDrinkViewModel: MotionClassifierDelegate, SoundClassifierDelegat
     func stopDrinkClassification() {
         self.motionClassifier.stopMotionUpdates()
         SoundClassifier.shared.stop()
-        HealthKitSessionManager.shared.endBackgroundSession()
     }
     
     func drinkMotionDetected(activity: String) {
