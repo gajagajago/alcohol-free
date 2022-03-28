@@ -54,7 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		42EC4C362705F0110052B1CF /* PBXContainerItemProxy */ = {
+		428FBF6727F2052D00CCD9E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42EC4C2A2705F0110052B1CF /* Project object */;
 			proxyType = 1;
@@ -452,7 +452,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				42EC4C372705F0110052B1CF /* PBXTargetDependency */,
+				428FBF6827F2052D00CCD9E0 /* PBXTargetDependency */,
 			);
 			name = AlcoholFree;
 			packageProductDependencies = (
@@ -809,10 +809,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		42EC4C372705F0110052B1CF /* PBXTargetDependency */ = {
+		428FBF6827F2052D00CCD9E0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 42EC4C332705F0110052B1CF /* AlcoholFree WatchKit App */;
-			targetProxy = 42EC4C362705F0110052B1CF /* PBXContainerItemProxy */;
+			targetProxy = 428FBF6727F2052D00CCD9E0 /* PBXContainerItemProxy */;
 		};
 		42EC4C422705F0130052B1CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
